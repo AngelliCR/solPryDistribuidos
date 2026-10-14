@@ -13,3 +13,5 @@
 
 # Archivos de compilación o temporales
 *.cache
+
+CapaDatos/clsConectaBD.vb

@@ -15,11 +15,13 @@ Public Class clsConectaBD
         'Lab 105: autenticación SQl Server
         'cn.ConnectionString = "data source=PCL105PROF;Initial catalog=BDDistribuidos_A;user id=sa;password='USAT2026'"
         'Lab 108: autenticación Windows
-        cn.ConnectionString = "data source=localhost;Initial catalog=bdpryDistribuidos;integrated security=SSPI;language=spanish"
+
+        'cn.ConnectionString = "data source=localhost;Initial catalog=bdpryDistribuidos;integrated security=SSPI;language=spanish"
 
         'BD en la nube somee.com
         'cn.ConnectionString = "workstation id=BDPersonal2024.mssql.somee.com;packet size=4096;user id=cdelcastillo_SQLLogin_1;pwd=wptf98uw6j;data source=BDPersonal2024.mssql.somee.com;persist security info=False;initial catalog=BDPersonal2024;language=spanish"
-
+        cn.ConnectionString = "workstation id=bdpryDistribuidos.mssql.somee.com;packet size=4096;user id=angelli_cr_SQLLogin_1;pwd=ljrle6ytlk;data source=bdpryDistribuidos.mssql.somee.com;persist security info=False;initial catalog=bdpryDistribuidos;language=spanish"
+        cn.Open()
 
     End Sub
 
@@ -73,7 +75,10 @@ Public Class clsConectaBD
                 'Lab 105: autenticación SQl Server
                 'cn.ConnectionString = "data source=PCL105PROF;Initial catalog=BDDistribuidos_A;user id=sa;password='USAT2026'"
                 'Lab 108: autenticación Windows
-                cn.ConnectionString = "data source=localhost;Initial catalog=bdpryDistribuidos;integrated security=SSPI;language=spanish"
+                'cn.ConnectionString = "data source=localhost;Initial catalog=bdpryDistribuidos;integrated security=SSPI;language=spanish"
+                'cn.ConnectionString = "data source=bdpryDistribuidos.mssql.somee.com;initial catalog=bdpryDistribuidos;user id=angelli_cr_SQLLogin_1;pwd=ljrle6ytlk;persist security info=False;TrustServerCertificate=True"
+                'cn.Open()
+                cn.ConnectionString = "workstation id=bdpryDistribuidos.mssql.somee.com;packet size=4096;user id=angelli_cr_SQLLogin_1;pwd=ljrle6ytlk;data source=bdpryDistribuidos.mssql.somee.com;persist security info=False;initial catalog=bdpryDistribuidos;language=spanish"
                 cn.Open()
             End If
         Catch Ex As Exception

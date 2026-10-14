@@ -32,26 +32,26 @@ Partial Class frmregistrar
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.txtnumdni = New System.Windows.Forms.TextBox()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.txttelefono = New System.Windows.Forms.TextBox()
+        Me.txtcorreo = New System.Windows.Forms.TextBox()
         Me.txtapellido = New System.Windows.Forms.TextBox()
         Me.txtnombre = New System.Windows.Forms.TextBox()
-        Me.txtcorreo = New System.Windows.Forms.TextBox()
+        Me.txttelefono = New System.Windows.Forms.TextBox()
+        Me.txtnumdni = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.cbxarea = New System.Windows.Forms.ComboBox()
+        Me.cbxtipo = New System.Windows.Forms.ComboBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.cbxtipo = New System.Windows.Forms.ComboBox()
-        Me.cbxarea = New System.Windows.Forms.ComboBox()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.txtcontrasena = New System.Windows.Forms.TextBox()
-        Me.Label17 = New System.Windows.Forms.Label()
         Me.txtconfirmar = New System.Windows.Forms.TextBox()
         Me.Label18 = New System.Windows.Forms.Label()
+        Me.txtcontrasena = New System.Windows.Forms.TextBox()
+        Me.Label17 = New System.Windows.Forms.Label()
         Me.btnregistrar = New System.Windows.Forms.Button()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
@@ -164,28 +164,12 @@ Partial Class frmregistrar
         Me.Panel1.Size = New System.Drawing.Size(543, 244)
         Me.Panel1.TabIndex = 18
         '
-        'txtnumdni
+        'txtcorreo
         '
-        Me.txtnumdni.Location = New System.Drawing.Point(14, 42)
-        Me.txtnumdni.Name = "txtnumdni"
-        Me.txtnumdni.Size = New System.Drawing.Size(226, 22)
-        Me.txtnumdni.TabIndex = 17
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(222, 175)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(546, 16)
-        Me.Label10.TabIndex = 19
-        Me.Label10.Text = "_____________________________________________________________________________"
-        '
-        'txttelefono
-        '
-        Me.txttelefono.Location = New System.Drawing.Point(278, 42)
-        Me.txttelefono.Name = "txttelefono"
-        Me.txttelefono.Size = New System.Drawing.Size(204, 22)
-        Me.txttelefono.TabIndex = 18
+        Me.txtcorreo.Location = New System.Drawing.Point(23, 208)
+        Me.txtcorreo.Name = "txtcorreo"
+        Me.txtcorreo.Size = New System.Drawing.Size(459, 22)
+        Me.txtcorreo.TabIndex = 21
         '
         'txtapellido
         '
@@ -201,12 +185,28 @@ Partial Class frmregistrar
         Me.txtnombre.Size = New System.Drawing.Size(226, 22)
         Me.txtnombre.TabIndex = 19
         '
-        'txtcorreo
+        'txttelefono
         '
-        Me.txtcorreo.Location = New System.Drawing.Point(23, 208)
-        Me.txtcorreo.Name = "txtcorreo"
-        Me.txtcorreo.Size = New System.Drawing.Size(459, 22)
-        Me.txtcorreo.TabIndex = 21
+        Me.txttelefono.Location = New System.Drawing.Point(278, 42)
+        Me.txttelefono.Name = "txttelefono"
+        Me.txttelefono.Size = New System.Drawing.Size(204, 22)
+        Me.txttelefono.TabIndex = 18
+        '
+        'txtnumdni
+        '
+        Me.txtnumdni.Location = New System.Drawing.Point(14, 42)
+        Me.txtnumdni.Name = "txtnumdni"
+        Me.txtnumdni.Size = New System.Drawing.Size(226, 22)
+        Me.txtnumdni.TabIndex = 17
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(222, 175)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(546, 16)
+        Me.Label10.TabIndex = 19
+        Me.Label10.Text = "_____________________________________________________________________________"
         '
         'Label11
         '
@@ -238,6 +238,26 @@ Partial Class frmregistrar
         Me.Panel2.Size = New System.Drawing.Size(543, 97)
         Me.Panel2.TabIndex = 22
         '
+        'cbxarea
+        '
+        Me.cbxarea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbxarea.FormattingEnabled = True
+        Me.cbxarea.Items.AddRange(New Object() {"Campo", "Fábrica", "Logística", "Mantenimiento", "Administración", "Recursos humanos", "Sistemas"})
+        Me.cbxarea.Location = New System.Drawing.Point(278, 55)
+        Me.cbxarea.Name = "cbxarea"
+        Me.cbxarea.Size = New System.Drawing.Size(204, 24)
+        Me.cbxarea.TabIndex = 20
+        '
+        'cbxtipo
+        '
+        Me.cbxtipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbxtipo.FormattingEnabled = True
+        Me.cbxtipo.Items.AddRange(New Object() {"Operario", "Supervisor", "Administrador"})
+        Me.cbxtipo.Location = New System.Drawing.Point(14, 55)
+        Me.cbxtipo.Name = "cbxtipo"
+        Me.cbxtipo.Size = New System.Drawing.Size(226, 24)
+        Me.cbxtipo.TabIndex = 19
+        '
         'Label13
         '
         Me.Label13.AutoSize = True
@@ -255,26 +275,6 @@ Partial Class frmregistrar
         Me.Label14.Size = New System.Drawing.Size(39, 16)
         Me.Label14.TabIndex = 18
         Me.Label14.Text = "Área:"
-        '
-        'cbxtipo
-        '
-        Me.cbxtipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbxtipo.FormattingEnabled = True
-        Me.cbxtipo.Items.AddRange(New Object() {"Operario", "Supervisor", "Administrador"})
-        Me.cbxtipo.Location = New System.Drawing.Point(14, 55)
-        Me.cbxtipo.Name = "cbxtipo"
-        Me.cbxtipo.Size = New System.Drawing.Size(226, 24)
-        Me.cbxtipo.TabIndex = 19
-        '
-        'cbxarea
-        '
-        Me.cbxarea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbxarea.FormattingEnabled = True
-        Me.cbxarea.Items.AddRange(New Object() {"Campo", "Fábrica", "Logística", "Mantenimiento", "Administración", "Recursos humanos", "Sistemas"})
-        Me.cbxarea.Location = New System.Drawing.Point(278, 55)
-        Me.cbxarea.Name = "cbxarea"
-        Me.cbxarea.Size = New System.Drawing.Size(204, 24)
-        Me.cbxarea.TabIndex = 20
         '
         'Label15
         '
@@ -306,22 +306,6 @@ Partial Class frmregistrar
         Me.Panel3.Size = New System.Drawing.Size(543, 100)
         Me.Panel3.TabIndex = 25
         '
-        'txtcontrasena
-        '
-        Me.txtcontrasena.Location = New System.Drawing.Point(14, 48)
-        Me.txtcontrasena.Name = "txtcontrasena"
-        Me.txtcontrasena.Size = New System.Drawing.Size(226, 22)
-        Me.txtcontrasena.TabIndex = 21
-        '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(11, 19)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(79, 16)
-        Me.Label17.TabIndex = 20
-        Me.Label17.Text = "Contraseña:"
-        '
         'txtconfirmar
         '
         Me.txtconfirmar.Location = New System.Drawing.Point(278, 48)
@@ -337,6 +321,22 @@ Partial Class frmregistrar
         Me.Label18.Size = New System.Drawing.Size(139, 16)
         Me.Label18.TabIndex = 22
         Me.Label18.Text = "Confirmar Contraseña:"
+        '
+        'txtcontrasena
+        '
+        Me.txtcontrasena.Location = New System.Drawing.Point(14, 48)
+        Me.txtcontrasena.Name = "txtcontrasena"
+        Me.txtcontrasena.Size = New System.Drawing.Size(226, 22)
+        Me.txtcontrasena.TabIndex = 21
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(11, 19)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(79, 16)
+        Me.Label17.TabIndex = 20
+        Me.Label17.Text = "Contraseña:"
         '
         'btnregistrar
         '

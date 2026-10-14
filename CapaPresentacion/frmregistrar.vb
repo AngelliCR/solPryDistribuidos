@@ -97,4 +97,14 @@ Public Class frmregistrar
             MessageBox.Show("Ocurrió un error al registrar: " & ex.Message, "Error Crítico", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+
+
+
+
+
+    Private Sub Label19_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles Label19.Click
+        Dim frmReg As New frmregistrar()
+        frmReg.Show()
+        Me.Hide()
+    End Sub
 End Class

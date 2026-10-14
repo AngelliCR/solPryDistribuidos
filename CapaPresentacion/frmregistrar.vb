@@ -88,13 +88,34 @@ Public Class frmregistrar
 
             MessageBox.Show("¡Cuenta creada exitosamente!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-            ' Opcional: Regresar al login o limpiar formulario
-            ' Dim frmLog As New frmLogin()
-            ' frmLog.Show()
-            ' Me.Close()
+            ' Volver al login para que inicie sesión con su nueva cuenta
+            Me.Close()
 
         Catch ex As Exception
             MessageBox.Show("Ocurrió un error al registrar: " & ex.Message, "Error Crítico", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+    End Sub
+
+    ' Click en "Iniciar Sesión": cerrar el registro (FormClosed vuelve a mostrar el login).
+    Private Sub Label19_Click(sender As Object, e As EventArgs) Handles Label19.Click
+        Me.Close()
+    End Sub
+
+    ' Al cerrar el registro (por el enlace, tras registrarse o con la X) se vuelve a mostrar el login
+    ' que quedó oculto. Si no existiera, se crea uno nuevo.
+    Private Sub frmregistrar_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
+        For Each frm As Form In Application.OpenForms
+            If TypeOf frm Is frmLogin Then
+                frm.Show()
+                frm.Activate()
+                Return
+            End If
+        Next
+        Dim nuevoLogin As New frmLogin()
+        nuevoLogin.Show()
+    End Sub
+
+    Private Sub frmregistrar_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Label19.Cursor = Cursors.Hand
     End Sub
 End Class

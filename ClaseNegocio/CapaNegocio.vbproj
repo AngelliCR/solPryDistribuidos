@@ -67,6 +67,7 @@
     <Compile Include="clsPersonal.vb" />
     <Compile Include="clsMaquinaria.vb" />
     <Compile Include="clsSolicitud.vb" />
+    <Compile Include="clsActividad.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>

@@ -22,10 +22,11 @@ Partial Class frmLogin
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmLogin))
         Me.pnlMarca = New System.Windows.Forms.Panel()
+        Me.picLogo = New System.Windows.Forms.PictureBox()
         Me.lblCopyright = New System.Windows.Forms.Label()
         Me.lblSistema = New System.Windows.Forms.Label()
-        Me.lblPomalca = New System.Windows.Forms.Label()
         Me.pnlTarjeta = New System.Windows.Forms.Panel()
         Me.flpRegistro = New System.Windows.Forms.FlowLayoutPanel()
         Me.lnkRegistro = New System.Windows.Forms.LinkLabel()
@@ -39,16 +40,17 @@ Partial Class frmLogin
         Me.lblSubtitulo = New System.Windows.Forms.Label()
         Me.lblTitulo = New System.Windows.Forms.Label()
         Me.pnlMarca.SuspendLayout()
+        CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.flpRegistro.SuspendLayout()
         Me.pnlTarjeta.SuspendLayout()
         Me.SuspendLayout()
         '
         'pnlMarca
         '
-        Me.pnlMarca.BackColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(177, Byte), Integer))
+        Me.pnlMarca.BackColor = System.Drawing.Color.FromArgb(CType(CType(7, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.pnlMarca.Controls.Add(Me.lblCopyright)
         Me.pnlMarca.Controls.Add(Me.lblSistema)
-        Me.pnlMarca.Controls.Add(Me.lblPomalca)
+        Me.pnlMarca.Controls.Add(Me.picLogo)
         Me.pnlMarca.Dock = System.Windows.Forms.DockStyle.Left
         Me.pnlMarca.Location = New System.Drawing.Point(0, 0)
         Me.pnlMarca.Name = "pnlMarca"
@@ -59,7 +61,7 @@ Partial Class frmLogin
         '
         Me.lblCopyright.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.lblCopyright.Font = New System.Drawing.Font("Segoe UI", 8.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCopyright.ForeColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.lblCopyright.ForeColor = System.Drawing.Color.FromArgb(CType(CType(190, Byte), Integer), CType(CType(205, Byte), Integer), CType(CType(245, Byte), Integer))
         Me.lblCopyright.Location = New System.Drawing.Point(0, 504)
         Me.lblCopyright.Name = "lblCopyright"
         Me.lblCopyright.Padding = New System.Windows.Forms.Padding(40, 0, 16, 12)
@@ -72,22 +74,23 @@ Partial Class frmLogin
         '
         Me.lblSistema.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblSistema.ForeColor = System.Drawing.Color.White
-        Me.lblSistema.Location = New System.Drawing.Point(40, 242)
+        Me.lblSistema.Location = New System.Drawing.Point(40, 400)
         Me.lblSistema.Name = "lblSistema"
         Me.lblSistema.Size = New System.Drawing.Size(300, 56)
         Me.lblSistema.TabIndex = 1
         Me.lblSistema.Text = "Sistema de Gestión de Maquinaria Agrícola"
+        Me.lblSistema.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
-        'lblPomalca
+        'picLogo
         '
-        Me.lblPomalca.AutoSize = True
-        Me.lblPomalca.Font = New System.Drawing.Font("Segoe UI Semibold", 26.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPomalca.ForeColor = System.Drawing.Color.White
-        Me.lblPomalca.Location = New System.Drawing.Point(40, 188)
-        Me.lblPomalca.Name = "lblPomalca"
-        Me.lblPomalca.Size = New System.Drawing.Size(176, 47)
-        Me.lblPomalca.TabIndex = 0
-        Me.lblPomalca.Text = "POMALCA"
+        Me.picLogo.BackColor = System.Drawing.Color.Transparent
+        Me.picLogo.Image = CType(resources.GetObject("picLogo.Image"), System.Drawing.Image)
+        Me.picLogo.Location = New System.Drawing.Point(40, 80)
+        Me.picLogo.Name = "picLogo"
+        Me.picLogo.Size = New System.Drawing.Size(300, 296)
+        Me.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.picLogo.TabIndex = 3
+        Me.picLogo.TabStop = False
         '
         'pnlTarjeta
         '
@@ -121,11 +124,11 @@ Partial Class frmLogin
         '
         'lnkRegistro
         '
-        Me.lnkRegistro.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(153, Byte), Integer))
+        Me.lnkRegistro.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(160, Byte), Integer))
         Me.lnkRegistro.AutoSize = True
         Me.lnkRegistro.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lnkRegistro.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
-        Me.lnkRegistro.LinkColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(177, Byte), Integer))
+        Me.lnkRegistro.LinkColor = System.Drawing.Color.FromArgb(CType(CType(7, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.lnkRegistro.Location = New System.Drawing.Point(166, 3)
         Me.lnkRegistro.Margin = New System.Windows.Forms.Padding(0, 3, 0, 0)
         Me.lnkRegistro.Name = "lnkRegistro"
@@ -133,7 +136,7 @@ Partial Class frmLogin
         Me.lnkRegistro.TabIndex = 4
         Me.lnkRegistro.TabStop = True
         Me.lnkRegistro.Text = "Regístrese aquí"
-        Me.lnkRegistro.VisitedLinkColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(177, Byte), Integer))
+        Me.lnkRegistro.VisitedLinkColor = System.Drawing.Color.FromArgb(CType(CType(7, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(204, Byte), Integer))
         '
         'lblNuevo
         '
@@ -149,11 +152,11 @@ Partial Class frmLogin
         '
         'btninicio
         '
-        Me.btninicio.BackColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(177, Byte), Integer))
+        Me.btninicio.BackColor = System.Drawing.Color.FromArgb(CType(CType(7, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.btninicio.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btninicio.FlatAppearance.BorderSize = 0
-        Me.btninicio.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.btninicio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(153, Byte), Integer))
+        Me.btninicio.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(160, Byte), Integer))
+        Me.btninicio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(160, Byte), Integer))
         Me.btninicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btninicio.Font = New System.Drawing.Font("Segoe UI Semibold", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btninicio.ForeColor = System.Drawing.Color.White
@@ -259,6 +262,7 @@ Partial Class frmLogin
         Me.Text = "Pomalca - Iniciar sesión"
         Me.pnlMarca.ResumeLayout(False)
         Me.pnlMarca.PerformLayout()
+        CType(Me.picLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.flpRegistro.ResumeLayout(False)
         Me.flpRegistro.PerformLayout()
         Me.pnlTarjeta.ResumeLayout(False)
@@ -269,7 +273,7 @@ Partial Class frmLogin
     End Sub
 
     Friend WithEvents pnlMarca As Panel
-    Friend WithEvents lblPomalca As Label
+    Friend WithEvents picLogo As PictureBox
     Friend WithEvents lblSistema As Label
     Friend WithEvents lblCopyright As Label
     Friend WithEvents pnlTarjeta As Panel

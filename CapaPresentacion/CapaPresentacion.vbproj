@@ -80,12 +80,20 @@
       <DependentUpon>frmLogin.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmMenuPrincipal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenuPrincipal.Designer.vb">
+      <DependentUpon>frmMenuPrincipal.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmregistrar.Designer.vb">
       <DependentUpon>frmregistrar.vb</DependentUpon>
     </Compile>
     <Compile Include="frmregistrar.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="modSesion.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -106,6 +114,9 @@
   <ItemGroup>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenuPrincipal.resx">
+      <DependentUpon>frmMenuPrincipal.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmregistrar.resx">
       <DependentUpon>frmregistrar.vb</DependentUpon>

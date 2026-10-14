@@ -7,7 +7,7 @@ Public Class clsPersonal
 
     ' 1. Iniciar sesión usando DNI y Contraseña (verificando que esté Activo)
     Public Function iniciarSesion(dni As String, con As String) As Boolean
-        strCon = "SELECT * FROM personal WHERE TRIM(dni)='" & dni.Trim() & "' AND TRIM(password)='" & con.Trim() & "' AND estado='Activo'"
+        strCon = "SELECT * FROM personal WHERE TRIM(dni)='" & dni.Trim().Replace("'", "''") & "' AND TRIM(password)='" & con.Trim().Replace("'", "''") & "' AND estado='Activo'"
         Try
             dt = objMan.listarComando(strCon)
             If dt.Rows.Count > 0 Then
@@ -17,6 +17,22 @@ Public Class clsPersonal
             End If
         Catch ex As Exception
             Throw New Exception("Error al iniciar sesión!")
+        End Try
+    End Function
+
+    ' Datos del usuario que inicia sesión (sin devolver la contraseña)
+    Public Function obtenerUsuarioLogin(dni As String, con As String) As DataRow
+        Dim dtLogin As New DataTable
+        strCon = "SELECT id_personal, dni, nombres, apellidos, tipo_usuario, area FROM personal WHERE TRIM(dni)='" & dni.Trim().Replace("'", "''") & "' AND TRIM(password)='" & con.Trim().Replace("'", "''") & "' AND estado='Activo'"
+        Try
+            dtLogin = objMan.listarComando(strCon)
+            If dtLogin.Rows.Count > 0 Then
+                Return dtLogin.Rows(0)
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            Throw New Exception("Error al obtener el usuario!")
         End Try
     End Function
 

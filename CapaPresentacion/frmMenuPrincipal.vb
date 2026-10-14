@@ -4,6 +4,7 @@ Public Class frmMenuPrincipal
     Private cerrandoSesion As Boolean
     Private botonActivo As Button
     Private ajustandoMenu As Boolean
+    Private formularioAbierto As Form
 
     Private Sub frmMenuPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         AcomodarControles()
@@ -27,9 +28,10 @@ Public Class frmMenuPrincipal
         pnlLateral.Controls.SetChildIndex(flpMenu, 0)
         pnlLateral.Controls.SetChildIndex(btnCerrarSesion, 1)
 
-        pnlContenido.Controls.SetChildIndex(flpAccesos, 0)
-        pnlContenido.Controls.SetChildIndex(lblFecha, 1)
-        pnlContenido.Controls.SetChildIndex(lblBienvenido, 2)
+        pnlContenido.Controls.SetChildIndex(pnlModulo, 0)
+        pnlContenido.Controls.SetChildIndex(flpAccesos, 1)
+        pnlContenido.Controls.SetChildIndex(lblFecha, 2)
+        pnlContenido.Controls.SetChildIndex(lblBienvenido, 3)
 
         Dim menu() As Control = {btnInicio, btnUsuarios, btnSolicitudes, btnTarea, btnMaquinaria, btnMantenimiento, btnActividad, btnRegistrarSolicitud, btnMisSolicitudes, btnFacturacion}
         Dim tarjetas() As Control = {pnlCardUsuarios, pnlCardSolicitudes, pnlCardTarea, pnlCardMaquinaria, pnlCardMantenimiento, pnlCardActividad, pnlCardRegistrarSolicitud, pnlCardMisSolicitudes, pnlCardFacturacion}
@@ -103,10 +105,53 @@ Public Class frmMenuPrincipal
     End Sub
 
     Private Sub MostrarInicio()
+        CerrarFormularioAbierto()
+        pnlModulo.Visible = False
         MarcarActivo(btnInicio)
         lblBienvenido.Visible = True
         lblFecha.Visible = True
         flpAccesos.Visible = True
+    End Sub
+
+    Private Sub AbrirFormulario(frm As Form, boton As Button)
+        MarcarActivo(boton)
+        CerrarFormularioAbierto()
+        frm.TopLevel = False
+        frm.FormBorderStyle = FormBorderStyle.None
+        frm.Dock = DockStyle.Fill
+        lblBienvenido.Visible = False
+        lblFecha.Visible = False
+        flpAccesos.Visible = False
+        pnlModulo.Visible = True
+        pnlModulo.Controls.Add(frm)
+        formularioAbierto = frm
+        frm.Show()
+    End Sub
+
+    Private Sub CerrarFormularioAbierto()
+        If formularioAbierto Is Nothing Then
+            Return
+        End If
+        pnlModulo.Controls.Remove(formularioAbierto)
+        formularioAbierto.Dispose()
+        formularioAbierto = Nothing
+    End Sub
+
+    Private Sub AbrirSegunBoton(boton As Button)
+        Select Case boton.Name
+            Case "btnUsuarios"
+                AbrirFormulario(New frmPersonal(), boton)
+            Case "btnMaquinaria"
+                AbrirFormulario(New frmMaquinaria(), boton)
+            Case "btnRegistrarSolicitud"
+                AbrirFormulario(New frmRegistrarSolicitud(), boton)
+            Case "btnMisSolicitudes"
+                AbrirFormulario(New frmMisSolicitudes(), boton)
+            Case "btnSolicitudes"
+                AbrirFormulario(New frmGestionSolicitudes(), boton)
+            Case Else
+                AbrirModulo(boton.Text, boton)
+        End Select
     End Sub
 
     Private Sub MarcarActivo(boton As Button)
@@ -131,13 +176,13 @@ Public Class frmMenuPrincipal
 
     Private Sub OpcionMenu_Click(sender As Object, e As EventArgs) Handles btnUsuarios.Click, btnSolicitudes.Click, btnTarea.Click, btnMaquinaria.Click, btnMantenimiento.Click, btnActividad.Click, btnRegistrarSolicitud.Click, btnMisSolicitudes.Click, btnFacturacion.Click
         Dim boton As Button = DirectCast(sender, Button)
-        AbrirModulo(boton.Text, boton)
+        AbrirSegunBoton(boton)
     End Sub
 
     Private Sub Tarjeta_Click(sender As Object, e As EventArgs) Handles pnlCardUsuarios.Click, lblCardUsuarios.Click, lblDescUsuarios.Click, pnlCardSolicitudes.Click, lblCardSolicitudes.Click, lblDescSolicitudes.Click, pnlCardTarea.Click, lblCardTarea.Click, lblDescTarea.Click, pnlCardMaquinaria.Click, lblCardMaquinaria.Click, lblDescMaquinaria.Click, pnlCardMantenimiento.Click, lblCardMantenimiento.Click, lblDescMantenimiento.Click, pnlCardActividad.Click, lblCardActividad.Click, lblDescActividad.Click, pnlCardRegistrarSolicitud.Click, lblCardRegistrarSolicitud.Click, lblDescRegistrarSolicitud.Click, pnlCardMisSolicitudes.Click, lblCardMisSolicitudes.Click, lblDescMisSolicitudes.Click, pnlCardFacturacion.Click, lblCardFacturacion.Click, lblDescFacturacion.Click
         Dim boton As Button = BotonDeTarjeta(DirectCast(sender, Control))
         If boton IsNot Nothing Then
-            AbrirModulo(boton.Text, boton)
+            AbrirSegunBoton(boton)
         End If
     End Sub
 

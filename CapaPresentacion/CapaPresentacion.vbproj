@@ -87,6 +87,41 @@
       <DependentUpon>frmMenuPrincipal.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmPersonal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPersonal.Designer.vb">
+      <DependentUpon>frmPersonal.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMaquinaria.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMaquinaria.Designer.vb">
+      <DependentUpon>frmMaquinaria.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegistrarSolicitud.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegistrarSolicitud.Designer.vb">
+      <DependentUpon>frmRegistrarSolicitud.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMisSolicitudes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMisSolicitudes.Designer.vb">
+      <DependentUpon>frmMisSolicitudes.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionSolicitudes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionSolicitudes.Designer.vb">
+      <DependentUpon>frmGestionSolicitudes.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmregistrar.Designer.vb">
       <DependentUpon>frmregistrar.vb</DependentUpon>
     </Compile>
@@ -94,6 +129,8 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="modSesion.vb" />
+    <Compile Include="modEstilos.vb" />
+    <Compile Include="modListas.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -117,6 +154,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenuPrincipal.resx">
       <DependentUpon>frmMenuPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPersonal.resx">
+      <DependentUpon>frmPersonal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMaquinaria.resx">
+      <DependentUpon>frmMaquinaria.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegistrarSolicitud.resx">
+      <DependentUpon>frmRegistrarSolicitud.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMisSolicitudes.resx">
+      <DependentUpon>frmMisSolicitudes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionSolicitudes.resx">
+      <DependentUpon>frmGestionSolicitudes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmregistrar.resx">
       <DependentUpon>frmregistrar.vb</DependentUpon>

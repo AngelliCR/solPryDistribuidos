@@ -32,6 +32,7 @@ Partial Class frmMenuPrincipal
         Me.btnCerrarSesion = New System.Windows.Forms.Button()
         Me.pnlLineaLateral = New System.Windows.Forms.Panel()
         Me.pnlContenido = New System.Windows.Forms.Panel()
+        Me.pnlModulo = New System.Windows.Forms.Panel()
         Me.lblBienvenido = New System.Windows.Forms.Label()
         Me.lblFecha = New System.Windows.Forms.Label()
         Me.flpAccesos = New System.Windows.Forms.FlowLayoutPanel()
@@ -412,6 +413,7 @@ Partial Class frmMenuPrincipal
         'pnlContenido
         '
         Me.pnlContenido.BackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(249, Byte), Integer))
+        Me.pnlContenido.Controls.Add(Me.pnlModulo)
         Me.pnlContenido.Controls.Add(Me.flpAccesos)
         Me.pnlContenido.Controls.Add(Me.lblFecha)
         Me.pnlContenido.Controls.Add(Me.lblBienvenido)
@@ -421,6 +423,16 @@ Partial Class frmMenuPrincipal
         Me.pnlContenido.Padding = New System.Windows.Forms.Padding(30)
         Me.pnlContenido.Size = New System.Drawing.Size(969, 660)
         Me.pnlContenido.TabIndex = 3
+        '
+        'pnlModulo
+        '
+        Me.pnlModulo.BackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(249, Byte), Integer))
+        Me.pnlModulo.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pnlModulo.Location = New System.Drawing.Point(30, 30)
+        Me.pnlModulo.Name = "pnlModulo"
+        Me.pnlModulo.Size = New System.Drawing.Size(909, 600)
+        Me.pnlModulo.TabIndex = 4
+        Me.pnlModulo.Visible = False
         '
         'lblBienvenido
         '
@@ -820,6 +832,7 @@ Partial Class frmMenuPrincipal
     Friend WithEvents btnCerrarSesion As Button
     Friend WithEvents pnlLineaLateral As Panel
     Friend WithEvents pnlContenido As Panel
+    Friend WithEvents pnlModulo As Panel
     Friend WithEvents lblBienvenido As Label
     Friend WithEvents lblFecha As Label
     Friend WithEvents flpAccesos As FlowLayoutPanel

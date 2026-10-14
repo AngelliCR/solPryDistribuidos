@@ -149,6 +149,10 @@ Public Class frmMenuPrincipal
                 AbrirFormulario(New frmMisSolicitudes(), boton)
             Case "btnSolicitudes"
                 AbrirFormulario(New frmGestionSolicitudes(), boton)
+            Case "btnActividad"
+                AbrirFormulario(New frmActividad(), boton)
+            Case "btnTarea"
+                AbrirFormulario(New frmRegistrarTarea(), boton)
             Case Else
                 AbrirModulo(boton.Text, boton)
         End Select

@@ -30,6 +30,8 @@ Partial Class frmGestionSolicitudes
         Me.cbxFiltroArea = New System.Windows.Forms.ComboBox()
         Me.lblFiltroPrioridad = New System.Windows.Forms.Label()
         Me.cbxFiltroPrioridad = New System.Windows.Forms.ComboBox()
+        Me.lblFiltroTipo = New System.Windows.Forms.Label()
+        Me.cbxFiltroTipo = New System.Windows.Forms.ComboBox()
         Me.btnLimpiarFiltros = New System.Windows.Forms.Button()
         Me.pnlFiltros = New System.Windows.Forms.Panel()
         Me.lblRevision = New System.Windows.Forms.Label()
@@ -122,6 +124,24 @@ Partial Class frmGestionSolicitudes
         Me.cbxFiltroPrioridad.Name = "cbxFiltroPrioridad"
         Me.cbxFiltroPrioridad.Size = New System.Drawing.Size(130, 28)
         '
+        'lblFiltroTipo
+        '
+        Me.lblFiltroTipo.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFiltroTipo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
+        Me.lblFiltroTipo.Location = New System.Drawing.Point(616, 16)
+        Me.lblFiltroTipo.Name = "lblFiltroTipo"
+        Me.lblFiltroTipo.Size = New System.Drawing.Size(40, 18)
+        Me.lblFiltroTipo.Text = "Tipo"
+        '
+        'cbxFiltroTipo
+        '
+        Me.cbxFiltroTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbxFiltroTipo.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbxFiltroTipo.FormattingEnabled = True
+        Me.cbxFiltroTipo.Location = New System.Drawing.Point(656, 12)
+        Me.cbxFiltroTipo.Name = "cbxFiltroTipo"
+        Me.cbxFiltroTipo.Size = New System.Drawing.Size(140, 28)
+        '
         'btnLimpiarFiltros
         '
         Me.btnLimpiarFiltros.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -141,6 +161,8 @@ Partial Class frmGestionSolicitudes
         Me.pnlFiltros.Controls.Add(Me.cbxFiltroArea)
         Me.pnlFiltros.Controls.Add(Me.lblFiltroPrioridad)
         Me.pnlFiltros.Controls.Add(Me.cbxFiltroPrioridad)
+        Me.pnlFiltros.Controls.Add(Me.lblFiltroTipo)
+        Me.pnlFiltros.Controls.Add(Me.cbxFiltroTipo)
         Me.pnlFiltros.Controls.Add(Me.btnLimpiarFiltros)
         Me.pnlFiltros.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlFiltros.Location = New System.Drawing.Point(0, 0)
@@ -277,6 +299,8 @@ Partial Class frmGestionSolicitudes
     Friend WithEvents cbxFiltroArea As ComboBox
     Friend WithEvents lblFiltroPrioridad As Label
     Friend WithEvents cbxFiltroPrioridad As ComboBox
+    Friend WithEvents lblFiltroTipo As Label
+    Friend WithEvents cbxFiltroTipo As ComboBox
     Friend WithEvents btnLimpiarFiltros As Button
     Friend WithEvents pnlFiltros As Panel
     Friend WithEvents lblRevision As Label

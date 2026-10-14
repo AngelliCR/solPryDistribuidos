@@ -2,16 +2,25 @@ USE bdpryDistribuidos;
 GO
 
 -- 1) Estados de maquinaria iguales a la versión web (necesario para "Dar de baja")
-DECLARE @ck SYSNAME;
+DECLARE @ck SYSNAME, @sql NVARCHAR(400);
 SELECT @ck = cc.name
 FROM sys.check_constraints cc
 JOIN sys.columns c ON c.object_id = cc.parent_object_id AND c.column_id = cc.parent_column_id
-WHERE cc.parent_object_id = OBJECT_ID('dbo.maquinaria') AND c.name = 'estado';
-IF @ck IS NOT NULL EXEC('ALTER TABLE dbo.maquinaria DROP CONSTRAINT ' + QUOTENAME(@ck));
+WHERE cc.parent_object_id = OBJECT_ID('dbo.maquinaria')
+  AND c.name = 'estado'
+  AND cc.name <> 'CK_maquinaria_estado';
+IF @ck IS NOT NULL
+BEGIN
+    SET @sql = N'ALTER TABLE dbo.maquinaria DROP CONSTRAINT ' + QUOTENAME(@ck);
+    EXEC sp_executesql @sql;
+END
 GO
 UPDATE dbo.maquinaria SET estado = 'Sin Tarea' WHERE estado = 'Inactivo';
-ALTER TABLE dbo.maquinaria ADD CONSTRAINT CK_maquinaria_estado
-    CHECK (estado IN ('Operativo','En Mantenimiento','Sin Tarea','Dado de Baja'));
+IF OBJECT_ID('dbo.CK_maquinaria_estado', 'C') IS NULL
+BEGIN
+    ALTER TABLE dbo.maquinaria ADD CONSTRAINT CK_maquinaria_estado
+        CHECK (estado IN ('Operativo','En Mantenimiento','Sin Tarea','Dado de Baja'));
+END
 GO
 
 -- 2) Solicitudes: tipo y máquina relacionada (igual que la versión web)

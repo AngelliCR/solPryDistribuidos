@@ -19,14 +19,17 @@ Public Class frmLogin
         pnlTarjeta.Location = New Point(x, y)
     End Sub
 
+    ' Logo y texto centrados en el panel azul (el texto queda debajo del logo).
     Private Sub CentrarMarca()
-        Dim altoBloque As Integer = lblPomalca.Height + 12 + lblSistema.Height
-        Dim y As Integer = (pnlMarca.ClientSize.Height - lblCopyright.Height - altoBloque) \ 2
-        If y < 24 Then
-            y = 24
+        Dim ancho As Integer = pnlMarca.ClientSize.Width
+        Dim altoDisponible As Integer = pnlMarca.ClientSize.Height - lblCopyright.Height
+        Dim altoBloque As Integer = picLogo.Height + 8 + lblSistema.Height
+        Dim y As Integer = (altoDisponible - altoBloque) \ 2
+        If y < 16 Then
+            y = 16
         End If
-        lblPomalca.Location = New Point(40, y)
-        lblSistema.Location = New Point(40, y + lblPomalca.Height + 12)
+        picLogo.Location = New Point((ancho - picLogo.Width) \ 2, y)
+        lblSistema.Location = New Point((ancho - lblSistema.Width) \ 2, y + picLogo.Height + 8)
     End Sub
 
     Private Sub pnlTarjeta_Paint(sender As Object, e As PaintEventArgs) Handles pnlTarjeta.Paint

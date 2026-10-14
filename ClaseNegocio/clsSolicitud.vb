@@ -15,6 +15,16 @@ Public Class clsSolicitud
         End Try
     End Sub
 
+    Public Sub registrarTarea(idPersonal As Integer, descripcion As String, area As String, prioridad As String)
+        strCon = "INSERT INTO solicitudes (id_personal, descripcion, area, prioridad, estado, tipo_solicitud, id_maquinaria) VALUES (" &
+            idPersonal & ", '" & Q(descripcion) & "', '" & Q(area) & "', '" & Q(prioridad) & "', 'Pendiente', 'Trabajo', NULL)"
+        Try
+            objMan.ejecutarComando(strCon)
+        Catch ex As Exception
+            Throw New Exception("Error al registrar la tarea!")
+        End Try
+    End Sub
+
     Public Function listarMisSolicitudes(idPersonal As Integer) As DataTable
         strCon = ConsultaBase() & " WHERE s.id_personal=" & idPersonal & " ORDER BY s.fecha_registro DESC"
         Try
@@ -24,7 +34,7 @@ Public Class clsSolicitud
         End Try
     End Function
 
-    Public Function listarSolicitudes(estado As String, area As String, prioridad As String) As DataTable
+    Public Function listarSolicitudes(estado As String, area As String, prioridad As String, Optional tipo As String = "") As DataTable
         strCon = ConsultaBase() & " WHERE 1=1"
         If Not SinFiltro(estado) Then
             strCon &= " AND s.estado='" & Q(estado) & "'"
@@ -34,6 +44,9 @@ Public Class clsSolicitud
         End If
         If Not SinFiltro(prioridad) Then
             strCon &= " AND s.prioridad='" & Q(prioridad) & "'"
+        End If
+        If Not SinFiltro(tipo) Then
+            strCon &= " AND s.tipo_solicitud='" & Q(tipo) & "'"
         End If
         strCon &= " ORDER BY s.fecha_registro DESC"
         Try

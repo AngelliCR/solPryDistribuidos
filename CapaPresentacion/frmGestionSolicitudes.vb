@@ -12,7 +12,6 @@ Public Class frmGestionSolicitudes
         LlenarFiltro(cbxFiltroEstado, modListas.EstadosSolicitud)
         LlenarFiltro(cbxFiltroArea, modListas.Areas)
         LlenarFiltro(cbxFiltroPrioridad, modListas.Prioridades)
-        LlenarFiltro(cbxFiltroTipo, New String() {"Mantenimiento", "Trabajo"})
         cbxNuevoEstado.Items.AddRange(modListas.EstadosSolicitud)
         LimpiarRevision()
         CargarGrilla()
@@ -29,7 +28,7 @@ Public Class frmGestionSolicitudes
         cargando = True
         Try
             Dim obj As New clsSolicitud
-            dgvGestion.DataSource = obj.listarSolicitudes(TextoCombo(cbxFiltroEstado), TextoCombo(cbxFiltroArea), TextoCombo(cbxFiltroPrioridad), TextoCombo(cbxFiltroTipo))
+            dgvGestion.DataSource = obj.listarSolicitudes(TextoCombo(cbxFiltroEstado), TextoCombo(cbxFiltroArea), TextoCombo(cbxFiltroPrioridad))
             ConfigurarColumnas()
             dgvGestion.ClearSelection()
         Catch ex As Exception
@@ -57,6 +56,7 @@ Public Class frmGestionSolicitudes
         Ocultar("id_solicitud")
         Ocultar("id_personal")
         Ocultar("id_maquinaria")
+        Ocultar("tipo_solicitud")
     End Sub
 
     Private Sub PonerEncabezado(columna As String, titulo As String)
@@ -91,7 +91,7 @@ Public Class frmGestionSolicitudes
         btnGuardar.Enabled = True
     End Sub
 
-    Private Sub Filtro_Changed(sender As Object, e As EventArgs) Handles cbxFiltroEstado.SelectedIndexChanged, cbxFiltroArea.SelectedIndexChanged, cbxFiltroPrioridad.SelectedIndexChanged, cbxFiltroTipo.SelectedIndexChanged
+    Private Sub Filtro_Changed(sender As Object, e As EventArgs) Handles cbxFiltroEstado.SelectedIndexChanged, cbxFiltroArea.SelectedIndexChanged, cbxFiltroPrioridad.SelectedIndexChanged
         If listo Then
             CargarGrilla()
             LimpiarRevision()
@@ -103,7 +103,6 @@ Public Class frmGestionSolicitudes
         cbxFiltroEstado.SelectedIndex = 0
         cbxFiltroArea.SelectedIndex = 0
         cbxFiltroPrioridad.SelectedIndex = 0
-        cbxFiltroTipo.SelectedIndex = 0
         listo = True
         CargarGrilla()
         LimpiarRevision()

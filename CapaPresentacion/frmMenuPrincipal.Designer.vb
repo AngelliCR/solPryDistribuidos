@@ -39,28 +39,19 @@ Partial Class frmMenuPrincipal
         Me.btnInicio = New System.Windows.Forms.Button()
         Me.btnUsuarios = New System.Windows.Forms.Button()
         Me.btnSolicitudes = New System.Windows.Forms.Button()
-        Me.btnTarea = New System.Windows.Forms.Button()
         Me.btnMaquinaria = New System.Windows.Forms.Button()
-        Me.btnMantenimiento = New System.Windows.Forms.Button()
         Me.btnActividad = New System.Windows.Forms.Button()
         Me.btnRegistrarSolicitud = New System.Windows.Forms.Button()
         Me.btnMisSolicitudes = New System.Windows.Forms.Button()
-        Me.btnFacturacion = New System.Windows.Forms.Button()
         Me.pnlCardUsuarios = New System.Windows.Forms.Panel()
         Me.lblCardUsuarios = New System.Windows.Forms.Label()
         Me.lblDescUsuarios = New System.Windows.Forms.Label()
         Me.pnlCardSolicitudes = New System.Windows.Forms.Panel()
         Me.lblCardSolicitudes = New System.Windows.Forms.Label()
         Me.lblDescSolicitudes = New System.Windows.Forms.Label()
-        Me.pnlCardTarea = New System.Windows.Forms.Panel()
-        Me.lblCardTarea = New System.Windows.Forms.Label()
-        Me.lblDescTarea = New System.Windows.Forms.Label()
         Me.pnlCardMaquinaria = New System.Windows.Forms.Panel()
         Me.lblCardMaquinaria = New System.Windows.Forms.Label()
         Me.lblDescMaquinaria = New System.Windows.Forms.Label()
-        Me.pnlCardMantenimiento = New System.Windows.Forms.Panel()
-        Me.lblCardMantenimiento = New System.Windows.Forms.Label()
-        Me.lblDescMantenimiento = New System.Windows.Forms.Label()
         Me.pnlCardActividad = New System.Windows.Forms.Panel()
         Me.lblCardActividad = New System.Windows.Forms.Label()
         Me.lblDescActividad = New System.Windows.Forms.Label()
@@ -70,9 +61,6 @@ Partial Class frmMenuPrincipal
         Me.pnlCardMisSolicitudes = New System.Windows.Forms.Panel()
         Me.lblCardMisSolicitudes = New System.Windows.Forms.Label()
         Me.lblDescMisSolicitudes = New System.Windows.Forms.Label()
-        Me.pnlCardFacturacion = New System.Windows.Forms.Panel()
-        Me.lblCardFacturacion = New System.Windows.Forms.Label()
-        Me.lblDescFacturacion = New System.Windows.Forms.Label()
         Me.pnlSuperior.SuspendLayout()
         Me.pnlLateral.SuspendLayout()
         Me.pnlContenido.SuspendLayout()
@@ -80,13 +68,10 @@ Partial Class frmMenuPrincipal
         Me.flpAccesos.SuspendLayout()
         Me.pnlCardUsuarios.SuspendLayout()
         Me.pnlCardSolicitudes.SuspendLayout()
-        Me.pnlCardTarea.SuspendLayout()
         Me.pnlCardMaquinaria.SuspendLayout()
-        Me.pnlCardMantenimiento.SuspendLayout()
         Me.pnlCardActividad.SuspendLayout()
         Me.pnlCardRegistrarSolicitud.SuspendLayout()
         Me.pnlCardMisSolicitudes.SuspendLayout()
-        Me.pnlCardFacturacion.SuspendLayout()
         Me.SuspendLayout()
         '
         'pnlSuperior
@@ -165,13 +150,10 @@ Partial Class frmMenuPrincipal
         Me.flpMenu.Controls.Add(Me.btnInicio)
         Me.flpMenu.Controls.Add(Me.btnUsuarios)
         Me.flpMenu.Controls.Add(Me.btnSolicitudes)
-        Me.flpMenu.Controls.Add(Me.btnTarea)
         Me.flpMenu.Controls.Add(Me.btnMaquinaria)
-        Me.flpMenu.Controls.Add(Me.btnMantenimiento)
         Me.flpMenu.Controls.Add(Me.btnActividad)
         Me.flpMenu.Controls.Add(Me.btnRegistrarSolicitud)
         Me.flpMenu.Controls.Add(Me.btnMisSolicitudes)
-        Me.flpMenu.Controls.Add(Me.btnFacturacion)
         Me.flpMenu.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
         Me.flpMenu.Location = New System.Drawing.Point(0, 0)
         Me.flpMenu.Margin = New System.Windows.Forms.Padding(0)
@@ -241,26 +223,6 @@ Partial Class frmMenuPrincipal
         Me.btnSolicitudes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnSolicitudes.UseVisualStyleBackColor = False
         '
-        'btnTarea
-        '
-        Me.btnTarea.BackColor = System.Drawing.Color.White
-        Me.btnTarea.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnTarea.FlatAppearance.BorderSize = 0
-        Me.btnTarea.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(251, Byte), Integer))
-        Me.btnTarea.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(251, Byte), Integer))
-        Me.btnTarea.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnTarea.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTarea.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
-        Me.btnTarea.Location = New System.Drawing.Point(0, 132)
-        Me.btnTarea.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnTarea.Name = "btnTarea"
-        Me.btnTarea.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
-        Me.btnTarea.Size = New System.Drawing.Size(230, 44)
-        Me.btnTarea.TabIndex = 3
-        Me.btnTarea.Text = "Registrar tarea"
-        Me.btnTarea.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnTarea.UseVisualStyleBackColor = False
-        '
         'btnMaquinaria
         '
         Me.btnMaquinaria.BackColor = System.Drawing.Color.White
@@ -280,26 +242,6 @@ Partial Class frmMenuPrincipal
         Me.btnMaquinaria.Text = "Maquinaria"
         Me.btnMaquinaria.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnMaquinaria.UseVisualStyleBackColor = False
-        '
-        'btnMantenimiento
-        '
-        Me.btnMantenimiento.BackColor = System.Drawing.Color.White
-        Me.btnMantenimiento.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnMantenimiento.FlatAppearance.BorderSize = 0
-        Me.btnMantenimiento.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(251, Byte), Integer))
-        Me.btnMantenimiento.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(251, Byte), Integer))
-        Me.btnMantenimiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnMantenimiento.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnMantenimiento.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
-        Me.btnMantenimiento.Location = New System.Drawing.Point(0, 220)
-        Me.btnMantenimiento.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnMantenimiento.Name = "btnMantenimiento"
-        Me.btnMantenimiento.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
-        Me.btnMantenimiento.Size = New System.Drawing.Size(230, 44)
-        Me.btnMantenimiento.TabIndex = 5
-        Me.btnMantenimiento.Text = "Mantenimiento"
-        Me.btnMantenimiento.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnMantenimiento.UseVisualStyleBackColor = False
         '
         'btnActividad
         '
@@ -360,26 +302,6 @@ Partial Class frmMenuPrincipal
         Me.btnMisSolicitudes.Text = "Mis solicitudes"
         Me.btnMisSolicitudes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnMisSolicitudes.UseVisualStyleBackColor = False
-        '
-        'btnFacturacion
-        '
-        Me.btnFacturacion.BackColor = System.Drawing.Color.White
-        Me.btnFacturacion.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnFacturacion.FlatAppearance.BorderSize = 0
-        Me.btnFacturacion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(251, Byte), Integer))
-        Me.btnFacturacion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(251, Byte), Integer))
-        Me.btnFacturacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnFacturacion.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnFacturacion.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
-        Me.btnFacturacion.Location = New System.Drawing.Point(0, 396)
-        Me.btnFacturacion.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnFacturacion.Name = "btnFacturacion"
-        Me.btnFacturacion.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
-        Me.btnFacturacion.Size = New System.Drawing.Size(230, 44)
-        Me.btnFacturacion.TabIndex = 9
-        Me.btnFacturacion.Text = "Facturación"
-        Me.btnFacturacion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnFacturacion.UseVisualStyleBackColor = False
         '
         'btnCerrarSesion
         '
@@ -465,13 +387,10 @@ Partial Class frmMenuPrincipal
         Me.flpAccesos.BackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(249, Byte), Integer))
         Me.flpAccesos.Controls.Add(Me.pnlCardUsuarios)
         Me.flpAccesos.Controls.Add(Me.pnlCardSolicitudes)
-        Me.flpAccesos.Controls.Add(Me.pnlCardTarea)
         Me.flpAccesos.Controls.Add(Me.pnlCardMaquinaria)
-        Me.flpAccesos.Controls.Add(Me.pnlCardMantenimiento)
         Me.flpAccesos.Controls.Add(Me.pnlCardActividad)
         Me.flpAccesos.Controls.Add(Me.pnlCardRegistrarSolicitud)
         Me.flpAccesos.Controls.Add(Me.pnlCardMisSolicitudes)
-        Me.flpAccesos.Controls.Add(Me.pnlCardFacturacion)
         Me.flpAccesos.Dock = System.Windows.Forms.DockStyle.Fill
         Me.flpAccesos.FlowDirection = System.Windows.Forms.FlowDirection.LeftToRight
         Me.flpAccesos.Location = New System.Drawing.Point(30, 108)
@@ -550,40 +469,6 @@ Partial Class frmMenuPrincipal
         Me.lblDescSolicitudes.TabIndex = 1
         Me.lblDescSolicitudes.Text = "Revisión de solicitudes"
         '
-        'pnlCardTarea
-        '
-        Me.pnlCardTarea.BackColor = System.Drawing.Color.White
-        Me.pnlCardTarea.Controls.Add(Me.lblDescTarea)
-        Me.pnlCardTarea.Controls.Add(Me.lblCardTarea)
-        Me.pnlCardTarea.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pnlCardTarea.Location = New System.Drawing.Point(472, 0)
-        Me.pnlCardTarea.Margin = New System.Windows.Forms.Padding(0, 0, 16, 16)
-        Me.pnlCardTarea.Name = "pnlCardTarea"
-        Me.pnlCardTarea.Size = New System.Drawing.Size(220, 120)
-        Me.pnlCardTarea.TabIndex = 2
-        '
-        'lblCardTarea
-        '
-        Me.lblCardTarea.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.lblCardTarea.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCardTarea.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
-        Me.lblCardTarea.Location = New System.Drawing.Point(16, 16)
-        Me.lblCardTarea.Name = "lblCardTarea"
-        Me.lblCardTarea.Size = New System.Drawing.Size(188, 40)
-        Me.lblCardTarea.TabIndex = 0
-        Me.lblCardTarea.Text = "Registrar tarea"
-        '
-        'lblDescTarea
-        '
-        Me.lblDescTarea.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.lblDescTarea.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDescTarea.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.lblDescTarea.Location = New System.Drawing.Point(16, 60)
-        Me.lblDescTarea.Name = "lblDescTarea"
-        Me.lblDescTarea.Size = New System.Drawing.Size(188, 42)
-        Me.lblDescTarea.TabIndex = 1
-        Me.lblDescTarea.Text = "Alta de tareas de trabajo"
-        '
         'pnlCardMaquinaria
         '
         Me.pnlCardMaquinaria.BackColor = System.Drawing.Color.White
@@ -617,40 +502,6 @@ Partial Class frmMenuPrincipal
         Me.lblDescMaquinaria.Size = New System.Drawing.Size(188, 42)
         Me.lblDescMaquinaria.TabIndex = 1
         Me.lblDescMaquinaria.Text = "Inventario de maquinaria"
-        '
-        'pnlCardMantenimiento
-        '
-        Me.pnlCardMantenimiento.BackColor = System.Drawing.Color.White
-        Me.pnlCardMantenimiento.Controls.Add(Me.lblDescMantenimiento)
-        Me.pnlCardMantenimiento.Controls.Add(Me.lblCardMantenimiento)
-        Me.pnlCardMantenimiento.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pnlCardMantenimiento.Location = New System.Drawing.Point(0, 136)
-        Me.pnlCardMantenimiento.Margin = New System.Windows.Forms.Padding(0, 0, 16, 16)
-        Me.pnlCardMantenimiento.Name = "pnlCardMantenimiento"
-        Me.pnlCardMantenimiento.Size = New System.Drawing.Size(220, 120)
-        Me.pnlCardMantenimiento.TabIndex = 4
-        '
-        'lblCardMantenimiento
-        '
-        Me.lblCardMantenimiento.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.lblCardMantenimiento.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCardMantenimiento.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
-        Me.lblCardMantenimiento.Location = New System.Drawing.Point(16, 16)
-        Me.lblCardMantenimiento.Name = "lblCardMantenimiento"
-        Me.lblCardMantenimiento.Size = New System.Drawing.Size(188, 40)
-        Me.lblCardMantenimiento.TabIndex = 0
-        Me.lblCardMantenimiento.Text = "Mantenimiento"
-        '
-        'lblDescMantenimiento
-        '
-        Me.lblDescMantenimiento.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.lblDescMantenimiento.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDescMantenimiento.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.lblDescMantenimiento.Location = New System.Drawing.Point(16, 60)
-        Me.lblDescMantenimiento.Name = "lblDescMantenimiento"
-        Me.lblDescMantenimiento.Size = New System.Drawing.Size(188, 42)
-        Me.lblDescMantenimiento.TabIndex = 1
-        Me.lblDescMantenimiento.Text = "Control de mantenimientos"
         '
         'pnlCardActividad
         '
@@ -754,40 +605,6 @@ Partial Class frmMenuPrincipal
         Me.lblDescMisSolicitudes.TabIndex = 1
         Me.lblDescMisSolicitudes.Text = "Consulta de sus solicitudes"
         '
-        'pnlCardFacturacion
-        '
-        Me.pnlCardFacturacion.BackColor = System.Drawing.Color.White
-        Me.pnlCardFacturacion.Controls.Add(Me.lblDescFacturacion)
-        Me.pnlCardFacturacion.Controls.Add(Me.lblCardFacturacion)
-        Me.pnlCardFacturacion.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pnlCardFacturacion.Location = New System.Drawing.Point(0, 272)
-        Me.pnlCardFacturacion.Margin = New System.Windows.Forms.Padding(0, 0, 16, 16)
-        Me.pnlCardFacturacion.Name = "pnlCardFacturacion"
-        Me.pnlCardFacturacion.Size = New System.Drawing.Size(220, 120)
-        Me.pnlCardFacturacion.TabIndex = 8
-        '
-        'lblCardFacturacion
-        '
-        Me.lblCardFacturacion.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.lblCardFacturacion.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCardFacturacion.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
-        Me.lblCardFacturacion.Location = New System.Drawing.Point(16, 16)
-        Me.lblCardFacturacion.Name = "lblCardFacturacion"
-        Me.lblCardFacturacion.Size = New System.Drawing.Size(188, 40)
-        Me.lblCardFacturacion.TabIndex = 0
-        Me.lblCardFacturacion.Text = "Facturación"
-        '
-        'lblDescFacturacion
-        '
-        Me.lblDescFacturacion.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.lblDescFacturacion.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDescFacturacion.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.lblDescFacturacion.Location = New System.Drawing.Point(16, 60)
-        Me.lblDescFacturacion.Name = "lblDescFacturacion"
-        Me.lblDescFacturacion.Size = New System.Drawing.Size(188, 42)
-        Me.lblDescFacturacion.TabIndex = 1
-        Me.lblDescFacturacion.Text = "Emisión y control de facturas"
-        '
         'frmMenuPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -803,13 +620,10 @@ Partial Class frmMenuPrincipal
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Pomalca - Menú principal"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        Me.pnlCardFacturacion.ResumeLayout(False)
         Me.pnlCardMisSolicitudes.ResumeLayout(False)
         Me.pnlCardRegistrarSolicitud.ResumeLayout(False)
         Me.pnlCardActividad.ResumeLayout(False)
-        Me.pnlCardMantenimiento.ResumeLayout(False)
         Me.pnlCardMaquinaria.ResumeLayout(False)
-        Me.pnlCardTarea.ResumeLayout(False)
         Me.pnlCardSolicitudes.ResumeLayout(False)
         Me.pnlCardUsuarios.ResumeLayout(False)
         Me.flpAccesos.ResumeLayout(False)
@@ -839,28 +653,19 @@ Partial Class frmMenuPrincipal
     Friend WithEvents btnInicio As Button
     Friend WithEvents btnUsuarios As Button
     Friend WithEvents btnSolicitudes As Button
-    Friend WithEvents btnTarea As Button
     Friend WithEvents btnMaquinaria As Button
-    Friend WithEvents btnMantenimiento As Button
     Friend WithEvents btnActividad As Button
     Friend WithEvents btnRegistrarSolicitud As Button
     Friend WithEvents btnMisSolicitudes As Button
-    Friend WithEvents btnFacturacion As Button
     Friend WithEvents pnlCardUsuarios As Panel
     Friend WithEvents lblCardUsuarios As Label
     Friend WithEvents lblDescUsuarios As Label
     Friend WithEvents pnlCardSolicitudes As Panel
     Friend WithEvents lblCardSolicitudes As Label
     Friend WithEvents lblDescSolicitudes As Label
-    Friend WithEvents pnlCardTarea As Panel
-    Friend WithEvents lblCardTarea As Label
-    Friend WithEvents lblDescTarea As Label
     Friend WithEvents pnlCardMaquinaria As Panel
     Friend WithEvents lblCardMaquinaria As Label
     Friend WithEvents lblDescMaquinaria As Label
-    Friend WithEvents pnlCardMantenimiento As Panel
-    Friend WithEvents lblCardMantenimiento As Label
-    Friend WithEvents lblDescMantenimiento As Label
     Friend WithEvents pnlCardActividad As Panel
     Friend WithEvents lblCardActividad As Label
     Friend WithEvents lblDescActividad As Label
@@ -870,7 +675,4 @@ Partial Class frmMenuPrincipal
     Friend WithEvents pnlCardMisSolicitudes As Panel
     Friend WithEvents lblCardMisSolicitudes As Label
     Friend WithEvents lblDescMisSolicitudes As Label
-    Friend WithEvents pnlCardFacturacion As Panel
-    Friend WithEvents lblCardFacturacion As Label
-    Friend WithEvents lblDescFacturacion As Label
 End Class

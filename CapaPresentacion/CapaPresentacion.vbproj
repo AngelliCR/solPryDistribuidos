@@ -122,13 +122,6 @@
       <DependentUpon>frmGestionSolicitudes.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRegistrarTarea.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmRegistrarTarea.Designer.vb">
-      <DependentUpon>frmRegistrarTarea.vb</DependentUpon>
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="frmActividad.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -183,9 +176,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmGestionSolicitudes.resx">
       <DependentUpon>frmGestionSolicitudes.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmRegistrarTarea.resx">
-      <DependentUpon>frmRegistrarTarea.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmActividad.resx">
       <DependentUpon>frmActividad.vb</DependentUpon>

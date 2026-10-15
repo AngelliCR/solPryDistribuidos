@@ -15,16 +15,6 @@ Public Class clsSolicitud
         End Try
     End Sub
 
-    Public Sub registrarTarea(idPersonal As Integer, descripcion As String, area As String, prioridad As String)
-        strCon = "INSERT INTO solicitudes (id_personal, descripcion, area, prioridad, estado, tipo_solicitud, id_maquinaria) VALUES (" &
-            idPersonal & ", '" & Q(descripcion) & "', '" & Q(area) & "', '" & Q(prioridad) & "', 'Pendiente', 'Trabajo', NULL)"
-        Try
-            objMan.ejecutarComando(strCon)
-        Catch ex As Exception
-            Throw New Exception("Error al registrar la tarea!")
-        End Try
-    End Sub
-
     Public Function listarMisSolicitudes(idPersonal As Integer) As DataTable
         strCon = ConsultaBase() & " WHERE s.id_personal=" & idPersonal & " ORDER BY s.fecha_registro DESC"
         Try

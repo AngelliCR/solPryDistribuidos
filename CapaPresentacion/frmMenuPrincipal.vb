@@ -33,8 +33,8 @@ Public Class frmMenuPrincipal
         pnlContenido.Controls.SetChildIndex(lblFecha, 2)
         pnlContenido.Controls.SetChildIndex(lblBienvenido, 3)
 
-        Dim menu() As Control = {btnInicio, btnUsuarios, btnSolicitudes, btnTarea, btnMaquinaria, btnMantenimiento, btnActividad, btnRegistrarSolicitud, btnMisSolicitudes, btnFacturacion}
-        Dim tarjetas() As Control = {pnlCardUsuarios, pnlCardSolicitudes, pnlCardTarea, pnlCardMaquinaria, pnlCardMantenimiento, pnlCardActividad, pnlCardRegistrarSolicitud, pnlCardMisSolicitudes, pnlCardFacturacion}
+        Dim menu() As Control = {btnInicio, btnUsuarios, btnSolicitudes, btnMaquinaria, btnActividad, btnRegistrarSolicitud, btnMisSolicitudes}
+        Dim tarjetas() As Control = {pnlCardUsuarios, pnlCardSolicitudes, pnlCardMaquinaria, pnlCardActividad, pnlCardRegistrarSolicitud, pnlCardMisSolicitudes}
         Dim i As Integer
         For i = 0 To menu.Length - 1
             flpMenu.Controls.SetChildIndex(menu(i), i)
@@ -90,13 +90,10 @@ Public Class frmMenuPrincipal
         btnInicio.Visible = True
         EstablecerOpcion(btnUsuarios, pnlCardUsuarios, esAdmin)
         EstablecerOpcion(btnSolicitudes, pnlCardSolicitudes, esAdmin OrElse esSupervisor)
-        EstablecerOpcion(btnTarea, pnlCardTarea, esAdmin OrElse esSupervisor)
         EstablecerOpcion(btnMaquinaria, pnlCardMaquinaria, esAdmin OrElse esSupervisor)
-        EstablecerOpcion(btnMantenimiento, pnlCardMantenimiento, esAdmin OrElse esSupervisor)
         EstablecerOpcion(btnActividad, pnlCardActividad, esAdmin OrElse esSupervisor OrElse esOperario)
         EstablecerOpcion(btnRegistrarSolicitud, pnlCardRegistrarSolicitud, esOperario)
         EstablecerOpcion(btnMisSolicitudes, pnlCardMisSolicitudes, esOperario)
-        EstablecerOpcion(btnFacturacion, pnlCardFacturacion, esAdmin)
     End Sub
 
     Private Sub EstablecerOpcion(boton As Button, tarjeta As Panel, visible As Boolean)
@@ -151,8 +148,6 @@ Public Class frmMenuPrincipal
                 AbrirFormulario(New frmGestionSolicitudes(), boton)
             Case "btnActividad"
                 AbrirFormulario(New frmActividad(), boton)
-            Case "btnTarea"
-                AbrirFormulario(New frmRegistrarTarea(), boton)
             Case Else
                 AbrirModulo(boton.Text, boton)
         End Select
@@ -178,12 +173,12 @@ Public Class frmMenuPrincipal
         MostrarInicio()
     End Sub
 
-    Private Sub OpcionMenu_Click(sender As Object, e As EventArgs) Handles btnUsuarios.Click, btnSolicitudes.Click, btnTarea.Click, btnMaquinaria.Click, btnMantenimiento.Click, btnActividad.Click, btnRegistrarSolicitud.Click, btnMisSolicitudes.Click, btnFacturacion.Click
+    Private Sub OpcionMenu_Click(sender As Object, e As EventArgs) Handles btnUsuarios.Click, btnSolicitudes.Click, btnMaquinaria.Click, btnActividad.Click, btnRegistrarSolicitud.Click, btnMisSolicitudes.Click
         Dim boton As Button = DirectCast(sender, Button)
         AbrirSegunBoton(boton)
     End Sub
 
-    Private Sub Tarjeta_Click(sender As Object, e As EventArgs) Handles pnlCardUsuarios.Click, lblCardUsuarios.Click, lblDescUsuarios.Click, pnlCardSolicitudes.Click, lblCardSolicitudes.Click, lblDescSolicitudes.Click, pnlCardTarea.Click, lblCardTarea.Click, lblDescTarea.Click, pnlCardMaquinaria.Click, lblCardMaquinaria.Click, lblDescMaquinaria.Click, pnlCardMantenimiento.Click, lblCardMantenimiento.Click, lblDescMantenimiento.Click, pnlCardActividad.Click, lblCardActividad.Click, lblDescActividad.Click, pnlCardRegistrarSolicitud.Click, lblCardRegistrarSolicitud.Click, lblDescRegistrarSolicitud.Click, pnlCardMisSolicitudes.Click, lblCardMisSolicitudes.Click, lblDescMisSolicitudes.Click, pnlCardFacturacion.Click, lblCardFacturacion.Click, lblDescFacturacion.Click
+    Private Sub Tarjeta_Click(sender As Object, e As EventArgs) Handles pnlCardUsuarios.Click, lblCardUsuarios.Click, lblDescUsuarios.Click, pnlCardSolicitudes.Click, lblCardSolicitudes.Click, lblDescSolicitudes.Click, pnlCardMaquinaria.Click, lblCardMaquinaria.Click, lblDescMaquinaria.Click, pnlCardActividad.Click, lblCardActividad.Click, lblDescActividad.Click, pnlCardRegistrarSolicitud.Click, lblCardRegistrarSolicitud.Click, lblDescRegistrarSolicitud.Click, pnlCardMisSolicitudes.Click, lblCardMisSolicitudes.Click, lblDescMisSolicitudes.Click
         Dim boton As Button = BotonDeTarjeta(DirectCast(sender, Control))
         If boton IsNot Nothing Then
             AbrirSegunBoton(boton)
@@ -201,26 +196,20 @@ Public Class frmMenuPrincipal
                 Return btnUsuarios
             Case "pnlCardSolicitudes"
                 Return btnSolicitudes
-            Case "pnlCardTarea"
-                Return btnTarea
             Case "pnlCardMaquinaria"
                 Return btnMaquinaria
-            Case "pnlCardMantenimiento"
-                Return btnMantenimiento
             Case "pnlCardActividad"
                 Return btnActividad
             Case "pnlCardRegistrarSolicitud"
                 Return btnRegistrarSolicitud
             Case "pnlCardMisSolicitudes"
                 Return btnMisSolicitudes
-            Case "pnlCardFacturacion"
-                Return btnFacturacion
             Case Else
                 Return Nothing
         End Select
     End Function
 
-    Private Sub PintarBordeTarjeta(sender As Object, e As PaintEventArgs) Handles pnlCardUsuarios.Paint, pnlCardSolicitudes.Paint, pnlCardTarea.Paint, pnlCardMaquinaria.Paint, pnlCardMantenimiento.Paint, pnlCardActividad.Paint, pnlCardRegistrarSolicitud.Paint, pnlCardMisSolicitudes.Paint, pnlCardFacturacion.Paint
+    Private Sub PintarBordeTarjeta(sender As Object, e As PaintEventArgs) Handles pnlCardUsuarios.Paint, pnlCardSolicitudes.Paint, pnlCardMaquinaria.Paint, pnlCardActividad.Paint, pnlCardRegistrarSolicitud.Paint, pnlCardMisSolicitudes.Paint
         Dim pnl As Panel = DirectCast(sender, Panel)
         Dim rect As New Rectangle(0, 0, pnl.Width - 1, pnl.Height - 1)
         Using lapiz As New Pen(Color.FromArgb(220, 221, 225))

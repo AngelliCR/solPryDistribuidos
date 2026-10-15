@@ -14,6 +14,8 @@ Public Class frmActividad
         EstilizarBotonExito(btnFinalizar)
         EstilizarBotonPeligro(btnAveria)
         EstilizarGrilla(dgvActividades)
+        dgvActividades.MinimumSize = New Size(0, 220)
+        Me.AutoScroll = True
         ConfigurarNumericos()
         cbxZona.Items.AddRange(modListas.Zonas)
         cbxCombustibleFinal.Items.AddRange(modListas.NivelesCombustible)
@@ -24,7 +26,7 @@ Public Class frmActividad
             cbxFiltroEstado.Items.Add("AVERIADO")
             cbxFiltroEstado.SelectedIndex = 0
             dtpHasta.Value = Date.Today
-            dtpDesde.Value = Date.Today.AddDays(-7)
+            dtpDesde.Value = Date.Today.AddDays(-30)
         End If
         AplicarRol()
         CargarTodo()
@@ -153,6 +155,20 @@ Public Class frmActividad
             dgvActividades.DataSource = tabla
             ConfigurarColumnas()
             dgvActividades.ClearSelection()
+            If tabla.Rows.Count = 0 Then
+                If EsOperario() Then
+                    lblSinDatos.Text = "Aún no tiene jornadas registradas."
+                Else
+                    lblSinDatos.Text = "No hay jornadas registradas en el rango seleccionado."
+                End If
+                lblSinDatos.Width = Math.Max(200, dgvActividades.Width - 24)
+                lblSinDatos.Left = dgvActividades.Left + Math.Max(0, (dgvActividades.Width - lblSinDatos.Width) \ 2)
+                lblSinDatos.Top = dgvActividades.Top + Math.Max(0, (dgvActividades.Height - lblSinDatos.Height) \ 2)
+                lblSinDatos.Visible = True
+                lblSinDatos.BringToFront()
+            Else
+                lblSinDatos.Visible = False
+            End If
             If Not EsOperario() Then
                 ActualizarTarjetas(tabla)
                 LimpiarDetalle()

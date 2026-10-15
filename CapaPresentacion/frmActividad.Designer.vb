@@ -77,6 +77,7 @@ Partial Class frmActividad
         Me.btnActualizar = New System.Windows.Forms.Button()
         Me.lblGrilla = New System.Windows.Forms.Label()
         Me.dgvActividades = New System.Windows.Forms.DataGridView()
+        Me.lblSinDatos = New System.Windows.Forms.Label()
         Me.pnlDetalle = New System.Windows.Forms.Panel()
         Me.lblDetalle = New System.Windows.Forms.Label()
         Me.lblCapOperario = New System.Windows.Forms.Label()
@@ -457,7 +458,7 @@ Partial Class frmActividad
         Me.pnlResumen.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlResumen.Location = New System.Drawing.Point(0, 64)
         Me.pnlResumen.Name = "pnlResumen"
-        Me.pnlResumen.Size = New System.Drawing.Size(980, 112)
+        Me.pnlResumen.Size = New System.Drawing.Size(980, 90)
         Me.pnlResumen.Visible = False
         '
         'pnlCardActivas
@@ -467,22 +468,22 @@ Partial Class frmActividad
         Me.pnlCardActivas.Controls.Add(Me.lblNumActivas)
         Me.pnlCardActivas.Location = New System.Drawing.Point(0, 8)
         Me.pnlCardActivas.Name = "pnlCardActivas"
-        Me.pnlCardActivas.Size = New System.Drawing.Size(210, 96)
+        Me.pnlCardActivas.Size = New System.Drawing.Size(210, 74)
         '
         'lblNumActivas
         '
         Me.lblNumActivas.Font = New System.Drawing.Font("Segoe UI Semibold", 22.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblNumActivas.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(177, Byte), Integer))
-        Me.lblNumActivas.Location = New System.Drawing.Point(16, 12)
+        Me.lblNumActivas.Location = New System.Drawing.Point(16, 4)
         Me.lblNumActivas.Name = "lblNumActivas"
-        Me.lblNumActivas.Size = New System.Drawing.Size(178, 40)
+        Me.lblNumActivas.Size = New System.Drawing.Size(178, 36)
         Me.lblNumActivas.Text = "0"
         '
         'lblTxtActivas
         '
         Me.lblTxtActivas.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTxtActivas.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.lblTxtActivas.Location = New System.Drawing.Point(16, 56)
+        Me.lblTxtActivas.Location = New System.Drawing.Point(16, 42)
         Me.lblTxtActivas.Name = "lblTxtActivas"
         Me.lblTxtActivas.Size = New System.Drawing.Size(178, 24)
         Me.lblTxtActivas.Text = "Jornadas activas"
@@ -494,22 +495,22 @@ Partial Class frmActividad
         Me.pnlCardFinalizadas.Controls.Add(Me.lblNumFinalizadas)
         Me.pnlCardFinalizadas.Location = New System.Drawing.Point(226, 8)
         Me.pnlCardFinalizadas.Name = "pnlCardFinalizadas"
-        Me.pnlCardFinalizadas.Size = New System.Drawing.Size(210, 96)
+        Me.pnlCardFinalizadas.Size = New System.Drawing.Size(210, 74)
         '
         'lblNumFinalizadas
         '
         Me.lblNumFinalizadas.Font = New System.Drawing.Font("Segoe UI Semibold", 22.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblNumFinalizadas.ForeColor = System.Drawing.Color.FromArgb(CType(CType(39, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(96, Byte), Integer))
-        Me.lblNumFinalizadas.Location = New System.Drawing.Point(16, 12)
+        Me.lblNumFinalizadas.Location = New System.Drawing.Point(16, 4)
         Me.lblNumFinalizadas.Name = "lblNumFinalizadas"
-        Me.lblNumFinalizadas.Size = New System.Drawing.Size(178, 40)
+        Me.lblNumFinalizadas.Size = New System.Drawing.Size(178, 36)
         Me.lblNumFinalizadas.Text = "0"
         '
         'lblTxtFinalizadas
         '
         Me.lblTxtFinalizadas.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTxtFinalizadas.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.lblTxtFinalizadas.Location = New System.Drawing.Point(16, 56)
+        Me.lblTxtFinalizadas.Location = New System.Drawing.Point(16, 42)
         Me.lblTxtFinalizadas.Name = "lblTxtFinalizadas"
         Me.lblTxtFinalizadas.Size = New System.Drawing.Size(178, 24)
         Me.lblTxtFinalizadas.Text = "Finalizadas hoy"
@@ -521,22 +522,22 @@ Partial Class frmActividad
         Me.pnlCardAverias.Controls.Add(Me.lblNumAverias)
         Me.pnlCardAverias.Location = New System.Drawing.Point(452, 8)
         Me.pnlCardAverias.Name = "pnlCardAverias"
-        Me.pnlCardAverias.Size = New System.Drawing.Size(210, 96)
+        Me.pnlCardAverias.Size = New System.Drawing.Size(210, 74)
         '
         'lblNumAverias
         '
         Me.lblNumAverias.Font = New System.Drawing.Font("Segoe UI Semibold", 22.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblNumAverias.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(43, Byte), Integer))
-        Me.lblNumAverias.Location = New System.Drawing.Point(16, 12)
+        Me.lblNumAverias.Location = New System.Drawing.Point(16, 4)
         Me.lblNumAverias.Name = "lblNumAverias"
-        Me.lblNumAverias.Size = New System.Drawing.Size(178, 40)
+        Me.lblNumAverias.Size = New System.Drawing.Size(178, 36)
         Me.lblNumAverias.Text = "0"
         '
         'lblTxtAverias
         '
         Me.lblTxtAverias.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTxtAverias.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.lblTxtAverias.Location = New System.Drawing.Point(16, 56)
+        Me.lblTxtAverias.Location = New System.Drawing.Point(16, 42)
         Me.lblTxtAverias.Name = "lblTxtAverias"
         Me.lblTxtAverias.Size = New System.Drawing.Size(178, 24)
         Me.lblTxtAverias.Text = "Averías hoy"
@@ -636,10 +637,23 @@ Partial Class frmActividad
         Me.dgvActividades.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvActividades.Location = New System.Drawing.Point(0, 264)
         Me.dgvActividades.Name = "dgvActividades"
-        Me.dgvActividades.Size = New System.Drawing.Size(980, 176)
+        Me.dgvActividades.Size = New System.Drawing.Size(640, 376)
+        '
+        'lblSinDatos
+        '
+        Me.lblSinDatos.BackColor = System.Drawing.Color.White
+        Me.lblSinDatos.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSinDatos.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(170, Byte), Integer))
+        Me.lblSinDatos.Location = New System.Drawing.Point(80, 400)
+        Me.lblSinDatos.Name = "lblSinDatos"
+        Me.lblSinDatos.Size = New System.Drawing.Size(480, 40)
+        Me.lblSinDatos.Text = "No hay jornadas registradas en el rango seleccionado."
+        Me.lblSinDatos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblSinDatos.Visible = False
         '
         'pnlDetalle
         '
+        Me.pnlDetalle.AutoScroll = True
         Me.pnlDetalle.BackColor = System.Drawing.Color.White
         Me.pnlDetalle.Controls.Add(Me.txtDetFalla)
         Me.pnlDetalle.Controls.Add(Me.lblCapFalla)
@@ -666,28 +680,30 @@ Partial Class frmActividad
         Me.pnlDetalle.Controls.Add(Me.lblDetOperario)
         Me.pnlDetalle.Controls.Add(Me.lblCapOperario)
         Me.pnlDetalle.Controls.Add(Me.lblDetalle)
-        Me.pnlDetalle.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.pnlDetalle.Location = New System.Drawing.Point(0, 440)
+        Me.pnlDetalle.Dock = System.Windows.Forms.DockStyle.Right
+        Me.pnlDetalle.Location = New System.Drawing.Point(640, 64)
         Me.pnlDetalle.Name = "pnlDetalle"
-        Me.pnlDetalle.Size = New System.Drawing.Size(980, 200)
+        Me.pnlDetalle.Size = New System.Drawing.Size(340, 576)
         Me.pnlDetalle.Visible = False
         '
         'lblDetalle
         '
         Me.lblDetalle.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDetalle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
+        Me.lblDetalle.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblDetalle.Location = New System.Drawing.Point(16, 8)
         Me.lblDetalle.Name = "lblDetalle"
-        Me.lblDetalle.Size = New System.Drawing.Size(400, 22)
+        Me.lblDetalle.Size = New System.Drawing.Size(300, 24)
         Me.lblDetalle.Text = "Detalle de la jornada"
         '
         'lblCapOperario
         '
         Me.lblCapOperario.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCapOperario.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.lblCapOperario.Location = New System.Drawing.Point(16, 36)
+        Me.lblCapOperario.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblCapOperario.Location = New System.Drawing.Point(16, 40)
         Me.lblCapOperario.Name = "lblCapOperario"
-        Me.lblCapOperario.Size = New System.Drawing.Size(150, 16)
+        Me.lblCapOperario.Size = New System.Drawing.Size(300, 16)
         Me.lblCapOperario.Text = "Operario"
         '
         'lblDetOperario
@@ -695,18 +711,20 @@ Partial Class frmActividad
         Me.lblDetOperario.AutoEllipsis = True
         Me.lblDetOperario.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDetOperario.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
-        Me.lblDetOperario.Location = New System.Drawing.Point(16, 52)
+        Me.lblDetOperario.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblDetOperario.Location = New System.Drawing.Point(16, 56)
         Me.lblDetOperario.Name = "lblDetOperario"
-        Me.lblDetOperario.Size = New System.Drawing.Size(160, 20)
+        Me.lblDetOperario.Size = New System.Drawing.Size(300, 20)
         Me.lblDetOperario.Text = "-"
         '
         'lblCapMaquina
         '
         Me.lblCapMaquina.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCapMaquina.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.lblCapMaquina.Location = New System.Drawing.Point(184, 36)
+        Me.lblCapMaquina.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblCapMaquina.Location = New System.Drawing.Point(16, 84)
         Me.lblCapMaquina.Name = "lblCapMaquina"
-        Me.lblCapMaquina.Size = New System.Drawing.Size(190, 16)
+        Me.lblCapMaquina.Size = New System.Drawing.Size(300, 16)
         Me.lblCapMaquina.Text = "Máquina"
         '
         'lblDetMaquina
@@ -714,18 +732,20 @@ Partial Class frmActividad
         Me.lblDetMaquina.AutoEllipsis = True
         Me.lblDetMaquina.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDetMaquina.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
-        Me.lblDetMaquina.Location = New System.Drawing.Point(184, 52)
+        Me.lblDetMaquina.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblDetMaquina.Location = New System.Drawing.Point(16, 100)
         Me.lblDetMaquina.Name = "lblDetMaquina"
-        Me.lblDetMaquina.Size = New System.Drawing.Size(200, 20)
+        Me.lblDetMaquina.Size = New System.Drawing.Size(300, 20)
         Me.lblDetMaquina.Text = "-"
         '
         'lblCapZona
         '
         Me.lblCapZona.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCapZona.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.lblCapZona.Location = New System.Drawing.Point(392, 36)
+        Me.lblCapZona.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblCapZona.Location = New System.Drawing.Point(16, 128)
         Me.lblCapZona.Name = "lblCapZona"
-        Me.lblCapZona.Size = New System.Drawing.Size(130, 16)
+        Me.lblCapZona.Size = New System.Drawing.Size(300, 16)
         Me.lblCapZona.Text = "Zona"
         '
         'lblDetZona
@@ -733,18 +753,20 @@ Partial Class frmActividad
         Me.lblDetZona.AutoEllipsis = True
         Me.lblDetZona.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDetZona.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
-        Me.lblDetZona.Location = New System.Drawing.Point(392, 52)
+        Me.lblDetZona.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblDetZona.Location = New System.Drawing.Point(16, 144)
         Me.lblDetZona.Name = "lblDetZona"
-        Me.lblDetZona.Size = New System.Drawing.Size(140, 20)
+        Me.lblDetZona.Size = New System.Drawing.Size(300, 20)
         Me.lblDetZona.Text = "-"
         '
         'lblCapEstado
         '
         Me.lblCapEstado.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCapEstado.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.lblCapEstado.Location = New System.Drawing.Point(540, 36)
+        Me.lblCapEstado.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblCapEstado.Location = New System.Drawing.Point(16, 172)
         Me.lblCapEstado.Name = "lblCapEstado"
-        Me.lblCapEstado.Size = New System.Drawing.Size(120, 16)
+        Me.lblCapEstado.Size = New System.Drawing.Size(300, 16)
         Me.lblCapEstado.Text = "Estado"
         '
         'lblDetEstado
@@ -752,126 +774,140 @@ Partial Class frmActividad
         Me.lblDetEstado.AutoEllipsis = True
         Me.lblDetEstado.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDetEstado.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
-        Me.lblDetEstado.Location = New System.Drawing.Point(540, 52)
+        Me.lblDetEstado.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblDetEstado.Location = New System.Drawing.Point(16, 188)
         Me.lblDetEstado.Name = "lblDetEstado"
-        Me.lblDetEstado.Size = New System.Drawing.Size(140, 20)
+        Me.lblDetEstado.Size = New System.Drawing.Size(300, 20)
         Me.lblDetEstado.Text = "-"
         '
         'lblCapInicio
         '
         Me.lblCapInicio.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCapInicio.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.lblCapInicio.Location = New System.Drawing.Point(16, 76)
+        Me.lblCapInicio.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblCapInicio.Location = New System.Drawing.Point(16, 216)
         Me.lblCapInicio.Name = "lblCapInicio"
-        Me.lblCapInicio.Size = New System.Drawing.Size(130, 16)
+        Me.lblCapInicio.Size = New System.Drawing.Size(300, 16)
         Me.lblCapInicio.Text = "Inicio"
         '
         'lblDetInicio
         '
         Me.lblDetInicio.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDetInicio.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
-        Me.lblDetInicio.Location = New System.Drawing.Point(16, 92)
+        Me.lblDetInicio.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblDetInicio.Location = New System.Drawing.Point(16, 232)
         Me.lblDetInicio.Name = "lblDetInicio"
-        Me.lblDetInicio.Size = New System.Drawing.Size(140, 20)
+        Me.lblDetInicio.Size = New System.Drawing.Size(300, 20)
         Me.lblDetInicio.Text = "-"
         '
         'lblCapFin
         '
         Me.lblCapFin.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCapFin.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.lblCapFin.Location = New System.Drawing.Point(160, 76)
+        Me.lblCapFin.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblCapFin.Location = New System.Drawing.Point(16, 260)
         Me.lblCapFin.Name = "lblCapFin"
-        Me.lblCapFin.Size = New System.Drawing.Size(130, 16)
+        Me.lblCapFin.Size = New System.Drawing.Size(300, 16)
         Me.lblCapFin.Text = "Fin"
         '
         'lblDetFin
         '
         Me.lblDetFin.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDetFin.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
-        Me.lblDetFin.Location = New System.Drawing.Point(160, 92)
+        Me.lblDetFin.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblDetFin.Location = New System.Drawing.Point(16, 276)
         Me.lblDetFin.Name = "lblDetFin"
-        Me.lblDetFin.Size = New System.Drawing.Size(140, 20)
+        Me.lblDetFin.Size = New System.Drawing.Size(300, 20)
         Me.lblDetFin.Text = "-"
         '
         'lblCapHorasEst
         '
         Me.lblCapHorasEst.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCapHorasEst.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.lblCapHorasEst.Location = New System.Drawing.Point(310, 76)
+        Me.lblCapHorasEst.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblCapHorasEst.Location = New System.Drawing.Point(16, 304)
         Me.lblCapHorasEst.Name = "lblCapHorasEst"
-        Me.lblCapHorasEst.Size = New System.Drawing.Size(100, 16)
+        Me.lblCapHorasEst.Size = New System.Drawing.Size(300, 16)
         Me.lblCapHorasEst.Text = "Horas estimadas"
         '
         'lblDetHorasEst
         '
         Me.lblDetHorasEst.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDetHorasEst.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
-        Me.lblDetHorasEst.Location = New System.Drawing.Point(310, 92)
+        Me.lblDetHorasEst.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblDetHorasEst.Location = New System.Drawing.Point(16, 320)
         Me.lblDetHorasEst.Name = "lblDetHorasEst"
-        Me.lblDetHorasEst.Size = New System.Drawing.Size(90, 20)
+        Me.lblDetHorasEst.Size = New System.Drawing.Size(300, 20)
         Me.lblDetHorasEst.Text = "-"
         '
         'lblCapHorasReales
         '
         Me.lblCapHorasReales.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCapHorasReales.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.lblCapHorasReales.Location = New System.Drawing.Point(420, 76)
+        Me.lblCapHorasReales.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblCapHorasReales.Location = New System.Drawing.Point(16, 348)
         Me.lblCapHorasReales.Name = "lblCapHorasReales"
-        Me.lblCapHorasReales.Size = New System.Drawing.Size(80, 16)
+        Me.lblCapHorasReales.Size = New System.Drawing.Size(300, 16)
         Me.lblCapHorasReales.Text = "Horas reales"
         '
         'lblDetHorasReales
         '
         Me.lblDetHorasReales.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDetHorasReales.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
-        Me.lblDetHorasReales.Location = New System.Drawing.Point(420, 92)
+        Me.lblDetHorasReales.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblDetHorasReales.Location = New System.Drawing.Point(16, 364)
         Me.lblDetHorasReales.Name = "lblDetHorasReales"
-        Me.lblDetHorasReales.Size = New System.Drawing.Size(80, 20)
+        Me.lblDetHorasReales.Size = New System.Drawing.Size(300, 20)
         Me.lblDetHorasReales.Text = "-"
         '
         'lblCapCombIni
         '
         Me.lblCapCombIni.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCapCombIni.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.lblCapCombIni.Location = New System.Drawing.Point(510, 76)
+        Me.lblCapCombIni.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblCapCombIni.Location = New System.Drawing.Point(16, 392)
         Me.lblCapCombIni.Name = "lblCapCombIni"
-        Me.lblCapCombIni.Size = New System.Drawing.Size(90, 16)
+        Me.lblCapCombIni.Size = New System.Drawing.Size(300, 16)
         Me.lblCapCombIni.Text = "Comb. inicial"
         '
         'lblDetCombIni
         '
         Me.lblDetCombIni.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDetCombIni.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
-        Me.lblDetCombIni.Location = New System.Drawing.Point(510, 92)
+        Me.lblDetCombIni.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblDetCombIni.Location = New System.Drawing.Point(16, 408)
         Me.lblDetCombIni.Name = "lblDetCombIni"
-        Me.lblDetCombIni.Size = New System.Drawing.Size(80, 20)
+        Me.lblDetCombIni.Size = New System.Drawing.Size(300, 20)
         Me.lblDetCombIni.Text = "-"
         '
         'lblCapCombFin
         '
         Me.lblCapCombFin.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCapCombFin.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.lblCapCombFin.Location = New System.Drawing.Point(610, 76)
+        Me.lblCapCombFin.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblCapCombFin.Location = New System.Drawing.Point(16, 436)
         Me.lblCapCombFin.Name = "lblCapCombFin"
-        Me.lblCapCombFin.Size = New System.Drawing.Size(80, 16)
+        Me.lblCapCombFin.Size = New System.Drawing.Size(300, 16)
         Me.lblCapCombFin.Text = "Comb. final"
         '
         'lblDetCombFin
         '
         Me.lblDetCombFin.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDetCombFin.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
-        Me.lblDetCombFin.Location = New System.Drawing.Point(610, 92)
+        Me.lblDetCombFin.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblDetCombFin.Location = New System.Drawing.Point(16, 452)
         Me.lblDetCombFin.Name = "lblDetCombFin"
-        Me.lblDetCombFin.Size = New System.Drawing.Size(80, 20)
+        Me.lblDetCombFin.Size = New System.Drawing.Size(300, 20)
         Me.lblDetCombFin.Text = "-"
         '
         'lblCapMotivo
         '
         Me.lblCapMotivo.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCapMotivo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.lblCapMotivo.Location = New System.Drawing.Point(16, 116)
+        Me.lblCapMotivo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblCapMotivo.Location = New System.Drawing.Point(16, 480)
         Me.lblCapMotivo.Name = "lblCapMotivo"
-        Me.lblCapMotivo.Size = New System.Drawing.Size(200, 16)
+        Me.lblCapMotivo.Size = New System.Drawing.Size(300, 16)
         Me.lblCapMotivo.Text = "Motivo de retraso"
         '
         'txtDetMotivo
@@ -879,20 +915,22 @@ Partial Class frmActividad
         Me.txtDetMotivo.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(249, Byte), Integer), CType(CType(251, Byte), Integer))
         Me.txtDetMotivo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtDetMotivo.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDetMotivo.Location = New System.Drawing.Point(16, 134)
+        Me.txtDetMotivo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtDetMotivo.Location = New System.Drawing.Point(16, 496)
         Me.txtDetMotivo.Multiline = True
         Me.txtDetMotivo.Name = "txtDetMotivo"
         Me.txtDetMotivo.ReadOnly = True
         Me.txtDetMotivo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtDetMotivo.Size = New System.Drawing.Size(320, 52)
+        Me.txtDetMotivo.Size = New System.Drawing.Size(300, 70)
         '
         'lblCapFalla
         '
         Me.lblCapFalla.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCapFalla.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.lblCapFalla.Location = New System.Drawing.Point(352, 116)
+        Me.lblCapFalla.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblCapFalla.Location = New System.Drawing.Point(16, 574)
         Me.lblCapFalla.Name = "lblCapFalla"
-        Me.lblCapFalla.Size = New System.Drawing.Size(220, 16)
+        Me.lblCapFalla.Size = New System.Drawing.Size(300, 16)
         Me.lblCapFalla.Text = "Observación de falla"
         '
         'txtDetFalla
@@ -900,20 +938,23 @@ Partial Class frmActividad
         Me.txtDetFalla.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(249, Byte), Integer), CType(CType(251, Byte), Integer))
         Me.txtDetFalla.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtDetFalla.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDetFalla.Location = New System.Drawing.Point(352, 134)
+        Me.txtDetFalla.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtDetFalla.Location = New System.Drawing.Point(16, 590)
         Me.txtDetFalla.Multiline = True
         Me.txtDetFalla.Name = "txtDetFalla"
         Me.txtDetFalla.ReadOnly = True
         Me.txtDetFalla.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtDetFalla.Size = New System.Drawing.Size(330, 52)
+        Me.txtDetFalla.Size = New System.Drawing.Size(300, 70)
         '
         'frmActividad
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(249, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(980, 640)
         Me.Controls.Add(Me.dgvActividades)
+        Me.Controls.Add(Me.lblSinDatos)
         Me.Controls.Add(Me.pnlDetalle)
         Me.Controls.Add(Me.lblGrilla)
         Me.Controls.Add(Me.pnlFiltros)
@@ -998,6 +1039,7 @@ Partial Class frmActividad
     Friend WithEvents btnActualizar As Button
     Friend WithEvents lblGrilla As Label
     Friend WithEvents dgvActividades As DataGridView
+    Friend WithEvents lblSinDatos As Label
     Friend WithEvents pnlDetalle As Panel
     Friend WithEvents lblDetalle As Label
     Friend WithEvents lblCapOperario As Label

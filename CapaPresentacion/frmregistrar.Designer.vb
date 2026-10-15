@@ -22,417 +22,536 @@ Partial Class frmregistrar
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.txtcorreo = New System.Windows.Forms.TextBox()
-        Me.txtapellido = New System.Windows.Forms.TextBox()
-        Me.txtnombre = New System.Windows.Forms.TextBox()
-        Me.txttelefono = New System.Windows.Forms.TextBox()
-        Me.txtnumdni = New System.Windows.Forms.TextBox()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Panel2 = New System.Windows.Forms.Panel()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmregistrar))
+        Me.pnlMarca = New System.Windows.Forms.Panel()
+        Me.picLogo = New System.Windows.Forms.PictureBox()
+        Me.lblCopyright = New System.Windows.Forms.Label()
+        Me.lblSistema = New System.Windows.Forms.Label()
+        Me.pnlTarjeta = New System.Windows.Forms.Panel()
+        Me.flpIniciarSesion = New System.Windows.Forms.FlowLayoutPanel()
+        Me.lblYaTiene = New System.Windows.Forms.Label()
+        Me.lnkIniciarSesion = New System.Windows.Forms.LinkLabel()
+        Me.btnregistrar = New System.Windows.Forms.Button()
+        Me.chkMostrar = New System.Windows.Forms.CheckBox()
+        Me.txtconfirmar = New System.Windows.Forms.TextBox()
+        Me.lblConfirmar = New System.Windows.Forms.Label()
+        Me.txtcontrasena = New System.Windows.Forms.TextBox()
+        Me.lblContrasena = New System.Windows.Forms.Label()
+        Me.pnlLineaAcceso = New System.Windows.Forms.Panel()
+        Me.lblSecAcceso = New System.Windows.Forms.Label()
         Me.cbxarea = New System.Windows.Forms.ComboBox()
         Me.cbxtipo = New System.Windows.Forms.ComboBox()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.txtconfirmar = New System.Windows.Forms.TextBox()
-        Me.Label18 = New System.Windows.Forms.Label()
-        Me.txtcontrasena = New System.Windows.Forms.TextBox()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.btnregistrar = New System.Windows.Forms.Button()
-        Me.Label19 = New System.Windows.Forms.Label()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.Panel1.SuspendLayout()
-        Me.Panel2.SuspendLayout()
-        Me.Panel3.SuspendLayout()
+        Me.lblArea = New System.Windows.Forms.Label()
+        Me.lblTipo = New System.Windows.Forms.Label()
+        Me.pnlLineaCargo = New System.Windows.Forms.Panel()
+        Me.lblSecCargo = New System.Windows.Forms.Label()
+        Me.txtcorreo = New System.Windows.Forms.TextBox()
+        Me.lblCorreo = New System.Windows.Forms.Label()
+        Me.txtapellido = New System.Windows.Forms.TextBox()
+        Me.txtnombre = New System.Windows.Forms.TextBox()
+        Me.lblApellidos = New System.Windows.Forms.Label()
+        Me.lblNombres = New System.Windows.Forms.Label()
+        Me.txttelefono = New System.Windows.Forms.TextBox()
+        Me.txtnumdni = New System.Windows.Forms.TextBox()
+        Me.lblTelefono = New System.Windows.Forms.Label()
+        Me.lblDni = New System.Windows.Forms.Label()
+        Me.pnlLineaPersonales = New System.Windows.Forms.Panel()
+        Me.lblSecPersonales = New System.Windows.Forms.Label()
+        Me.lblSubtitulo = New System.Windows.Forms.Label()
+        Me.lblTitulo = New System.Windows.Forms.Label()
+        Me.pnlMarca.SuspendLayout()
+        CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.flpIniciarSesion.SuspendLayout()
+        Me.pnlTarjeta.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Label3
+        'pnlMarca
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.Label3.Location = New System.Drawing.Point(420, 46)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(144, 27)
-        Me.Label3.TabIndex = 6
-        Me.Label3.Text = "P O M A L C A"
+        Me.pnlMarca.BackColor = System.Drawing.Color.FromArgb(CType(CType(7, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.pnlMarca.Controls.Add(Me.lblCopyright)
+        Me.pnlMarca.Controls.Add(Me.lblSistema)
+        Me.pnlMarca.Controls.Add(Me.picLogo)
+        Me.pnlMarca.Dock = System.Windows.Forms.DockStyle.Left
+        Me.pnlMarca.Location = New System.Drawing.Point(0, 0)
+        Me.pnlMarca.Name = "pnlMarca"
+        Me.pnlMarca.Size = New System.Drawing.Size(340, 640)
+        Me.pnlMarca.TabIndex = 0
         '
-        'Label7
+        'lblCopyright
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(346, 107)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(299, 16)
-        Me.Label7.TabIndex = 11
-        Me.Label7.Text = "Completa los datos para registrarte en el sistema"
+        Me.lblCopyright.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.lblCopyright.Font = New System.Drawing.Font("Segoe UI", 8.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCopyright.ForeColor = System.Drawing.Color.FromArgb(CType(CType(190, Byte), Integer), CType(CType(205, Byte), Integer), CType(CType(245, Byte), Integer))
+        Me.lblCopyright.Location = New System.Drawing.Point(0, 584)
+        Me.lblCopyright.Name = "lblCopyright"
+        Me.lblCopyright.Padding = New System.Windows.Forms.Padding(40, 0, 16, 12)
+        Me.lblCopyright.Size = New System.Drawing.Size(340, 56)
+        Me.lblCopyright.TabIndex = 2
+        Me.lblCopyright.Text = "© 2026 - Grupo 2"
+        Me.lblCopyright.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'Label4
+        'lblSistema
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(434, 85)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(130, 22)
-        Me.Label4.TabIndex = 10
-        Me.Label4.Text = "Crear Cuenta"
+        Me.lblSistema.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSistema.ForeColor = System.Drawing.Color.White
+        Me.lblSistema.Location = New System.Drawing.Point(30, 396)
+        Me.lblSistema.Name = "lblSistema"
+        Me.lblSistema.Size = New System.Drawing.Size(280, 56)
+        Me.lblSistema.TabIndex = 1
+        Me.lblSistema.Text = "Sistema de Gestión de Maquinaria Agrícola"
+        Me.lblSistema.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
-        'Label1
+        'picLogo
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(222, 155)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(131, 16)
-        Me.Label1.TabIndex = 12
-        Me.Label1.Text = "Datos Personales"
+        Me.picLogo.BackColor = System.Drawing.Color.Transparent
+        Me.picLogo.Image = CType(resources.GetObject("picLogo.Image"), System.Drawing.Image)
+        Me.picLogo.Location = New System.Drawing.Point(40, 132)
+        Me.picLogo.Name = "picLogo"
+        Me.picLogo.Size = New System.Drawing.Size(260, 256)
+        Me.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.picLogo.TabIndex = 3
+        Me.picLogo.TabStop = False
         '
-        'Label2
+        'pnlTarjeta
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(11, 92)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(66, 16)
-        Me.Label2.TabIndex = 13
-        Me.Label2.Text = "Nombres:"
+        Me.pnlTarjeta.BackColor = System.Drawing.Color.White
+        Me.pnlTarjeta.Controls.Add(Me.flpIniciarSesion)
+        Me.pnlTarjeta.Controls.Add(Me.btnregistrar)
+        Me.pnlTarjeta.Controls.Add(Me.chkMostrar)
+        Me.pnlTarjeta.Controls.Add(Me.txtconfirmar)
+        Me.pnlTarjeta.Controls.Add(Me.lblConfirmar)
+        Me.pnlTarjeta.Controls.Add(Me.txtcontrasena)
+        Me.pnlTarjeta.Controls.Add(Me.lblContrasena)
+        Me.pnlTarjeta.Controls.Add(Me.pnlLineaAcceso)
+        Me.pnlTarjeta.Controls.Add(Me.lblSecAcceso)
+        Me.pnlTarjeta.Controls.Add(Me.cbxarea)
+        Me.pnlTarjeta.Controls.Add(Me.cbxtipo)
+        Me.pnlTarjeta.Controls.Add(Me.lblArea)
+        Me.pnlTarjeta.Controls.Add(Me.lblTipo)
+        Me.pnlTarjeta.Controls.Add(Me.pnlLineaCargo)
+        Me.pnlTarjeta.Controls.Add(Me.lblSecCargo)
+        Me.pnlTarjeta.Controls.Add(Me.txtcorreo)
+        Me.pnlTarjeta.Controls.Add(Me.lblCorreo)
+        Me.pnlTarjeta.Controls.Add(Me.txtapellido)
+        Me.pnlTarjeta.Controls.Add(Me.txtnombre)
+        Me.pnlTarjeta.Controls.Add(Me.lblApellidos)
+        Me.pnlTarjeta.Controls.Add(Me.lblNombres)
+        Me.pnlTarjeta.Controls.Add(Me.txttelefono)
+        Me.pnlTarjeta.Controls.Add(Me.txtnumdni)
+        Me.pnlTarjeta.Controls.Add(Me.lblTelefono)
+        Me.pnlTarjeta.Controls.Add(Me.lblDni)
+        Me.pnlTarjeta.Controls.Add(Me.pnlLineaPersonales)
+        Me.pnlTarjeta.Controls.Add(Me.lblSecPersonales)
+        Me.pnlTarjeta.Controls.Add(Me.lblSubtitulo)
+        Me.pnlTarjeta.Controls.Add(Me.lblTitulo)
+        Me.pnlTarjeta.Location = New System.Drawing.Point(380, 40)
+        Me.pnlTarjeta.Name = "pnlTarjeta"
+        Me.pnlTarjeta.Size = New System.Drawing.Size(580, 560)
+        Me.pnlTarjeta.TabIndex = 1
         '
-        'Label5
+        'flpIniciarSesion
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(20, 176)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(121, 16)
-        Me.Label5.TabIndex = 14
-        Me.Label5.Text = "Correo Electrónico:"
+        Me.flpIniciarSesion.AutoSize = True
+        Me.flpIniciarSesion.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.flpIniciarSesion.BackColor = System.Drawing.Color.White
+        Me.flpIniciarSesion.Controls.Add(Me.lblYaTiene)
+        Me.flpIniciarSesion.Controls.Add(Me.lnkIniciarSesion)
+        Me.flpIniciarSesion.Location = New System.Drawing.Point(166, 517)
+        Me.flpIniciarSesion.Name = "flpIniciarSesion"
+        Me.flpIniciarSesion.Size = New System.Drawing.Size(248, 24)
+        Me.flpIniciarSesion.TabIndex = 11
+        Me.flpIniciarSesion.WrapContents = False
         '
-        'Label6
+        'lblYaTiene
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(11, 12)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(103, 16)
-        Me.Label6.TabIndex = 15
-        Me.Label6.Text = "Número de DNI:"
+        Me.lblYaTiene.AutoSize = True
+        Me.lblYaTiene.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblYaTiene.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
+        Me.lblYaTiene.Location = New System.Drawing.Point(0, 3)
+        Me.lblYaTiene.Margin = New System.Windows.Forms.Padding(0, 3, 8, 0)
+        Me.lblYaTiene.Name = "lblYaTiene"
+        Me.lblYaTiene.Size = New System.Drawing.Size(145, 15)
+        Me.lblYaTiene.TabIndex = 12
+        Me.lblYaTiene.Text = "¿Ya tiene una cuenta?"
         '
-        'Label8
+        'lnkIniciarSesion
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(275, 12)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(64, 16)
-        Me.Label8.TabIndex = 16
-        Me.Label8.Text = "Teléfono:"
+        Me.lnkIniciarSesion.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(160, Byte), Integer))
+        Me.lnkIniciarSesion.AutoSize = True
+        Me.lnkIniciarSesion.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lnkIniciarSesion.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
+        Me.lnkIniciarSesion.LinkColor = System.Drawing.Color.FromArgb(CType(CType(7, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.lnkIniciarSesion.Location = New System.Drawing.Point(153, 3)
+        Me.lnkIniciarSesion.Margin = New System.Windows.Forms.Padding(0, 3, 0, 0)
+        Me.lnkIniciarSesion.Name = "lnkIniciarSesion"
+        Me.lnkIniciarSesion.Size = New System.Drawing.Size(91, 15)
+        Me.lnkIniciarSesion.TabIndex = 11
+        Me.lnkIniciarSesion.TabStop = True
+        Me.lnkIniciarSesion.Text = "Iniciar sesión"
+        Me.lnkIniciarSesion.VisitedLinkColor = System.Drawing.Color.FromArgb(CType(CType(7, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(204, Byte), Integer))
         '
-        'Label9
+        'btnregistrar
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(275, 92)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(67, 16)
-        Me.Label9.TabIndex = 17
-        Me.Label9.Text = "Apellidos:"
+        Me.btnregistrar.BackColor = System.Drawing.Color.FromArgb(CType(CType(7, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.btnregistrar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnregistrar.FlatAppearance.BorderSize = 0
+        Me.btnregistrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(160, Byte), Integer))
+        Me.btnregistrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(160, Byte), Integer))
+        Me.btnregistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnregistrar.Font = New System.Drawing.Font("Segoe UI Semibold", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnregistrar.ForeColor = System.Drawing.Color.White
+        Me.btnregistrar.Location = New System.Drawing.Point(30, 467)
+        Me.btnregistrar.Name = "btnregistrar"
+        Me.btnregistrar.Size = New System.Drawing.Size(520, 42)
+        Me.btnregistrar.TabIndex = 10
+        Me.btnregistrar.Text = "Crear cuenta"
+        Me.btnregistrar.UseVisualStyleBackColor = False
         '
-        'Panel1
+        'chkMostrar
         '
-        Me.Panel1.Controls.Add(Me.txtcorreo)
-        Me.Panel1.Controls.Add(Me.txtapellido)
-        Me.Panel1.Controls.Add(Me.txtnombre)
-        Me.Panel1.Controls.Add(Me.Label5)
-        Me.Panel1.Controls.Add(Me.txttelefono)
-        Me.Panel1.Controls.Add(Me.txtnumdni)
-        Me.Panel1.Controls.Add(Me.Label9)
-        Me.Panel1.Controls.Add(Me.Label6)
-        Me.Panel1.Controls.Add(Me.Label8)
-        Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Location = New System.Drawing.Point(225, 209)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(543, 244)
-        Me.Panel1.TabIndex = 18
+        Me.chkMostrar.AutoSize = True
+        Me.chkMostrar.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkMostrar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
+        Me.chkMostrar.Location = New System.Drawing.Point(30, 440)
+        Me.chkMostrar.Name = "chkMostrar"
+        Me.chkMostrar.Size = New System.Drawing.Size(148, 19)
+        Me.chkMostrar.TabIndex = 9
+        Me.chkMostrar.Text = "Mostrar contraseñas"
+        Me.chkMostrar.UseVisualStyleBackColor = True
         '
-        'txtcorreo
+        'txtconfirmar
         '
-        Me.txtcorreo.Location = New System.Drawing.Point(23, 208)
-        Me.txtcorreo.Name = "txtcorreo"
-        Me.txtcorreo.Size = New System.Drawing.Size(459, 22)
-        Me.txtcorreo.TabIndex = 21
+        Me.txtconfirmar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtconfirmar.Font = New System.Drawing.Font("Segoe UI", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtconfirmar.Location = New System.Drawing.Point(300, 404)
+        Me.txtconfirmar.MinimumSize = New System.Drawing.Size(250, 30)
+        Me.txtconfirmar.Name = "txtconfirmar"
+        Me.txtconfirmar.Size = New System.Drawing.Size(250, 30)
+        Me.txtconfirmar.TabIndex = 8
+        Me.txtconfirmar.UseSystemPasswordChar = True
         '
-        'txtapellido
+        'lblConfirmar
         '
-        Me.txtapellido.Location = New System.Drawing.Point(278, 121)
-        Me.txtapellido.Name = "txtapellido"
-        Me.txtapellido.Size = New System.Drawing.Size(204, 22)
-        Me.txtapellido.TabIndex = 20
+        Me.lblConfirmar.AutoSize = True
+        Me.lblConfirmar.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblConfirmar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
+        Me.lblConfirmar.Location = New System.Drawing.Point(300, 385)
+        Me.lblConfirmar.Name = "lblConfirmar"
+        Me.lblConfirmar.Size = New System.Drawing.Size(128, 15)
+        Me.lblConfirmar.TabIndex = 28
+        Me.lblConfirmar.Text = "Confirmar contraseña"
         '
-        'txtnombre
+        'txtcontrasena
         '
-        Me.txtnombre.Location = New System.Drawing.Point(14, 121)
-        Me.txtnombre.Name = "txtnombre"
-        Me.txtnombre.Size = New System.Drawing.Size(226, 22)
-        Me.txtnombre.TabIndex = 19
+        Me.txtcontrasena.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtcontrasena.Font = New System.Drawing.Font("Segoe UI", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtcontrasena.Location = New System.Drawing.Point(30, 404)
+        Me.txtcontrasena.MinimumSize = New System.Drawing.Size(250, 30)
+        Me.txtcontrasena.Name = "txtcontrasena"
+        Me.txtcontrasena.Size = New System.Drawing.Size(250, 30)
+        Me.txtcontrasena.TabIndex = 7
+        Me.txtcontrasena.UseSystemPasswordChar = True
         '
-        'txttelefono
+        'lblContrasena
         '
-        Me.txttelefono.Location = New System.Drawing.Point(278, 42)
-        Me.txttelefono.Name = "txttelefono"
-        Me.txttelefono.Size = New System.Drawing.Size(204, 22)
-        Me.txttelefono.TabIndex = 18
+        Me.lblContrasena.AutoSize = True
+        Me.lblContrasena.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblContrasena.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
+        Me.lblContrasena.Location = New System.Drawing.Point(30, 385)
+        Me.lblContrasena.Name = "lblContrasena"
+        Me.lblContrasena.Size = New System.Drawing.Size(69, 15)
+        Me.lblContrasena.TabIndex = 27
+        Me.lblContrasena.Text = "Contraseña"
         '
-        'txtnumdni
+        'pnlLineaAcceso
         '
-        Me.txtnumdni.Location = New System.Drawing.Point(14, 42)
-        Me.txtnumdni.Name = "txtnumdni"
-        Me.txtnumdni.Size = New System.Drawing.Size(226, 22)
-        Me.txtnumdni.TabIndex = 17
+        Me.pnlLineaAcceso.BackColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(221, Byte), Integer), CType(CType(225, Byte), Integer))
+        Me.pnlLineaAcceso.Location = New System.Drawing.Point(30, 378)
+        Me.pnlLineaAcceso.Name = "pnlLineaAcceso"
+        Me.pnlLineaAcceso.Size = New System.Drawing.Size(520, 1)
+        Me.pnlLineaAcceso.TabIndex = 26
         '
-        'Label10
+        'lblSecAcceso
         '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(222, 175)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(546, 16)
-        Me.Label10.TabIndex = 19
-        Me.Label10.Text = "_____________________________________________________________________________"
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(222, 495)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(546, 16)
-        Me.Label11.TabIndex = 21
-        Me.Label11.Text = "_____________________________________________________________________________"
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(222, 475)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(98, 16)
-        Me.Label12.TabIndex = 20
-        Me.Label12.Text = "Cargo y Área"
-        '
-        'Panel2
-        '
-        Me.Panel2.Controls.Add(Me.cbxarea)
-        Me.Panel2.Controls.Add(Me.cbxtipo)
-        Me.Panel2.Controls.Add(Me.Label13)
-        Me.Panel2.Controls.Add(Me.Label14)
-        Me.Panel2.Location = New System.Drawing.Point(225, 514)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(543, 97)
-        Me.Panel2.TabIndex = 22
+        Me.lblSecAcceso.AutoSize = True
+        Me.lblSecAcceso.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSecAcceso.ForeColor = System.Drawing.Color.FromArgb(CType(CType(7, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.lblSecAcceso.Location = New System.Drawing.Point(30, 357)
+        Me.lblSecAcceso.Name = "lblSecAcceso"
+        Me.lblSecAcceso.Size = New System.Drawing.Size(128, 19)
+        Me.lblSecAcceso.TabIndex = 25
+        Me.lblSecAcceso.Text = "Acceso al sistema"
         '
         'cbxarea
         '
         Me.cbxarea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbxarea.Font = New System.Drawing.Font("Segoe UI", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbxarea.FormattingEnabled = True
         Me.cbxarea.Items.AddRange(New Object() {"Campo", "Fábrica", "Logística", "Mantenimiento", "Administración", "Recursos humanos", "Sistemas"})
-        Me.cbxarea.Location = New System.Drawing.Point(278, 55)
+        Me.cbxarea.Location = New System.Drawing.Point(300, 319)
         Me.cbxarea.Name = "cbxarea"
-        Me.cbxarea.Size = New System.Drawing.Size(204, 24)
-        Me.cbxarea.TabIndex = 20
+        Me.cbxarea.Size = New System.Drawing.Size(250, 30)
+        Me.cbxarea.TabIndex = 6
         '
         'cbxtipo
         '
         Me.cbxtipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbxtipo.Font = New System.Drawing.Font("Segoe UI", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbxtipo.FormattingEnabled = True
         Me.cbxtipo.Items.AddRange(New Object() {"Operario", "Supervisor", "Administrador"})
-        Me.cbxtipo.Location = New System.Drawing.Point(14, 55)
+        Me.cbxtipo.Location = New System.Drawing.Point(30, 319)
         Me.cbxtipo.Name = "cbxtipo"
-        Me.cbxtipo.Size = New System.Drawing.Size(226, 24)
-        Me.cbxtipo.TabIndex = 19
+        Me.cbxtipo.Size = New System.Drawing.Size(250, 30)
+        Me.cbxtipo.TabIndex = 5
         '
-        'Label13
+        'lblArea
         '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(11, 23)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(107, 16)
-        Me.Label13.TabIndex = 17
-        Me.Label13.Text = "Tipo de Usuario:"
+        Me.lblArea.AutoSize = True
+        Me.lblArea.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblArea.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
+        Me.lblArea.Location = New System.Drawing.Point(300, 300)
+        Me.lblArea.Name = "lblArea"
+        Me.lblArea.Size = New System.Drawing.Size(32, 15)
+        Me.lblArea.TabIndex = 24
+        Me.lblArea.Text = "Área"
         '
-        'Label14
+        'lblTipo
         '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(284, 23)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(39, 16)
-        Me.Label14.TabIndex = 18
-        Me.Label14.Text = "Área:"
+        Me.lblTipo.AutoSize = True
+        Me.lblTipo.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTipo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
+        Me.lblTipo.Location = New System.Drawing.Point(30, 300)
+        Me.lblTipo.Name = "lblTipo"
+        Me.lblTipo.Size = New System.Drawing.Size(96, 15)
+        Me.lblTipo.TabIndex = 23
+        Me.lblTipo.Text = "Tipo de usuario"
         '
-        'Label15
+        'pnlLineaCargo
         '
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(222, 643)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(546, 16)
-        Me.Label15.TabIndex = 24
-        Me.Label15.Text = "_____________________________________________________________________________"
+        Me.pnlLineaCargo.BackColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(221, Byte), Integer), CType(CType(225, Byte), Integer))
+        Me.pnlLineaCargo.Location = New System.Drawing.Point(30, 293)
+        Me.pnlLineaCargo.Name = "pnlLineaCargo"
+        Me.pnlLineaCargo.Size = New System.Drawing.Size(520, 1)
+        Me.pnlLineaCargo.TabIndex = 22
         '
-        'Label16
+        'lblSecCargo
         '
-        Me.Label16.AutoSize = True
-        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(222, 623)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(134, 16)
-        Me.Label16.TabIndex = 23
-        Me.Label16.Text = "Acceso al sistema"
+        Me.lblSecCargo.AutoSize = True
+        Me.lblSecCargo.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSecCargo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(7, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.lblSecCargo.Location = New System.Drawing.Point(30, 272)
+        Me.lblSecCargo.Name = "lblSecCargo"
+        Me.lblSecCargo.Size = New System.Drawing.Size(92, 19)
+        Me.lblSecCargo.TabIndex = 21
+        Me.lblSecCargo.Text = "Cargo y área"
         '
-        'Panel3
+        'txtcorreo
         '
-        Me.Panel3.Controls.Add(Me.txtconfirmar)
-        Me.Panel3.Controls.Add(Me.Label18)
-        Me.Panel3.Controls.Add(Me.txtcontrasena)
-        Me.Panel3.Controls.Add(Me.Label17)
-        Me.Panel3.Location = New System.Drawing.Point(225, 662)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(543, 100)
-        Me.Panel3.TabIndex = 25
+        Me.txtcorreo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtcorreo.Font = New System.Drawing.Font("Segoe UI", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtcorreo.Location = New System.Drawing.Point(30, 234)
+        Me.txtcorreo.MinimumSize = New System.Drawing.Size(520, 30)
+        Me.txtcorreo.Name = "txtcorreo"
+        Me.txtcorreo.Size = New System.Drawing.Size(520, 30)
+        Me.txtcorreo.TabIndex = 4
         '
-        'txtconfirmar
+        'lblCorreo
         '
-        Me.txtconfirmar.Location = New System.Drawing.Point(278, 48)
-        Me.txtconfirmar.Name = "txtconfirmar"
-        Me.txtconfirmar.Size = New System.Drawing.Size(226, 22)
-        Me.txtconfirmar.TabIndex = 23
+        Me.lblCorreo.AutoSize = True
+        Me.lblCorreo.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCorreo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
+        Me.lblCorreo.Location = New System.Drawing.Point(30, 215)
+        Me.lblCorreo.Name = "lblCorreo"
+        Me.lblCorreo.Size = New System.Drawing.Size(111, 15)
+        Me.lblCorreo.TabIndex = 20
+        Me.lblCorreo.Text = "Correo electrónico"
         '
-        'Label18
+        'txtapellido
         '
-        Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(275, 19)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(139, 16)
-        Me.Label18.TabIndex = 22
-        Me.Label18.Text = "Confirmar Contraseña:"
+        Me.txtapellido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtapellido.Font = New System.Drawing.Font("Segoe UI", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtapellido.Location = New System.Drawing.Point(300, 179)
+        Me.txtapellido.MinimumSize = New System.Drawing.Size(250, 30)
+        Me.txtapellido.Name = "txtapellido"
+        Me.txtapellido.Size = New System.Drawing.Size(250, 30)
+        Me.txtapellido.TabIndex = 3
         '
-        'txtcontrasena
+        'txtnombre
         '
-        Me.txtcontrasena.Location = New System.Drawing.Point(14, 48)
-        Me.txtcontrasena.Name = "txtcontrasena"
-        Me.txtcontrasena.Size = New System.Drawing.Size(226, 22)
-        Me.txtcontrasena.TabIndex = 21
+        Me.txtnombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtnombre.Font = New System.Drawing.Font("Segoe UI", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtnombre.Location = New System.Drawing.Point(30, 179)
+        Me.txtnombre.MinimumSize = New System.Drawing.Size(250, 30)
+        Me.txtnombre.Name = "txtnombre"
+        Me.txtnombre.Size = New System.Drawing.Size(250, 30)
+        Me.txtnombre.TabIndex = 2
         '
-        'Label17
+        'lblApellidos
         '
-        Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(11, 19)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(79, 16)
-        Me.Label17.TabIndex = 20
-        Me.Label17.Text = "Contraseña:"
+        Me.lblApellidos.AutoSize = True
+        Me.lblApellidos.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblApellidos.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
+        Me.lblApellidos.Location = New System.Drawing.Point(300, 160)
+        Me.lblApellidos.Name = "lblApellidos"
+        Me.lblApellidos.Size = New System.Drawing.Size(58, 15)
+        Me.lblApellidos.TabIndex = 19
+        Me.lblApellidos.Text = "Apellidos"
         '
-        'btnregistrar
+        'lblNombres
         '
-        Me.btnregistrar.BackColor = System.Drawing.Color.SteelBlue
-        Me.btnregistrar.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnregistrar.Location = New System.Drawing.Point(349, 782)
-        Me.btnregistrar.Name = "btnregistrar"
-        Me.btnregistrar.Size = New System.Drawing.Size(259, 37)
-        Me.btnregistrar.TabIndex = 26
-        Me.btnregistrar.Text = "Crear Cuenta"
-        Me.btnregistrar.UseVisualStyleBackColor = False
+        Me.lblNombres.AutoSize = True
+        Me.lblNombres.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombres.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
+        Me.lblNombres.Location = New System.Drawing.Point(30, 160)
+        Me.lblNombres.Name = "lblNombres"
+        Me.lblNombres.Size = New System.Drawing.Size(55, 15)
+        Me.lblNombres.TabIndex = 18
+        Me.lblNombres.Text = "Nombres"
         '
-        'Label19
+        'txttelefono
         '
-        Me.Label19.AutoSize = True
-        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.Label19.Location = New System.Drawing.Point(488, 835)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(101, 16)
-        Me.Label19.TabIndex = 28
-        Me.Label19.Text = "Iniciar Sesión"
+        Me.txttelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txttelefono.Font = New System.Drawing.Font("Segoe UI", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txttelefono.Location = New System.Drawing.Point(300, 124)
+        Me.txttelefono.MaxLength = 9
+        Me.txttelefono.MinimumSize = New System.Drawing.Size(250, 30)
+        Me.txttelefono.Name = "txttelefono"
+        Me.txttelefono.Size = New System.Drawing.Size(250, 30)
+        Me.txttelefono.TabIndex = 1
         '
-        'Label20
+        'txtnumdni
         '
-        Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(323, 835)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(145, 16)
-        Me.Label20.TabIndex = 27
-        Me.Label20.Text = "¿Ya tienes una cuenta?"
+        Me.txtnumdni.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtnumdni.Font = New System.Drawing.Font("Segoe UI", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtnumdni.Location = New System.Drawing.Point(30, 124)
+        Me.txtnumdni.MaxLength = 8
+        Me.txtnumdni.MinimumSize = New System.Drawing.Size(250, 30)
+        Me.txtnumdni.Name = "txtnumdni"
+        Me.txtnumdni.Size = New System.Drawing.Size(250, 30)
+        Me.txtnumdni.TabIndex = 0
+        '
+        'lblTelefono
+        '
+        Me.lblTelefono.AutoSize = True
+        Me.lblTelefono.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTelefono.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
+        Me.lblTelefono.Location = New System.Drawing.Point(300, 105)
+        Me.lblTelefono.Name = "lblTelefono"
+        Me.lblTelefono.Size = New System.Drawing.Size(55, 15)
+        Me.lblTelefono.TabIndex = 17
+        Me.lblTelefono.Text = "Teléfono"
+        '
+        'lblDni
+        '
+        Me.lblDni.AutoSize = True
+        Me.lblDni.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDni.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
+        Me.lblDni.Location = New System.Drawing.Point(30, 105)
+        Me.lblDni.Name = "lblDni"
+        Me.lblDni.Size = New System.Drawing.Size(28, 15)
+        Me.lblDni.TabIndex = 16
+        Me.lblDni.Text = "DNI"
+        '
+        'pnlLineaPersonales
+        '
+        Me.pnlLineaPersonales.BackColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(221, Byte), Integer), CType(CType(225, Byte), Integer))
+        Me.pnlLineaPersonales.Location = New System.Drawing.Point(30, 98)
+        Me.pnlLineaPersonales.Name = "pnlLineaPersonales"
+        Me.pnlLineaPersonales.Size = New System.Drawing.Size(520, 1)
+        Me.pnlLineaPersonales.TabIndex = 15
+        '
+        'lblSecPersonales
+        '
+        Me.lblSecPersonales.AutoSize = True
+        Me.lblSecPersonales.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSecPersonales.ForeColor = System.Drawing.Color.FromArgb(CType(CType(7, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.lblSecPersonales.Location = New System.Drawing.Point(30, 77)
+        Me.lblSecPersonales.Name = "lblSecPersonales"
+        Me.lblSecPersonales.Size = New System.Drawing.Size(118, 19)
+        Me.lblSecPersonales.TabIndex = 14
+        Me.lblSecPersonales.Text = "Datos personales"
+        '
+        'lblSubtitulo
+        '
+        Me.lblSubtitulo.AutoSize = True
+        Me.lblSubtitulo.Font = New System.Drawing.Font("Segoe UI", 9.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSubtitulo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(170, Byte), Integer))
+        Me.lblSubtitulo.Location = New System.Drawing.Point(30, 52)
+        Me.lblSubtitulo.Name = "lblSubtitulo"
+        Me.lblSubtitulo.Size = New System.Drawing.Size(310, 17)
+        Me.lblSubtitulo.TabIndex = 13
+        Me.lblSubtitulo.Text = "Complete sus datos para registrarse en el sistema"
+        '
+        'lblTitulo
+        '
+        Me.lblTitulo.AutoSize = True
+        Me.lblTitulo.Font = New System.Drawing.Font("Segoe UI Semibold", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
+        Me.lblTitulo.Location = New System.Drawing.Point(30, 16)
+        Me.lblTitulo.Name = "lblTitulo"
+        Me.lblTitulo.Size = New System.Drawing.Size(139, 32)
+        Me.lblTitulo.TabIndex = 12
+        Me.lblTitulo.Text = "Crear cuenta"
         '
         'frmregistrar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1005, 887)
-        Me.Controls.Add(Me.Label19)
-        Me.Controls.Add(Me.Label20)
-        Me.Controls.Add(Me.btnregistrar)
-        Me.Controls.Add(Me.Panel3)
-        Me.Controls.Add(Me.Label15)
-        Me.Controls.Add(Me.Label16)
-        Me.Controls.Add(Me.Panel2)
-        Me.Controls.Add(Me.Label11)
-        Me.Controls.Add(Me.Label12)
-        Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label3)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(249, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(1000, 640)
+        Me.Controls.Add(Me.pnlMarca)
+        Me.Controls.Add(Me.pnlTarjeta)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
         Me.Name = "frmregistrar"
-        Me.Text = "frmregistrar"
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
-        Me.Panel3.ResumeLayout(False)
-        Me.Panel3.PerformLayout()
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Pomalca - Crear cuenta"
+        Me.pnlMarca.ResumeLayout(False)
+        Me.pnlMarca.PerformLayout()
+        CType(Me.picLogo, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.flpIniciarSesion.ResumeLayout(False)
+        Me.flpIniciarSesion.PerformLayout()
+        Me.pnlTarjeta.ResumeLayout(False)
+        Me.pnlTarjeta.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Label8 As Label
-    Friend WithEvents Label9 As Label
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents pnlMarca As Panel
+    Friend WithEvents picLogo As PictureBox
+    Friend WithEvents lblSistema As Label
+    Friend WithEvents lblCopyright As Label
+    Friend WithEvents pnlTarjeta As Panel
+    Friend WithEvents lblTitulo As Label
+    Friend WithEvents lblSubtitulo As Label
+    Friend WithEvents lblSecPersonales As Label
+    Friend WithEvents pnlLineaPersonales As Panel
+    Friend WithEvents lblDni As Label
     Friend WithEvents txtnumdni As TextBox
-    Friend WithEvents Label10 As Label
+    Friend WithEvents lblTelefono As Label
     Friend WithEvents txttelefono As TextBox
-    Friend WithEvents txtapellido As TextBox
+    Friend WithEvents lblNombres As Label
     Friend WithEvents txtnombre As TextBox
+    Friend WithEvents lblApellidos As Label
+    Friend WithEvents txtapellido As TextBox
+    Friend WithEvents lblCorreo As Label
     Friend WithEvents txtcorreo As TextBox
-    Friend WithEvents Label11 As Label
-    Friend WithEvents Label12 As Label
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents cbxarea As ComboBox
+    Friend WithEvents lblSecCargo As Label
+    Friend WithEvents pnlLineaCargo As Panel
+    Friend WithEvents lblTipo As Label
     Friend WithEvents cbxtipo As ComboBox
-    Friend WithEvents Label13 As Label
-    Friend WithEvents Label14 As Label
-    Friend WithEvents Label15 As Label
-    Friend WithEvents Label16 As Label
-    Friend WithEvents Panel3 As Panel
-    Friend WithEvents txtconfirmar As TextBox
-    Friend WithEvents Label18 As Label
+    Friend WithEvents lblArea As Label
+    Friend WithEvents cbxarea As ComboBox
+    Friend WithEvents lblSecAcceso As Label
+    Friend WithEvents pnlLineaAcceso As Panel
+    Friend WithEvents lblContrasena As Label
     Friend WithEvents txtcontrasena As TextBox
-    Friend WithEvents Label17 As Label
+    Friend WithEvents lblConfirmar As Label
+    Friend WithEvents txtconfirmar As TextBox
+    Friend WithEvents chkMostrar As CheckBox
     Friend WithEvents btnregistrar As Button
-    Friend WithEvents Label19 As Label
-    Friend WithEvents Label20 As Label
+    Friend WithEvents flpIniciarSesion As FlowLayoutPanel
+    Friend WithEvents lblYaTiene As Label
+    Friend WithEvents lnkIniciarSesion As LinkLabel
 End Class

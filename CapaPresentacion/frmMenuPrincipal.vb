@@ -70,7 +70,7 @@ Public Class frmMenuPrincipal
         mnuRegistrarSolicitud.Visible = esOperario
         mnuMisSolicitudes.Visible = esOperario
         mnuActividad.Visible = esAdmin OrElse esSupervisor OrElse esOperario
-        mnuSolicitudes.Visible = mnuGestionSolicitudes.Visible OrElse mnuRegistrarSolicitud.Visible OrElse mnuMisSolicitudes.Visible
+        mnuSolicitudes.Visible = esAdmin OrElse esSupervisor OrElse esOperario
     End Sub
 
     Private Sub MostrarInicio()

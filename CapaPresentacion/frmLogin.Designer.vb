@@ -24,13 +24,13 @@ Partial Class frmLogin
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmLogin))
         Me.pnlMarca = New System.Windows.Forms.Panel()
-        Me.picLogo = New System.Windows.Forms.PictureBox()
         Me.lblCopyright = New System.Windows.Forms.Label()
         Me.lblSistema = New System.Windows.Forms.Label()
+        Me.picLogo = New System.Windows.Forms.PictureBox()
         Me.pnlTarjeta = New System.Windows.Forms.Panel()
         Me.flpRegistro = New System.Windows.Forms.FlowLayoutPanel()
-        Me.lnkRegistro = New System.Windows.Forms.LinkLabel()
         Me.lblNuevo = New System.Windows.Forms.Label()
+        Me.lnkRegistro = New System.Windows.Forms.LinkLabel()
         Me.btninicio = New System.Windows.Forms.Button()
         Me.chkMostrar = New System.Windows.Forms.CheckBox()
         Me.txtcontrasena = New System.Windows.Forms.TextBox()
@@ -41,8 +41,8 @@ Partial Class frmLogin
         Me.lblTitulo = New System.Windows.Forms.Label()
         Me.pnlMarca.SuspendLayout()
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.flpRegistro.SuspendLayout()
         Me.pnlTarjeta.SuspendLayout()
+        Me.flpRegistro.SuspendLayout()
         Me.SuspendLayout()
         '
         'pnlMarca
@@ -118,25 +118,9 @@ Partial Class frmLogin
         Me.flpRegistro.Controls.Add(Me.lnkRegistro)
         Me.flpRegistro.Location = New System.Drawing.Point(32, 346)
         Me.flpRegistro.Name = "flpRegistro"
-        Me.flpRegistro.Size = New System.Drawing.Size(280, 24)
+        Me.flpRegistro.Size = New System.Drawing.Size(291, 23)
         Me.flpRegistro.TabIndex = 9
         Me.flpRegistro.WrapContents = False
-        '
-        'lnkRegistro
-        '
-        Me.lnkRegistro.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(160, Byte), Integer))
-        Me.lnkRegistro.AutoSize = True
-        Me.lnkRegistro.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lnkRegistro.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
-        Me.lnkRegistro.LinkColor = System.Drawing.Color.FromArgb(CType(CType(7, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.lnkRegistro.Location = New System.Drawing.Point(166, 3)
-        Me.lnkRegistro.Margin = New System.Windows.Forms.Padding(0, 3, 0, 0)
-        Me.lnkRegistro.Name = "lnkRegistro"
-        Me.lnkRegistro.Size = New System.Drawing.Size(99, 15)
-        Me.lnkRegistro.TabIndex = 4
-        Me.lnkRegistro.TabStop = True
-        Me.lnkRegistro.Text = "Regístrese aquí"
-        Me.lnkRegistro.VisitedLinkColor = System.Drawing.Color.FromArgb(CType(CType(7, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(204, Byte), Integer))
         '
         'lblNuevo
         '
@@ -146,9 +130,25 @@ Partial Class frmLogin
         Me.lblNuevo.Location = New System.Drawing.Point(0, 3)
         Me.lblNuevo.Margin = New System.Windows.Forms.Padding(0, 3, 8, 0)
         Me.lblNuevo.Name = "lblNuevo"
-        Me.lblNuevo.Size = New System.Drawing.Size(158, 15)
+        Me.lblNuevo.Size = New System.Drawing.Size(171, 20)
         Me.lblNuevo.TabIndex = 8
         Me.lblNuevo.Text = "¿Es nuevo en el sistema?"
+        '
+        'lnkRegistro
+        '
+        Me.lnkRegistro.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(160, Byte), Integer))
+        Me.lnkRegistro.AutoSize = True
+        Me.lnkRegistro.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lnkRegistro.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
+        Me.lnkRegistro.LinkColor = System.Drawing.Color.FromArgb(CType(CType(7, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.lnkRegistro.Location = New System.Drawing.Point(179, 3)
+        Me.lnkRegistro.Margin = New System.Windows.Forms.Padding(0, 3, 0, 0)
+        Me.lnkRegistro.Name = "lnkRegistro"
+        Me.lnkRegistro.Size = New System.Drawing.Size(112, 20)
+        Me.lnkRegistro.TabIndex = 4
+        Me.lnkRegistro.TabStop = True
+        Me.lnkRegistro.Text = "Regístrese aquí"
+        Me.lnkRegistro.VisitedLinkColor = System.Drawing.Color.FromArgb(CType(CType(7, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(204, Byte), Integer))
         '
         'btninicio
         '
@@ -174,7 +174,7 @@ Partial Class frmLogin
         Me.chkMostrar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.chkMostrar.Location = New System.Drawing.Point(32, 248)
         Me.chkMostrar.Name = "chkMostrar"
-        Me.chkMostrar.Size = New System.Drawing.Size(139, 19)
+        Me.chkMostrar.Size = New System.Drawing.Size(158, 24)
         Me.chkMostrar.TabIndex = 2
         Me.chkMostrar.Text = "Mostrar contraseña"
         Me.chkMostrar.UseVisualStyleBackColor = True
@@ -197,7 +197,7 @@ Partial Class frmLogin
         Me.lblContrasena.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.lblContrasena.Location = New System.Drawing.Point(32, 184)
         Me.lblContrasena.Name = "lblContrasena"
-        Me.lblContrasena.Size = New System.Drawing.Size(69, 15)
+        Me.lblContrasena.Size = New System.Drawing.Size(83, 20)
         Me.lblContrasena.TabIndex = 7
         Me.lblContrasena.Text = "Contraseña"
         '
@@ -219,7 +219,7 @@ Partial Class frmLogin
         Me.lblDni.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.lblDni.Location = New System.Drawing.Point(32, 118)
         Me.lblDni.Name = "lblDni"
-        Me.lblDni.Size = New System.Drawing.Size(88, 15)
+        Me.lblDni.Size = New System.Drawing.Size(114, 20)
         Me.lblDni.TabIndex = 6
         Me.lblDni.Text = "Número de DNI"
         '
@@ -230,7 +230,7 @@ Partial Class frmLogin
         Me.lblSubtitulo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(170, Byte), Integer))
         Me.lblSubtitulo.Location = New System.Drawing.Point(32, 74)
         Me.lblSubtitulo.Name = "lblSubtitulo"
-        Me.lblSubtitulo.Size = New System.Drawing.Size(230, 17)
+        Me.lblSubtitulo.Size = New System.Drawing.Size(282, 21)
         Me.lblSubtitulo.TabIndex = 5
         Me.lblSubtitulo.Text = "Ingrese sus credenciales para continuar"
         '
@@ -241,7 +241,7 @@ Partial Class frmLogin
         Me.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.lblTitulo.Location = New System.Drawing.Point(32, 36)
         Me.lblTitulo.Name = "lblTitulo"
-        Me.lblTitulo.Size = New System.Drawing.Size(196, 32)
+        Me.lblTitulo.Size = New System.Drawing.Size(267, 41)
         Me.lblTitulo.TabIndex = 4
         Me.lblTitulo.Text = "Portal de Personal"
         '
@@ -254,21 +254,19 @@ Partial Class frmLogin
         Me.ClientSize = New System.Drawing.Size(900, 560)
         Me.Controls.Add(Me.pnlMarca)
         Me.Controls.Add(Me.pnlTarjeta)
-        Me.ControlBox = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "frmLogin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Pomalca - Iniciar sesión"
         Me.pnlMarca.ResumeLayout(False)
-        Me.pnlMarca.PerformLayout()
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.flpRegistro.ResumeLayout(False)
-        Me.flpRegistro.PerformLayout()
         Me.pnlTarjeta.ResumeLayout(False)
         Me.pnlTarjeta.PerformLayout()
+        Me.flpRegistro.ResumeLayout(False)
+        Me.flpRegistro.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 

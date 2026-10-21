@@ -48,10 +48,9 @@ Partial Class frmMenuPrincipal
         '
         Me.mnuPrincipal.AutoSize = False
         Me.mnuPrincipal.BackColor = System.Drawing.Color.FromArgb(CType(CType(7, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.mnuPrincipal.Dock = System.Windows.Forms.DockStyle.Top
         Me.mnuPrincipal.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.mnuPrincipal.ForeColor = System.Drawing.Color.White
-        Me.mnuPrincipal.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
+        Me.mnuPrincipal.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.mnuPrincipal.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuMarca, Me.mnuInicio, Me.mnuUsuarios, Me.mnuMaquinaria, Me.mnuSolicitudes, Me.mnuActividad, Me.mnuUsuarioSesion})
         Me.mnuPrincipal.Location = New System.Drawing.Point(0, 0)
         Me.mnuPrincipal.Name = "mnuPrincipal"
@@ -67,7 +66,7 @@ Partial Class frmMenuPrincipal
         Me.mnuMarca.ForeColor = System.Drawing.Color.White
         Me.mnuMarca.Name = "mnuMarca"
         Me.mnuMarca.Padding = New System.Windows.Forms.Padding(8, 0, 20, 0)
-        Me.mnuMarca.Size = New System.Drawing.Size(104, 28)
+        Me.mnuMarca.Size = New System.Drawing.Size(133, 28)
         Me.mnuMarca.Text = "POMALCA"
         '
         'mnuInicio
@@ -75,7 +74,7 @@ Partial Class frmMenuPrincipal
         Me.mnuInicio.BackColor = System.Drawing.Color.FromArgb(CType(CType(7, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.mnuInicio.ForeColor = System.Drawing.Color.White
         Me.mnuInicio.Name = "mnuInicio"
-        Me.mnuInicio.Size = New System.Drawing.Size(58, 28)
+        Me.mnuInicio.Size = New System.Drawing.Size(65, 28)
         Me.mnuInicio.Text = "Inicio"
         '
         'mnuUsuarios
@@ -83,7 +82,7 @@ Partial Class frmMenuPrincipal
         Me.mnuUsuarios.BackColor = System.Drawing.Color.FromArgb(CType(CType(7, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.mnuUsuarios.ForeColor = System.Drawing.Color.White
         Me.mnuUsuarios.Name = "mnuUsuarios"
-        Me.mnuUsuarios.Size = New System.Drawing.Size(154, 28)
+        Me.mnuUsuarios.Size = New System.Drawing.Size(174, 28)
         Me.mnuUsuarios.Text = "Gestión de usuarios"
         '
         'mnuMaquinaria
@@ -91,7 +90,7 @@ Partial Class frmMenuPrincipal
         Me.mnuMaquinaria.BackColor = System.Drawing.Color.FromArgb(CType(CType(7, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.mnuMaquinaria.ForeColor = System.Drawing.Color.White
         Me.mnuMaquinaria.Name = "mnuMaquinaria"
-        Me.mnuMaquinaria.Size = New System.Drawing.Size(99, 28)
+        Me.mnuMaquinaria.Size = New System.Drawing.Size(110, 28)
         Me.mnuMaquinaria.Text = "Maquinaria"
         '
         'mnuSolicitudes
@@ -100,28 +99,28 @@ Partial Class frmMenuPrincipal
         Me.mnuSolicitudes.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuGestionSolicitudes, Me.mnuRegistrarSolicitud, Me.mnuMisSolicitudes})
         Me.mnuSolicitudes.ForeColor = System.Drawing.Color.White
         Me.mnuSolicitudes.Name = "mnuSolicitudes"
-        Me.mnuSolicitudes.Size = New System.Drawing.Size(108, 28)
+        Me.mnuSolicitudes.Size = New System.Drawing.Size(125, 28)
         Me.mnuSolicitudes.Text = "Solicitudes ▾"
         '
         'mnuGestionSolicitudes
         '
         Me.mnuGestionSolicitudes.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.mnuGestionSolicitudes.Name = "mnuGestionSolicitudes"
-        Me.mnuGestionSolicitudes.Size = New System.Drawing.Size(220, 24)
+        Me.mnuGestionSolicitudes.Size = New System.Drawing.Size(260, 28)
         Me.mnuGestionSolicitudes.Text = "Gestión de solicitudes"
         '
         'mnuRegistrarSolicitud
         '
         Me.mnuRegistrarSolicitud.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.mnuRegistrarSolicitud.Name = "mnuRegistrarSolicitud"
-        Me.mnuRegistrarSolicitud.Size = New System.Drawing.Size(220, 24)
+        Me.mnuRegistrarSolicitud.Size = New System.Drawing.Size(260, 28)
         Me.mnuRegistrarSolicitud.Text = "Registrar solicitud"
         '
         'mnuMisSolicitudes
         '
         Me.mnuMisSolicitudes.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.mnuMisSolicitudes.Name = "mnuMisSolicitudes"
-        Me.mnuMisSolicitudes.Size = New System.Drawing.Size(220, 24)
+        Me.mnuMisSolicitudes.Size = New System.Drawing.Size(260, 28)
         Me.mnuMisSolicitudes.Text = "Mis solicitudes"
         '
         'mnuActividad
@@ -129,7 +128,7 @@ Partial Class frmMenuPrincipal
         Me.mnuActividad.BackColor = System.Drawing.Color.FromArgb(CType(CType(7, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.mnuActividad.ForeColor = System.Drawing.Color.White
         Me.mnuActividad.Name = "mnuActividad"
-        Me.mnuActividad.Size = New System.Drawing.Size(186, 28)
+        Me.mnuActividad.Size = New System.Drawing.Size(209, 28)
         Me.mnuActividad.Text = "Actividad de maquinaria"
         '
         'mnuUsuarioSesion
@@ -139,14 +138,14 @@ Partial Class frmMenuPrincipal
         Me.mnuUsuarioSesion.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuCerrarSesion})
         Me.mnuUsuarioSesion.ForeColor = System.Drawing.Color.White
         Me.mnuUsuarioSesion.Name = "mnuUsuarioSesion"
-        Me.mnuUsuarioSesion.Size = New System.Drawing.Size(118, 28)
+        Me.mnuUsuarioSesion.Size = New System.Drawing.Size(120, 28)
         Me.mnuUsuarioSesion.Text = "Usuario · Rol"
         '
         'mnuCerrarSesion
         '
         Me.mnuCerrarSesion.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.mnuCerrarSesion.Name = "mnuCerrarSesion"
-        Me.mnuCerrarSesion.Size = New System.Drawing.Size(180, 24)
+        Me.mnuCerrarSesion.Size = New System.Drawing.Size(193, 28)
         Me.mnuCerrarSesion.Text = "Cerrar sesión"
         '
         'pnlContenido
@@ -183,7 +182,7 @@ Partial Class frmMenuPrincipal
         Me.lblBienvenido.ForeColor = System.Drawing.Color.White
         Me.lblBienvenido.Location = New System.Drawing.Point(48, 520)
         Me.lblBienvenido.Name = "lblBienvenido"
-        Me.lblBienvenido.Size = New System.Drawing.Size(196, 51)
+        Me.lblBienvenido.Size = New System.Drawing.Size(263, 62)
         Me.lblBienvenido.TabIndex = 1
         Me.lblBienvenido.Text = "Bienvenido"
         '
@@ -196,7 +195,7 @@ Partial Class frmMenuPrincipal
         Me.lblFecha.ForeColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.lblFecha.Location = New System.Drawing.Point(48, 575)
         Me.lblFecha.Name = "lblFecha"
-        Me.lblFecha.Size = New System.Drawing.Size(52, 21)
+        Me.lblFecha.Size = New System.Drawing.Size(62, 28)
         Me.lblFecha.TabIndex = 2
         Me.lblFecha.Text = "Fecha"
         '
@@ -209,7 +208,7 @@ Partial Class frmMenuPrincipal
         Me.lblSistema.ForeColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(210, Byte), Integer), CType(CType(230, Byte), Integer))
         Me.lblSistema.Location = New System.Drawing.Point(48, 602)
         Me.lblSistema.Name = "lblSistema"
-        Me.lblSistema.Size = New System.Drawing.Size(392, 20)
+        Me.lblSistema.Size = New System.Drawing.Size(460, 25)
         Me.lblSistema.TabIndex = 3
         Me.lblSistema.Text = "Sistema de Gestión de Maquinaria Agrícola · Pomalca"
         '
@@ -221,6 +220,7 @@ Partial Class frmMenuPrincipal
         Me.ClientSize = New System.Drawing.Size(1200, 720)
         Me.Controls.Add(Me.pnlContenido)
         Me.Controls.Add(Me.mnuPrincipal)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.mnuPrincipal
         Me.MinimumSize = New System.Drawing.Size(1000, 600)
         Me.Name = "frmMenuPrincipal"
@@ -232,7 +232,6 @@ Partial Class frmMenuPrincipal
         Me.pnlContenido.ResumeLayout(False)
         Me.pnlContenido.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 

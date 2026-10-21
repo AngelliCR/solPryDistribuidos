@@ -24,9 +24,9 @@ Partial Class frmregistrar
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmregistrar))
         Me.pnlMarca = New System.Windows.Forms.Panel()
-        Me.picLogo = New System.Windows.Forms.PictureBox()
         Me.lblCopyright = New System.Windows.Forms.Label()
         Me.lblSistema = New System.Windows.Forms.Label()
+        Me.picLogo = New System.Windows.Forms.PictureBox()
         Me.pnlTarjeta = New System.Windows.Forms.Panel()
         Me.flpIniciarSesion = New System.Windows.Forms.FlowLayoutPanel()
         Me.lblYaTiene = New System.Windows.Forms.Label()
@@ -61,8 +61,8 @@ Partial Class frmregistrar
         Me.lblTitulo = New System.Windows.Forms.Label()
         Me.pnlMarca.SuspendLayout()
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.flpIniciarSesion.SuspendLayout()
         Me.pnlTarjeta.SuspendLayout()
+        Me.flpIniciarSesion.SuspendLayout()
         Me.SuspendLayout()
         '
         'pnlMarca
@@ -158,7 +158,7 @@ Partial Class frmregistrar
         Me.flpIniciarSesion.Controls.Add(Me.lnkIniciarSesion)
         Me.flpIniciarSesion.Location = New System.Drawing.Point(166, 517)
         Me.flpIniciarSesion.Name = "flpIniciarSesion"
-        Me.flpIniciarSesion.Size = New System.Drawing.Size(248, 24)
+        Me.flpIniciarSesion.Size = New System.Drawing.Size(256, 23)
         Me.flpIniciarSesion.TabIndex = 11
         Me.flpIniciarSesion.WrapContents = False
         '
@@ -170,7 +170,7 @@ Partial Class frmregistrar
         Me.lblYaTiene.Location = New System.Drawing.Point(0, 3)
         Me.lblYaTiene.Margin = New System.Windows.Forms.Padding(0, 3, 8, 0)
         Me.lblYaTiene.Name = "lblYaTiene"
-        Me.lblYaTiene.Size = New System.Drawing.Size(145, 15)
+        Me.lblYaTiene.Size = New System.Drawing.Size(151, 20)
         Me.lblYaTiene.TabIndex = 12
         Me.lblYaTiene.Text = "¿Ya tiene una cuenta?"
         '
@@ -181,10 +181,10 @@ Partial Class frmregistrar
         Me.lnkIniciarSesion.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lnkIniciarSesion.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
         Me.lnkIniciarSesion.LinkColor = System.Drawing.Color.FromArgb(CType(CType(7, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.lnkIniciarSesion.Location = New System.Drawing.Point(153, 3)
+        Me.lnkIniciarSesion.Location = New System.Drawing.Point(159, 3)
         Me.lnkIniciarSesion.Margin = New System.Windows.Forms.Padding(0, 3, 0, 0)
         Me.lnkIniciarSesion.Name = "lnkIniciarSesion"
-        Me.lnkIniciarSesion.Size = New System.Drawing.Size(91, 15)
+        Me.lnkIniciarSesion.Size = New System.Drawing.Size(97, 20)
         Me.lnkIniciarSesion.TabIndex = 11
         Me.lnkIniciarSesion.TabStop = True
         Me.lnkIniciarSesion.Text = "Iniciar sesión"
@@ -214,7 +214,7 @@ Partial Class frmregistrar
         Me.chkMostrar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.chkMostrar.Location = New System.Drawing.Point(30, 440)
         Me.chkMostrar.Name = "chkMostrar"
-        Me.chkMostrar.Size = New System.Drawing.Size(148, 19)
+        Me.chkMostrar.Size = New System.Drawing.Size(164, 24)
         Me.chkMostrar.TabIndex = 9
         Me.chkMostrar.Text = "Mostrar contraseñas"
         Me.chkMostrar.UseVisualStyleBackColor = True
@@ -226,7 +226,7 @@ Partial Class frmregistrar
         Me.txtconfirmar.Location = New System.Drawing.Point(300, 404)
         Me.txtconfirmar.MinimumSize = New System.Drawing.Size(250, 30)
         Me.txtconfirmar.Name = "txtconfirmar"
-        Me.txtconfirmar.Size = New System.Drawing.Size(250, 30)
+        Me.txtconfirmar.Size = New System.Drawing.Size(250, 31)
         Me.txtconfirmar.TabIndex = 8
         Me.txtconfirmar.UseSystemPasswordChar = True
         '
@@ -237,7 +237,7 @@ Partial Class frmregistrar
         Me.lblConfirmar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.lblConfirmar.Location = New System.Drawing.Point(300, 385)
         Me.lblConfirmar.Name = "lblConfirmar"
-        Me.lblConfirmar.Size = New System.Drawing.Size(128, 15)
+        Me.lblConfirmar.Size = New System.Drawing.Size(151, 20)
         Me.lblConfirmar.TabIndex = 28
         Me.lblConfirmar.Text = "Confirmar contraseña"
         '
@@ -248,7 +248,7 @@ Partial Class frmregistrar
         Me.txtcontrasena.Location = New System.Drawing.Point(30, 404)
         Me.txtcontrasena.MinimumSize = New System.Drawing.Size(250, 30)
         Me.txtcontrasena.Name = "txtcontrasena"
-        Me.txtcontrasena.Size = New System.Drawing.Size(250, 30)
+        Me.txtcontrasena.Size = New System.Drawing.Size(250, 31)
         Me.txtcontrasena.TabIndex = 7
         Me.txtcontrasena.UseSystemPasswordChar = True
         '
@@ -259,7 +259,7 @@ Partial Class frmregistrar
         Me.lblContrasena.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.lblContrasena.Location = New System.Drawing.Point(30, 385)
         Me.lblContrasena.Name = "lblContrasena"
-        Me.lblContrasena.Size = New System.Drawing.Size(69, 15)
+        Me.lblContrasena.Size = New System.Drawing.Size(83, 20)
         Me.lblContrasena.TabIndex = 27
         Me.lblContrasena.Text = "Contraseña"
         '
@@ -278,7 +278,7 @@ Partial Class frmregistrar
         Me.lblSecAcceso.ForeColor = System.Drawing.Color.FromArgb(CType(CType(7, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.lblSecAcceso.Location = New System.Drawing.Point(30, 357)
         Me.lblSecAcceso.Name = "lblSecAcceso"
-        Me.lblSecAcceso.Size = New System.Drawing.Size(128, 19)
+        Me.lblSecAcceso.Size = New System.Drawing.Size(143, 23)
         Me.lblSecAcceso.TabIndex = 25
         Me.lblSecAcceso.Text = "Acceso al sistema"
         '
@@ -290,7 +290,7 @@ Partial Class frmregistrar
         Me.cbxarea.Items.AddRange(New Object() {"Campo", "Fábrica", "Logística", "Mantenimiento", "Administración", "Recursos humanos", "Sistemas"})
         Me.cbxarea.Location = New System.Drawing.Point(300, 319)
         Me.cbxarea.Name = "cbxarea"
-        Me.cbxarea.Size = New System.Drawing.Size(250, 30)
+        Me.cbxarea.Size = New System.Drawing.Size(250, 31)
         Me.cbxarea.TabIndex = 6
         '
         'cbxtipo
@@ -301,7 +301,7 @@ Partial Class frmregistrar
         Me.cbxtipo.Items.AddRange(New Object() {"Operario", "Supervisor", "Administrador"})
         Me.cbxtipo.Location = New System.Drawing.Point(30, 319)
         Me.cbxtipo.Name = "cbxtipo"
-        Me.cbxtipo.Size = New System.Drawing.Size(250, 30)
+        Me.cbxtipo.Size = New System.Drawing.Size(250, 31)
         Me.cbxtipo.TabIndex = 5
         '
         'lblArea
@@ -311,7 +311,7 @@ Partial Class frmregistrar
         Me.lblArea.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.lblArea.Location = New System.Drawing.Point(300, 300)
         Me.lblArea.Name = "lblArea"
-        Me.lblArea.Size = New System.Drawing.Size(32, 15)
+        Me.lblArea.Size = New System.Drawing.Size(40, 20)
         Me.lblArea.TabIndex = 24
         Me.lblArea.Text = "Área"
         '
@@ -322,7 +322,7 @@ Partial Class frmregistrar
         Me.lblTipo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.lblTipo.Location = New System.Drawing.Point(30, 300)
         Me.lblTipo.Name = "lblTipo"
-        Me.lblTipo.Size = New System.Drawing.Size(96, 15)
+        Me.lblTipo.Size = New System.Drawing.Size(112, 20)
         Me.lblTipo.TabIndex = 23
         Me.lblTipo.Text = "Tipo de usuario"
         '
@@ -341,7 +341,7 @@ Partial Class frmregistrar
         Me.lblSecCargo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(7, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.lblSecCargo.Location = New System.Drawing.Point(30, 272)
         Me.lblSecCargo.Name = "lblSecCargo"
-        Me.lblSecCargo.Size = New System.Drawing.Size(92, 19)
+        Me.lblSecCargo.Size = New System.Drawing.Size(108, 23)
         Me.lblSecCargo.TabIndex = 21
         Me.lblSecCargo.Text = "Cargo y área"
         '
@@ -352,7 +352,7 @@ Partial Class frmregistrar
         Me.txtcorreo.Location = New System.Drawing.Point(30, 234)
         Me.txtcorreo.MinimumSize = New System.Drawing.Size(520, 30)
         Me.txtcorreo.Name = "txtcorreo"
-        Me.txtcorreo.Size = New System.Drawing.Size(520, 30)
+        Me.txtcorreo.Size = New System.Drawing.Size(520, 31)
         Me.txtcorreo.TabIndex = 4
         '
         'lblCorreo
@@ -362,7 +362,7 @@ Partial Class frmregistrar
         Me.lblCorreo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.lblCorreo.Location = New System.Drawing.Point(30, 215)
         Me.lblCorreo.Name = "lblCorreo"
-        Me.lblCorreo.Size = New System.Drawing.Size(111, 15)
+        Me.lblCorreo.Size = New System.Drawing.Size(132, 20)
         Me.lblCorreo.TabIndex = 20
         Me.lblCorreo.Text = "Correo electrónico"
         '
@@ -373,7 +373,7 @@ Partial Class frmregistrar
         Me.txtapellido.Location = New System.Drawing.Point(300, 179)
         Me.txtapellido.MinimumSize = New System.Drawing.Size(250, 30)
         Me.txtapellido.Name = "txtapellido"
-        Me.txtapellido.Size = New System.Drawing.Size(250, 30)
+        Me.txtapellido.Size = New System.Drawing.Size(250, 31)
         Me.txtapellido.TabIndex = 3
         '
         'txtnombre
@@ -383,7 +383,7 @@ Partial Class frmregistrar
         Me.txtnombre.Location = New System.Drawing.Point(30, 179)
         Me.txtnombre.MinimumSize = New System.Drawing.Size(250, 30)
         Me.txtnombre.Name = "txtnombre"
-        Me.txtnombre.Size = New System.Drawing.Size(250, 30)
+        Me.txtnombre.Size = New System.Drawing.Size(250, 31)
         Me.txtnombre.TabIndex = 2
         '
         'lblApellidos
@@ -393,7 +393,7 @@ Partial Class frmregistrar
         Me.lblApellidos.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.lblApellidos.Location = New System.Drawing.Point(300, 160)
         Me.lblApellidos.Name = "lblApellidos"
-        Me.lblApellidos.Size = New System.Drawing.Size(58, 15)
+        Me.lblApellidos.Size = New System.Drawing.Size(72, 20)
         Me.lblApellidos.TabIndex = 19
         Me.lblApellidos.Text = "Apellidos"
         '
@@ -404,7 +404,7 @@ Partial Class frmregistrar
         Me.lblNombres.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.lblNombres.Location = New System.Drawing.Point(30, 160)
         Me.lblNombres.Name = "lblNombres"
-        Me.lblNombres.Size = New System.Drawing.Size(55, 15)
+        Me.lblNombres.Size = New System.Drawing.Size(70, 20)
         Me.lblNombres.TabIndex = 18
         Me.lblNombres.Text = "Nombres"
         '
@@ -416,7 +416,7 @@ Partial Class frmregistrar
         Me.txttelefono.MaxLength = 9
         Me.txttelefono.MinimumSize = New System.Drawing.Size(250, 30)
         Me.txttelefono.Name = "txttelefono"
-        Me.txttelefono.Size = New System.Drawing.Size(250, 30)
+        Me.txttelefono.Size = New System.Drawing.Size(250, 31)
         Me.txttelefono.TabIndex = 1
         '
         'txtnumdni
@@ -427,7 +427,7 @@ Partial Class frmregistrar
         Me.txtnumdni.MaxLength = 8
         Me.txtnumdni.MinimumSize = New System.Drawing.Size(250, 30)
         Me.txtnumdni.Name = "txtnumdni"
-        Me.txtnumdni.Size = New System.Drawing.Size(250, 30)
+        Me.txtnumdni.Size = New System.Drawing.Size(250, 31)
         Me.txtnumdni.TabIndex = 0
         '
         'lblTelefono
@@ -437,7 +437,7 @@ Partial Class frmregistrar
         Me.lblTelefono.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.lblTelefono.Location = New System.Drawing.Point(300, 105)
         Me.lblTelefono.Name = "lblTelefono"
-        Me.lblTelefono.Size = New System.Drawing.Size(55, 15)
+        Me.lblTelefono.Size = New System.Drawing.Size(67, 20)
         Me.lblTelefono.TabIndex = 17
         Me.lblTelefono.Text = "Teléfono"
         '
@@ -448,7 +448,7 @@ Partial Class frmregistrar
         Me.lblDni.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.lblDni.Location = New System.Drawing.Point(30, 105)
         Me.lblDni.Name = "lblDni"
-        Me.lblDni.Size = New System.Drawing.Size(28, 15)
+        Me.lblDni.Size = New System.Drawing.Size(35, 20)
         Me.lblDni.TabIndex = 16
         Me.lblDni.Text = "DNI"
         '
@@ -467,7 +467,7 @@ Partial Class frmregistrar
         Me.lblSecPersonales.ForeColor = System.Drawing.Color.FromArgb(CType(CType(7, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.lblSecPersonales.Location = New System.Drawing.Point(30, 77)
         Me.lblSecPersonales.Name = "lblSecPersonales"
-        Me.lblSecPersonales.Size = New System.Drawing.Size(118, 19)
+        Me.lblSecPersonales.Size = New System.Drawing.Size(140, 23)
         Me.lblSecPersonales.TabIndex = 14
         Me.lblSecPersonales.Text = "Datos personales"
         '
@@ -478,7 +478,7 @@ Partial Class frmregistrar
         Me.lblSubtitulo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(170, Byte), Integer))
         Me.lblSubtitulo.Location = New System.Drawing.Point(30, 52)
         Me.lblSubtitulo.Name = "lblSubtitulo"
-        Me.lblSubtitulo.Size = New System.Drawing.Size(310, 17)
+        Me.lblSubtitulo.Size = New System.Drawing.Size(353, 21)
         Me.lblSubtitulo.TabIndex = 13
         Me.lblSubtitulo.Text = "Complete sus datos para registrarse en el sistema"
         '
@@ -489,7 +489,7 @@ Partial Class frmregistrar
         Me.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.lblTitulo.Location = New System.Drawing.Point(30, 16)
         Me.lblTitulo.Name = "lblTitulo"
-        Me.lblTitulo.Size = New System.Drawing.Size(139, 32)
+        Me.lblTitulo.Size = New System.Drawing.Size(192, 41)
         Me.lblTitulo.TabIndex = 12
         Me.lblTitulo.Text = "Crear cuenta"
         '
@@ -502,19 +502,18 @@ Partial Class frmregistrar
         Me.Controls.Add(Me.pnlMarca)
         Me.Controls.Add(Me.pnlTarjeta)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "frmregistrar"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Pomalca - Crear cuenta"
         Me.pnlMarca.ResumeLayout(False)
-        Me.pnlMarca.PerformLayout()
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.flpIniciarSesion.ResumeLayout(False)
-        Me.flpIniciarSesion.PerformLayout()
         Me.pnlTarjeta.ResumeLayout(False)
         Me.pnlTarjeta.PerformLayout()
+        Me.flpIniciarSesion.ResumeLayout(False)
+        Me.flpIniciarSesion.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 

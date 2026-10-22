@@ -22,6 +22,9 @@ Partial Class frmMisSolicitudes
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.lblTitulo = New System.Windows.Forms.Label()
         Me.lblSubtitulo = New System.Windows.Forms.Label()
         Me.lblMaquina = New System.Windows.Forms.Label()
@@ -39,6 +42,18 @@ Partial Class frmMisSolicitudes
         Me.btnLimpiar = New System.Windows.Forms.Button()
         Me.pnlEdicion = New System.Windows.Forms.Panel()
         Me.dgvSolicitudes = New System.Windows.Forms.DataGridView()
+        Me.id_solicitud = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id_personal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id_maquinaria = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fecha_registro = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.area = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.prioridad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.comentario = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tipo_solicitud = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.trabajador = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.maquina = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.pnlEdicion.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -96,6 +111,7 @@ Partial Class frmMisSolicitudes
         Me.cbxarea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbxarea.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbxarea.FormattingEnabled = True
+        Me.cbxarea.Items.AddRange(New Object() {"Campo", "Fábrica", "Logística", "Mantenimiento", "Administración", "Recursos humanos", "Sistemas"})
         Me.cbxarea.Location = New System.Drawing.Point(312, 32)
         Me.cbxarea.Name = "cbxarea"
         Me.cbxarea.Size = New System.Drawing.Size(150, 28)
@@ -114,6 +130,7 @@ Partial Class frmMisSolicitudes
         Me.cbxprioridad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbxprioridad.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbxprioridad.FormattingEnabled = True
+        Me.cbxprioridad.Items.AddRange(New Object() {"Alta", "Media", "Baja"})
         Me.cbxprioridad.Location = New System.Drawing.Point(478, 32)
         Me.cbxprioridad.Name = "cbxprioridad"
         Me.cbxprioridad.Size = New System.Drawing.Size(160, 28)
@@ -160,6 +177,12 @@ Partial Class frmMisSolicitudes
         '
         'btnActualizar
         '
+        Me.btnActualizar.BackColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(177, Byte), Integer))
+        Me.btnActualizar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnActualizar.FlatAppearance.BorderSize = 0
+        Me.btnActualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(153, Byte), Integer))
+        Me.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(153, Byte), Integer))
+        Me.btnActualizar.ForeColor = System.Drawing.Color.White
         Me.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnActualizar.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnActualizar.Location = New System.Drawing.Point(16, 196)
@@ -170,6 +193,12 @@ Partial Class frmMisSolicitudes
         '
         'btnEliminar
         '
+        Me.btnEliminar.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(43, Byte), Integer))
+        Me.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnEliminar.FlatAppearance.BorderSize = 0
+        Me.btnEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(160, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(160, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.btnEliminar.ForeColor = System.Drawing.Color.White
         Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnEliminar.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEliminar.Location = New System.Drawing.Point(144, 196)
@@ -180,6 +209,13 @@ Partial Class frmMisSolicitudes
         '
         'btnLimpiar
         '
+        Me.btnLimpiar.BackColor = System.Drawing.Color.White
+        Me.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnLimpiar.FlatAppearance.BorderSize = 1
+        Me.btnLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(221, Byte), Integer), CType(CType(225, Byte), Integer))
+        Me.btnLimpiar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(249, Byte), Integer))
+        Me.btnLimpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(249, Byte), Integer))
+        Me.btnLimpiar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnLimpiar.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLimpiar.Location = New System.Drawing.Point(262, 196)
@@ -209,12 +245,125 @@ Partial Class frmMisSolicitudes
         Me.pnlEdicion.Name = "pnlEdicion"
         Me.pnlEdicion.Size = New System.Drawing.Size(980, 248)
         '
+        CType(Me.dgvSolicitudes, System.ComponentModel.ISupportInitialize).BeginInit()
+        '
         'dgvSolicitudes
         '
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(177, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(177, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(251, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(249, Byte), Integer), CType(CType(251, Byte), Integer))
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(251, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
+        Me.dgvSolicitudes.AllowUserToAddRows = False
+        Me.dgvSolicitudes.AllowUserToDeleteRows = False
+        Me.dgvSolicitudes.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
+        Me.dgvSolicitudes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvSolicitudes.BackgroundColor = System.Drawing.Color.White
+        Me.dgvSolicitudes.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.dgvSolicitudes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.dgvSolicitudes.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgvSolicitudes.ColumnHeadersHeight = 36
+        Me.dgvSolicitudes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.dgvSolicitudes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_solicitud, Me.id_personal, Me.id_maquinaria, Me.fecha_registro, Me.descripcion, Me.area, Me.prioridad, Me.estado, Me.comentario, Me.tipo_solicitud, Me.trabajador, Me.maquina})
+        Me.dgvSolicitudes.DefaultCellStyle = DataGridViewCellStyle2
         Me.dgvSolicitudes.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgvSolicitudes.EnableHeadersVisualStyles = False
+        Me.dgvSolicitudes.GridColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(221, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.dgvSolicitudes.Location = New System.Drawing.Point(0, 0)
+        Me.dgvSolicitudes.MultiSelect = False
         Me.dgvSolicitudes.Name = "dgvSolicitudes"
+        Me.dgvSolicitudes.ReadOnly = True
+        Me.dgvSolicitudes.RowHeadersVisible = False
+        Me.dgvSolicitudes.RowTemplate.Height = 30
+        Me.dgvSolicitudes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvSolicitudes.Size = New System.Drawing.Size(980, 200)
+        '
+        'id_solicitud
+        '
+        Me.id_solicitud.DataPropertyName = "id_solicitud"
+        Me.id_solicitud.HeaderText = "id_solicitud"
+        Me.id_solicitud.Name = "id_solicitud"
+        Me.id_solicitud.Visible = False
+        '
+        'id_personal
+        '
+        Me.id_personal.DataPropertyName = "id_personal"
+        Me.id_personal.HeaderText = "id_personal"
+        Me.id_personal.Name = "id_personal"
+        Me.id_personal.Visible = False
+        '
+        'id_maquinaria
+        '
+        Me.id_maquinaria.DataPropertyName = "id_maquinaria"
+        Me.id_maquinaria.HeaderText = "id_maquinaria"
+        Me.id_maquinaria.Name = "id_maquinaria"
+        Me.id_maquinaria.Visible = False
+        '
+        'fecha_registro
+        '
+        Me.fecha_registro.DataPropertyName = "fecha_registro"
+        Me.fecha_registro.DefaultCellStyle.Format = "dd/MM/yyyy HH:mm"
+        Me.fecha_registro.HeaderText = "Fecha"
+        Me.fecha_registro.Name = "fecha_registro"
+        '
+        'descripcion
+        '
+        Me.descripcion.DataPropertyName = "descripcion"
+        Me.descripcion.HeaderText = "Descripción"
+        Me.descripcion.Name = "descripcion"
+        '
+        'area
+        '
+        Me.area.DataPropertyName = "area"
+        Me.area.HeaderText = "Área"
+        Me.area.Name = "area"
+        '
+        'prioridad
+        '
+        Me.prioridad.DataPropertyName = "prioridad"
+        Me.prioridad.HeaderText = "Prioridad"
+        Me.prioridad.Name = "prioridad"
+        '
+        'estado
+        '
+        Me.estado.DataPropertyName = "estado"
+        Me.estado.HeaderText = "Estado"
+        Me.estado.Name = "estado"
+        '
+        'comentario
+        '
+        Me.comentario.DataPropertyName = "comentario"
+        Me.comentario.HeaderText = "Comentario"
+        Me.comentario.Name = "comentario"
+        '
+        'tipo_solicitud
+        '
+        Me.tipo_solicitud.DataPropertyName = "tipo_solicitud"
+        Me.tipo_solicitud.HeaderText = "Tipo"
+        Me.tipo_solicitud.Name = "tipo_solicitud"
+        Me.tipo_solicitud.Visible = False
+        '
+        'trabajador
+        '
+        Me.trabajador.DataPropertyName = "trabajador"
+        Me.trabajador.HeaderText = "Trabajador"
+        Me.trabajador.Name = "trabajador"
+        Me.trabajador.Visible = False
+        '
+        'maquina
+        '
+        Me.maquina.DataPropertyName = "maquina"
+        Me.maquina.HeaderText = "Máquina"
+        Me.maquina.Name = "maquina"
+        CType(Me.dgvSolicitudes, System.ComponentModel.ISupportInitialize).EndInit()
         '
         'frmMisSolicitudes
         '
@@ -252,4 +401,16 @@ Partial Class frmMisSolicitudes
     Friend WithEvents btnLimpiar As Button
     Friend WithEvents pnlEdicion As Panel
     Friend WithEvents dgvSolicitudes As DataGridView
+    Friend WithEvents id_solicitud As DataGridViewTextBoxColumn
+    Friend WithEvents id_personal As DataGridViewTextBoxColumn
+    Friend WithEvents id_maquinaria As DataGridViewTextBoxColumn
+    Friend WithEvents fecha_registro As DataGridViewTextBoxColumn
+    Friend WithEvents descripcion As DataGridViewTextBoxColumn
+    Friend WithEvents area As DataGridViewTextBoxColumn
+    Friend WithEvents prioridad As DataGridViewTextBoxColumn
+    Friend WithEvents estado As DataGridViewTextBoxColumn
+    Friend WithEvents comentario As DataGridViewTextBoxColumn
+    Friend WithEvents tipo_solicitud As DataGridViewTextBoxColumn
+    Friend WithEvents trabajador As DataGridViewTextBoxColumn
+    Friend WithEvents maquina As DataGridViewTextBoxColumn
 End Class

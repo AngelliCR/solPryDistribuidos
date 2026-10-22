@@ -22,6 +22,9 @@ Partial Class frmPersonal
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.lblTitulo = New System.Windows.Forms.Label()
         Me.lblSubtitulo = New System.Windows.Forms.Label()
         Me.lblDni = New System.Windows.Forms.Label()
@@ -57,6 +60,16 @@ Partial Class frmPersonal
         Me.cbxFiltroEstado = New System.Windows.Forms.ComboBox()
         Me.pnlFiltros = New System.Windows.Forms.Panel()
         Me.dgvPersonal = New System.Windows.Forms.DataGridView()
+        Me.id_personal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dni = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombres = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.apellidos = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.correo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tipo_usuario = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.area = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fecha_ingreso = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.pnlFormulario.SuspendLayout()
         Me.pnlFiltros.SuspendLayout()
         Me.SuspendLayout()
@@ -211,6 +224,7 @@ Partial Class frmPersonal
         Me.cbxtipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbxtipo.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbxtipo.FormattingEnabled = True
+        Me.cbxtipo.Items.AddRange(New Object() {"Operario", "Supervisor", "Administrador"})
         Me.cbxtipo.Location = New System.Drawing.Point(16, 152)
         Me.cbxtipo.Name = "cbxtipo"
         Me.cbxtipo.Size = New System.Drawing.Size(200, 28)
@@ -229,6 +243,7 @@ Partial Class frmPersonal
         Me.cbxarea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbxarea.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbxarea.FormattingEnabled = True
+        Me.cbxarea.Items.AddRange(New Object() {"Campo", "Fábrica", "Logística", "Mantenimiento", "Administración", "Recursos humanos", "Sistemas"})
         Me.cbxarea.Location = New System.Drawing.Point(236, 152)
         Me.cbxarea.Name = "cbxarea"
         Me.cbxarea.Size = New System.Drawing.Size(220, 28)
@@ -253,6 +268,12 @@ Partial Class frmPersonal
         '
         'btnRegistrar
         '
+        Me.btnRegistrar.BackColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(177, Byte), Integer))
+        Me.btnRegistrar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnRegistrar.FlatAppearance.BorderSize = 0
+        Me.btnRegistrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(153, Byte), Integer))
+        Me.btnRegistrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(153, Byte), Integer))
+        Me.btnRegistrar.ForeColor = System.Drawing.Color.White
         Me.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnRegistrar.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRegistrar.Location = New System.Drawing.Point(16, 214)
@@ -263,6 +284,12 @@ Partial Class frmPersonal
         '
         'btnActualizar
         '
+        Me.btnActualizar.BackColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(177, Byte), Integer))
+        Me.btnActualizar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnActualizar.FlatAppearance.BorderSize = 0
+        Me.btnActualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(153, Byte), Integer))
+        Me.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(153, Byte), Integer))
+        Me.btnActualizar.ForeColor = System.Drawing.Color.White
         Me.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnActualizar.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnActualizar.Location = New System.Drawing.Point(144, 214)
@@ -273,6 +300,12 @@ Partial Class frmPersonal
         '
         'btnBaja
         '
+        Me.btnBaja.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(43, Byte), Integer))
+        Me.btnBaja.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnBaja.FlatAppearance.BorderSize = 0
+        Me.btnBaja.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(160, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.btnBaja.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(160, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.btnBaja.ForeColor = System.Drawing.Color.White
         Me.btnBaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBaja.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBaja.Location = New System.Drawing.Point(272, 214)
@@ -283,6 +316,12 @@ Partial Class frmPersonal
         '
         'btnEliminar
         '
+        Me.btnEliminar.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(43, Byte), Integer))
+        Me.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnEliminar.FlatAppearance.BorderSize = 0
+        Me.btnEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(160, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(160, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.btnEliminar.ForeColor = System.Drawing.Color.White
         Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnEliminar.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEliminar.Location = New System.Drawing.Point(430, 214)
@@ -293,6 +332,13 @@ Partial Class frmPersonal
         '
         'btnLimpiar
         '
+        Me.btnLimpiar.BackColor = System.Drawing.Color.White
+        Me.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnLimpiar.FlatAppearance.BorderSize = 1
+        Me.btnLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(221, Byte), Integer), CType(CType(225, Byte), Integer))
+        Me.btnLimpiar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(249, Byte), Integer))
+        Me.btnLimpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(249, Byte), Integer))
+        Me.btnLimpiar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnLimpiar.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLimpiar.Location = New System.Drawing.Point(548, 214)
@@ -364,6 +410,7 @@ Partial Class frmPersonal
         Me.cbxFiltroRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbxFiltroRol.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbxFiltroRol.FormattingEnabled = True
+        Me.cbxFiltroRol.Items.AddRange(New Object() {"Todos", "Operario", "Supervisor", "Administrador"})
         Me.cbxFiltroRol.Location = New System.Drawing.Point(364, 12)
         Me.cbxFiltroRol.Name = "cbxFiltroRol"
         Me.cbxFiltroRol.Size = New System.Drawing.Size(140, 28)
@@ -382,6 +429,7 @@ Partial Class frmPersonal
         Me.cbxFiltroEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbxFiltroEstado.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbxFiltroEstado.FormattingEnabled = True
+        Me.cbxFiltroEstado.Items.AddRange(New Object() {"Todos", "Activo", "Inactivo"})
         Me.cbxFiltroEstado.Location = New System.Drawing.Point(570, 12)
         Me.cbxFiltroEstado.Name = "cbxFiltroEstado"
         Me.cbxFiltroEstado.Size = New System.Drawing.Size(110, 28)
@@ -400,12 +448,109 @@ Partial Class frmPersonal
         Me.pnlFiltros.Name = "pnlFiltros"
         Me.pnlFiltros.Size = New System.Drawing.Size(980, 52)
         '
+        CType(Me.dgvPersonal, System.ComponentModel.ISupportInitialize).BeginInit()
+        '
         'dgvPersonal
         '
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(177, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(177, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(251, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(249, Byte), Integer), CType(CType(251, Byte), Integer))
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(251, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
+        Me.dgvPersonal.AllowUserToAddRows = False
+        Me.dgvPersonal.AllowUserToDeleteRows = False
+        Me.dgvPersonal.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
+        Me.dgvPersonal.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvPersonal.BackgroundColor = System.Drawing.Color.White
+        Me.dgvPersonal.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.dgvPersonal.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.dgvPersonal.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgvPersonal.ColumnHeadersHeight = 36
+        Me.dgvPersonal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.dgvPersonal.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_personal, Me.dni, Me.nombres, Me.apellidos, Me.telefono, Me.correo, Me.tipo_usuario, Me.area, Me.fecha_ingreso, Me.estado})
+        Me.dgvPersonal.DefaultCellStyle = DataGridViewCellStyle2
         Me.dgvPersonal.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgvPersonal.EnableHeadersVisualStyles = False
+        Me.dgvPersonal.GridColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(221, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.dgvPersonal.Location = New System.Drawing.Point(0, 0)
+        Me.dgvPersonal.MultiSelect = False
         Me.dgvPersonal.Name = "dgvPersonal"
+        Me.dgvPersonal.ReadOnly = True
+        Me.dgvPersonal.RowHeadersVisible = False
+        Me.dgvPersonal.RowTemplate.Height = 30
+        Me.dgvPersonal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvPersonal.Size = New System.Drawing.Size(980, 200)
+        '
+        'id_personal
+        '
+        Me.id_personal.DataPropertyName = "id_personal"
+        Me.id_personal.HeaderText = "id_personal"
+        Me.id_personal.Name = "id_personal"
+        Me.id_personal.Visible = False
+        '
+        'dni
+        '
+        Me.dni.DataPropertyName = "dni"
+        Me.dni.HeaderText = "DNI"
+        Me.dni.Name = "dni"
+        '
+        'nombres
+        '
+        Me.nombres.DataPropertyName = "nombres"
+        Me.nombres.HeaderText = "Nombres"
+        Me.nombres.Name = "nombres"
+        '
+        'apellidos
+        '
+        Me.apellidos.DataPropertyName = "apellidos"
+        Me.apellidos.HeaderText = "Apellidos"
+        Me.apellidos.Name = "apellidos"
+        '
+        'telefono
+        '
+        Me.telefono.DataPropertyName = "telefono"
+        Me.telefono.HeaderText = "Teléfono"
+        Me.telefono.Name = "telefono"
+        '
+        'correo
+        '
+        Me.correo.DataPropertyName = "correo"
+        Me.correo.HeaderText = "Correo"
+        Me.correo.Name = "correo"
+        '
+        'tipo_usuario
+        '
+        Me.tipo_usuario.DataPropertyName = "tipo_usuario"
+        Me.tipo_usuario.HeaderText = "Tipo"
+        Me.tipo_usuario.Name = "tipo_usuario"
+        '
+        'area
+        '
+        Me.area.DataPropertyName = "area"
+        Me.area.HeaderText = "Área"
+        Me.area.Name = "area"
+        '
+        'fecha_ingreso
+        '
+        Me.fecha_ingreso.DataPropertyName = "fecha_ingreso"
+        Me.fecha_ingreso.DefaultCellStyle.Format = "dd/MM/yyyy"
+        Me.fecha_ingreso.HeaderText = "Fecha de ingreso"
+        Me.fecha_ingreso.Name = "fecha_ingreso"
+        '
+        'estado
+        '
+        Me.estado.DataPropertyName = "estado"
+        Me.estado.HeaderText = "Estado"
+        Me.estado.Name = "estado"
+        CType(Me.dgvPersonal, System.ComponentModel.ISupportInitialize).EndInit()
         '
         'frmPersonal
         '
@@ -464,4 +609,14 @@ Partial Class frmPersonal
     Friend WithEvents cbxFiltroEstado As ComboBox
     Friend WithEvents pnlFiltros As Panel
     Friend WithEvents dgvPersonal As DataGridView
+    Friend WithEvents id_personal As DataGridViewTextBoxColumn
+    Friend WithEvents dni As DataGridViewTextBoxColumn
+    Friend WithEvents nombres As DataGridViewTextBoxColumn
+    Friend WithEvents apellidos As DataGridViewTextBoxColumn
+    Friend WithEvents telefono As DataGridViewTextBoxColumn
+    Friend WithEvents correo As DataGridViewTextBoxColumn
+    Friend WithEvents tipo_usuario As DataGridViewTextBoxColumn
+    Friend WithEvents area As DataGridViewTextBoxColumn
+    Friend WithEvents fecha_ingreso As DataGridViewTextBoxColumn
+    Friend WithEvents estado As DataGridViewTextBoxColumn
 End Class

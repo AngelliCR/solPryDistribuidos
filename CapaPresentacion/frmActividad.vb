@@ -9,21 +9,12 @@ Public Class frmActividad
     Private zonaActiva As String
 
     Private Sub frmActividad_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        EstilizarBotonPrimario(btnIniciar)
-        EstilizarBotonPrimario(btnActualizar)
-        EstilizarBotonExito(btnFinalizar)
-        EstilizarBotonPeligro(btnAveria)
-        EstilizarGrilla(dgvActividades)
-        dgvActividades.MinimumSize = New Size(0, 220)
-        Me.AutoScroll = True
-        ConfigurarNumericos()
-        cbxZona.Items.AddRange(modListas.Zonas)
-        cbxCombustibleFinal.Items.AddRange(modListas.NivelesCombustible)
-        If Not EsOperario() Then
-            cbxFiltroEstado.Items.Add("Todos")
-            cbxFiltroEstado.Items.Add("ACTIVO")
-            cbxFiltroEstado.Items.Add("FINALIZADO")
-            cbxFiltroEstado.Items.Add("AVERIADO")
+        ' No se puede en el Diseñador: AutoGenerateColumns está oculta en la ventana Propiedades.
+        dgvActividades.AutoGenerateColumns = False
+        If EsOperario() Then
+            ' No se puede en el Diseñador: la columna Operario se oculta según el rol.
+            dgvActividades.Columns("operario").Visible = False
+        Else
             cbxFiltroEstado.SelectedIndex = 0
             dtpHasta.Value = Date.Today
             dtpDesde.Value = Date.Today.AddDays(-30)
@@ -38,6 +29,7 @@ Public Class frmActividad
     End Sub
 
     Private Sub AplicarRol()
+        ' No se puede en el Diseñador: los paneles se muestran u ocultan según el rol.
         Dim operario As Boolean = EsOperario()
         pnlResumen.Visible = Not operario
         pnlFiltros.Visible = Not operario
@@ -61,6 +53,7 @@ Public Class frmActividad
     End Sub
 
     Private Sub CargarOperario()
+        ' No se puede en el Diseñador: el panel visible depende de si hay una jornada activa.
         pnlCheckin.Visible = True
         pnlControl.Visible = False
         idActividadActiva = 0
@@ -153,17 +146,14 @@ Public Class frmActividad
             Dim tabla As DataTable = obj.listarActividades(idPersonal, estado, desde, hasta)
             AgregarObservacion(tabla)
             dgvActividades.DataSource = tabla
-            ConfigurarColumnas()
             dgvActividades.ClearSelection()
             If tabla.Rows.Count = 0 Then
+                ' No se puede en el Diseñador: el mensaje se muestra u oculta según si hay jornadas y según el rol.
                 If EsOperario() Then
                     lblSinDatos.Text = "Aún no tiene jornadas registradas."
                 Else
                     lblSinDatos.Text = "No hay jornadas registradas en el rango seleccionado."
                 End If
-                lblSinDatos.Width = Math.Max(200, dgvActividades.Width - 24)
-                lblSinDatos.Left = dgvActividades.Left + Math.Max(0, (dgvActividades.Width - lblSinDatos.Width) \ 2)
-                lblSinDatos.Top = dgvActividades.Top + Math.Max(0, (dgvActividades.Height - lblSinDatos.Height) \ 2)
                 lblSinDatos.Visible = True
                 lblSinDatos.BringToFront()
             Else
@@ -191,51 +181,8 @@ Public Class frmActividad
         Next
     End Sub
 
-    Private Sub ConfigurarColumnas()
-        PonerEncabezado("fecha_inicio", "Inicio")
-        PonerEncabezado("maquina", "Máquina")
-        PonerEncabezado("zona", "Zona")
-        PonerEncabezado("horas_estimadas", "Horas estimadas")
-        PonerEncabezado("horas_reales", "Horas reales")
-        PonerEncabezado("combustible_final", "Combustible final")
-        PonerEncabezado("estado", "Estado")
-        PonerEncabezado("fecha_fin", "Fin")
-        PonerEncabezado("observacion", "Observación")
-        PonerEncabezado("operario", "Operario")
-        If dgvActividades.Columns.Contains("fecha_inicio") Then
-            dgvActividades.Columns("fecha_inicio").DefaultCellStyle.Format = "dd/MM/yyyy HH:mm"
-        End If
-        If dgvActividades.Columns.Contains("fecha_fin") Then
-            dgvActividades.Columns("fecha_fin").DefaultCellStyle.Format = "dd/MM/yyyy HH:mm"
-        End If
-        If dgvActividades.Columns.Contains("horas_estimadas") Then
-            dgvActividades.Columns("horas_estimadas").DefaultCellStyle.Format = "0.0"
-        End If
-        If dgvActividades.Columns.Contains("horas_reales") Then
-            dgvActividades.Columns("horas_reales").DefaultCellStyle.Format = "0.0"
-        End If
-        Ocultar("id_actividad")
-        Ocultar("id_maquinaria")
-        Ocultar("id_personal")
-        Ocultar("combustible_inicial")
-        Ocultar("motivo_retraso")
-        Ocultar("observacion_falla")
-        If EsOperario() Then
-            Ocultar("operario")
-        End If
-    End Sub
 
-    Private Sub PonerEncabezado(columna As String, titulo As String)
-        If dgvActividades.Columns.Contains(columna) Then
-            dgvActividades.Columns(columna).HeaderText = titulo
-        End If
-    End Sub
 
-    Private Sub Ocultar(columna As String)
-        If dgvActividades.Columns.Contains(columna) Then
-            dgvActividades.Columns(columna).Visible = False
-        End If
-    End Sub
 
     Private Sub ActualizarTarjetas(tabla As DataTable)
         Dim activas As Integer = 0
@@ -260,6 +207,7 @@ Public Class frmActividad
         If e.RowIndex < 0 Then
             Return
         End If
+        ' No se puede en el Diseñador: el color del estado y el texto del combustible dependen del valor de la fila.
         Dim nombre As String = dgvActividades.Columns(e.ColumnIndex).Name
         If nombre = "estado" Then
             Dim colorTexto As Color = ColorEstado(Convert.ToString(e.Value))
@@ -406,43 +354,8 @@ Public Class frmActividad
         End Try
     End Sub
 
-    Private Sub PintarTarjeta(sender As Object, e As PaintEventArgs) Handles pnlCardActivas.Paint, pnlCardFinalizadas.Paint, pnlCardAverias.Paint
-        Dim pnl As Panel = DirectCast(sender, Panel)
-        Dim rect As New Rectangle(0, 0, pnl.Width - 1, pnl.Height - 1)
-        Using lapiz As New Pen(Color.FromArgb(220, 221, 225))
-            e.Graphics.DrawRectangle(lapiz, rect)
-        End Using
-        Dim colorBarra As Color = Color.FromArgb(91, 127, 177)
-        If pnl Is pnlCardFinalizadas Then
-            colorBarra = Color.FromArgb(39, 174, 96)
-        ElseIf pnl Is pnlCardAverias Then
-            colorBarra = Color.FromArgb(192, 57, 43)
-        End If
-        Using brocha As New SolidBrush(colorBarra)
-            e.Graphics.FillRectangle(brocha, 0, 0, pnl.Width, 4)
-        End Using
-    End Sub
 
-    Private Sub PintarBordeIncidente(sender As Object, e As PaintEventArgs) Handles pnlIncidente.Paint
-        Dim pnl As Panel = DirectCast(sender, Panel)
-        Dim rect As New Rectangle(0, 0, pnl.Width - 1, pnl.Height - 1)
-        Using lapiz As New Pen(Color.FromArgb(231, 76, 60))
-            e.Graphics.DrawRectangle(lapiz, rect)
-        End Using
-    End Sub
 
-    Private Sub ConfigurarNumericos()
-        nudHorasEstimadas.DecimalPlaces = 1
-        nudHorasEstimadas.Increment = 0.5D
-        nudHorasEstimadas.Minimum = 1D
-        nudHorasEstimadas.Maximum = 24D
-        nudHorasEstimadas.Value = 8D
-        nudHorasReales.DecimalPlaces = 1
-        nudHorasReales.Increment = 0.5D
-        nudHorasReales.Minimum = 0.5D
-        nudHorasReales.Maximum = 24D
-        nudHorasReales.Value = 0.5D
-    End Sub
 
     Private Function HorasRedondeadas(inicio As DateTime) As Decimal
         Dim totalHoras As Decimal = CDec((DateTime.Now - inicio).TotalHours)

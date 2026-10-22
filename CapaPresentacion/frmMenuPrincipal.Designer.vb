@@ -37,11 +37,13 @@ Partial Class frmMenuPrincipal
         Me.mnuCerrarSesion = New System.Windows.Forms.ToolStripMenuItem()
         Me.pnlContenido = New System.Windows.Forms.Panel()
         Me.pnlModulo = New System.Windows.Forms.Panel()
+        Me.pnlBienvenida = New System.Windows.Forms.Panel()
         Me.lblBienvenido = New System.Windows.Forms.Label()
         Me.lblFecha = New System.Windows.Forms.Label()
         Me.lblSistema = New System.Windows.Forms.Label()
         Me.mnuPrincipal.SuspendLayout()
         Me.pnlContenido.SuspendLayout()
+        Me.pnlBienvenida.SuspendLayout()
         Me.SuspendLayout()
         '
         'mnuPrincipal
@@ -152,11 +154,9 @@ Partial Class frmMenuPrincipal
         '
         Me.pnlContenido.BackColor = System.Drawing.Color.Black
         Me.pnlContenido.BackgroundImage = CType(resources.GetObject("pnlContenido.BackgroundImage"), System.Drawing.Image)
-        Me.pnlContenido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.pnlContenido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.pnlContenido.Controls.Add(Me.pnlBienvenida)
         Me.pnlContenido.Controls.Add(Me.pnlModulo)
-        Me.pnlContenido.Controls.Add(Me.lblBienvenido)
-        Me.pnlContenido.Controls.Add(Me.lblFecha)
-        Me.pnlContenido.Controls.Add(Me.lblSistema)
         Me.pnlContenido.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlContenido.Location = New System.Drawing.Point(0, 40)
         Me.pnlContenido.Name = "pnlContenido"
@@ -175,12 +175,11 @@ Partial Class frmMenuPrincipal
         '
         'lblBienvenido
         '
-        Me.lblBienvenido.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lblBienvenido.AutoSize = True
         Me.lblBienvenido.BackColor = System.Drawing.Color.Transparent
         Me.lblBienvenido.Font = New System.Drawing.Font("Segoe UI Semibold", 28.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblBienvenido.ForeColor = System.Drawing.Color.White
-        Me.lblBienvenido.Location = New System.Drawing.Point(48, 520)
+        Me.lblBienvenido.Location = New System.Drawing.Point(48, 24)
         Me.lblBienvenido.Name = "lblBienvenido"
         Me.lblBienvenido.Size = New System.Drawing.Size(263, 62)
         Me.lblBienvenido.TabIndex = 1
@@ -188,25 +187,35 @@ Partial Class frmMenuPrincipal
         '
         'lblFecha
         '
-        Me.lblFecha.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lblFecha.AutoSize = True
         Me.lblFecha.BackColor = System.Drawing.Color.Transparent
         Me.lblFecha.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblFecha.ForeColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(225, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.lblFecha.Location = New System.Drawing.Point(48, 575)
+        Me.lblFecha.Location = New System.Drawing.Point(48, 90)
         Me.lblFecha.Name = "lblFecha"
         Me.lblFecha.Size = New System.Drawing.Size(62, 28)
         Me.lblFecha.TabIndex = 2
         Me.lblFecha.Text = "Fecha"
         '
+        'pnlBienvenida
+        '
+        Me.pnlBienvenida.BackColor = System.Drawing.Color.FromArgb(CType(CType(140, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.pnlBienvenida.Controls.Add(Me.lblBienvenido)
+        Me.pnlBienvenida.Controls.Add(Me.lblFecha)
+        Me.pnlBienvenida.Controls.Add(Me.lblSistema)
+        Me.pnlBienvenida.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.pnlBienvenida.Location = New System.Drawing.Point(0, 510)
+        Me.pnlBienvenida.Name = "pnlBienvenida"
+        Me.pnlBienvenida.Size = New System.Drawing.Size(1200, 170)
+        Me.pnlBienvenida.TabIndex = 4
+        '
         'lblSistema
         '
-        Me.lblSistema.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lblSistema.AutoSize = True
         Me.lblSistema.BackColor = System.Drawing.Color.Transparent
         Me.lblSistema.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblSistema.ForeColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(210, Byte), Integer), CType(CType(230, Byte), Integer))
-        Me.lblSistema.Location = New System.Drawing.Point(48, 602)
+        Me.lblSistema.Location = New System.Drawing.Point(48, 122)
         Me.lblSistema.Name = "lblSistema"
         Me.lblSistema.Size = New System.Drawing.Size(460, 25)
         Me.lblSistema.TabIndex = 3
@@ -215,6 +224,7 @@ Partial Class frmMenuPrincipal
         'frmMenuPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.DoubleBuffered = True
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(249, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1200, 720)
@@ -229,6 +239,8 @@ Partial Class frmMenuPrincipal
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.mnuPrincipal.ResumeLayout(False)
         Me.mnuPrincipal.PerformLayout()
+        Me.pnlBienvenida.ResumeLayout(False)
+        Me.pnlBienvenida.PerformLayout()
         Me.pnlContenido.ResumeLayout(False)
         Me.pnlContenido.PerformLayout()
         Me.ResumeLayout(False)
@@ -249,6 +261,7 @@ Partial Class frmMenuPrincipal
     Friend WithEvents mnuCerrarSesion As ToolStripMenuItem
     Friend WithEvents pnlContenido As Panel
     Friend WithEvents pnlModulo As Panel
+    Friend WithEvents pnlBienvenida As Panel
     Friend WithEvents lblBienvenido As Label
     Friend WithEvents lblFecha As Label
     Friend WithEvents lblSistema As Label

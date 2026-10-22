@@ -22,6 +22,9 @@ Partial Class frmMaquinaria
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.lblTitulo = New System.Windows.Forms.Label()
         Me.lblSubtitulo = New System.Windows.Forms.Label()
         Me.lblCodigo = New System.Windows.Forms.Label()
@@ -52,6 +55,15 @@ Partial Class frmMaquinaria
         Me.cbxFiltroArea = New System.Windows.Forms.ComboBox()
         Me.pnlFiltros = New System.Windows.Forms.Panel()
         Me.dgvMaquinaria = New System.Windows.Forms.DataGridView()
+        Me.id_maquinaria = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombre_codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.marca = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.modelo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.area = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.observaciones = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fecha_registro = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.pnlFormulario.SuspendLayout()
         Me.pnlFiltros.SuspendLayout()
         Me.SuspendLayout()
@@ -161,6 +173,7 @@ Partial Class frmMaquinaria
         Me.cbxarea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbxarea.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbxarea.FormattingEnabled = True
+        Me.cbxarea.Items.AddRange(New Object() {"Campo", "Fábrica", "Logística", "Mantenimiento", "Administración", "Recursos humanos", "Sistemas"})
         Me.cbxarea.Location = New System.Drawing.Point(236, 92)
         Me.cbxarea.Name = "cbxarea"
         Me.cbxarea.Size = New System.Drawing.Size(220, 28)
@@ -179,6 +192,7 @@ Partial Class frmMaquinaria
         Me.cbxestado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbxestado.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbxestado.FormattingEnabled = True
+        Me.cbxestado.Items.AddRange(New Object() {"Operativo", "En Mantenimiento", "Sin Tarea", "Dado de Baja"})
         Me.cbxestado.Location = New System.Drawing.Point(476, 92)
         Me.cbxestado.Name = "cbxestado"
         Me.cbxestado.Size = New System.Drawing.Size(180, 28)
@@ -204,6 +218,12 @@ Partial Class frmMaquinaria
         '
         'btnRegistrar
         '
+        Me.btnRegistrar.BackColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(177, Byte), Integer))
+        Me.btnRegistrar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnRegistrar.FlatAppearance.BorderSize = 0
+        Me.btnRegistrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(153, Byte), Integer))
+        Me.btnRegistrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(153, Byte), Integer))
+        Me.btnRegistrar.ForeColor = System.Drawing.Color.White
         Me.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnRegistrar.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRegistrar.Location = New System.Drawing.Point(16, 220)
@@ -214,6 +234,12 @@ Partial Class frmMaquinaria
         '
         'btnActualizar
         '
+        Me.btnActualizar.BackColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(177, Byte), Integer))
+        Me.btnActualizar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnActualizar.FlatAppearance.BorderSize = 0
+        Me.btnActualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(153, Byte), Integer))
+        Me.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(153, Byte), Integer))
+        Me.btnActualizar.ForeColor = System.Drawing.Color.White
         Me.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnActualizar.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnActualizar.Location = New System.Drawing.Point(144, 220)
@@ -224,6 +250,12 @@ Partial Class frmMaquinaria
         '
         'btnBaja
         '
+        Me.btnBaja.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(43, Byte), Integer))
+        Me.btnBaja.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnBaja.FlatAppearance.BorderSize = 0
+        Me.btnBaja.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(160, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.btnBaja.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(160, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.btnBaja.ForeColor = System.Drawing.Color.White
         Me.btnBaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBaja.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBaja.Location = New System.Drawing.Point(272, 220)
@@ -234,6 +266,12 @@ Partial Class frmMaquinaria
         '
         'btnEliminar
         '
+        Me.btnEliminar.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(43, Byte), Integer))
+        Me.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnEliminar.FlatAppearance.BorderSize = 0
+        Me.btnEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(160, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(160, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.btnEliminar.ForeColor = System.Drawing.Color.White
         Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnEliminar.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEliminar.Location = New System.Drawing.Point(420, 220)
@@ -244,6 +282,13 @@ Partial Class frmMaquinaria
         '
         'btnLimpiar
         '
+        Me.btnLimpiar.BackColor = System.Drawing.Color.White
+        Me.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnLimpiar.FlatAppearance.BorderSize = 1
+        Me.btnLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(221, Byte), Integer), CType(CType(225, Byte), Integer))
+        Me.btnLimpiar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(249, Byte), Integer))
+        Me.btnLimpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(249, Byte), Integer))
+        Me.btnLimpiar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnLimpiar.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLimpiar.Location = New System.Drawing.Point(538, 220)
@@ -310,6 +355,7 @@ Partial Class frmMaquinaria
         Me.cbxFiltroEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbxFiltroEstado.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbxFiltroEstado.FormattingEnabled = True
+        Me.cbxFiltroEstado.Items.AddRange(New Object() {"Todos", "Operativo", "En Mantenimiento", "Sin Tarea", "Dado de Baja"})
         Me.cbxFiltroEstado.Location = New System.Drawing.Point(364, 12)
         Me.cbxFiltroEstado.Name = "cbxFiltroEstado"
         Me.cbxFiltroEstado.Size = New System.Drawing.Size(140, 28)
@@ -328,6 +374,7 @@ Partial Class frmMaquinaria
         Me.cbxFiltroArea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbxFiltroArea.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbxFiltroArea.FormattingEnabled = True
+        Me.cbxFiltroArea.Items.AddRange(New Object() {"Todos", "Campo", "Fábrica", "Logística", "Mantenimiento", "Administración", "Recursos humanos", "Sistemas"})
         Me.cbxFiltroArea.Location = New System.Drawing.Point(556, 12)
         Me.cbxFiltroArea.Name = "cbxFiltroArea"
         Me.cbxFiltroArea.Size = New System.Drawing.Size(140, 28)
@@ -346,12 +393,103 @@ Partial Class frmMaquinaria
         Me.pnlFiltros.Name = "pnlFiltros"
         Me.pnlFiltros.Size = New System.Drawing.Size(980, 52)
         '
+        CType(Me.dgvMaquinaria, System.ComponentModel.ISupportInitialize).BeginInit()
+        '
         'dgvMaquinaria
         '
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(177, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(177, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(251, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(249, Byte), Integer), CType(CType(251, Byte), Integer))
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(251, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
+        Me.dgvMaquinaria.AllowUserToAddRows = False
+        Me.dgvMaquinaria.AllowUserToDeleteRows = False
+        Me.dgvMaquinaria.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
+        Me.dgvMaquinaria.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvMaquinaria.BackgroundColor = System.Drawing.Color.White
+        Me.dgvMaquinaria.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.dgvMaquinaria.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.dgvMaquinaria.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgvMaquinaria.ColumnHeadersHeight = 36
+        Me.dgvMaquinaria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.dgvMaquinaria.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_maquinaria, Me.nombre_codigo, Me.tipo, Me.marca, Me.modelo, Me.area, Me.estado, Me.observaciones, Me.fecha_registro})
+        Me.dgvMaquinaria.DefaultCellStyle = DataGridViewCellStyle2
         Me.dgvMaquinaria.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgvMaquinaria.EnableHeadersVisualStyles = False
+        Me.dgvMaquinaria.GridColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(221, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.dgvMaquinaria.Location = New System.Drawing.Point(0, 0)
+        Me.dgvMaquinaria.MultiSelect = False
         Me.dgvMaquinaria.Name = "dgvMaquinaria"
+        Me.dgvMaquinaria.ReadOnly = True
+        Me.dgvMaquinaria.RowHeadersVisible = False
+        Me.dgvMaquinaria.RowTemplate.Height = 30
+        Me.dgvMaquinaria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvMaquinaria.Size = New System.Drawing.Size(980, 200)
+        '
+        'id_maquinaria
+        '
+        Me.id_maquinaria.DataPropertyName = "id_maquinaria"
+        Me.id_maquinaria.HeaderText = "id_maquinaria"
+        Me.id_maquinaria.Name = "id_maquinaria"
+        Me.id_maquinaria.Visible = False
+        '
+        'nombre_codigo
+        '
+        Me.nombre_codigo.DataPropertyName = "nombre_codigo"
+        Me.nombre_codigo.HeaderText = "Código"
+        Me.nombre_codigo.Name = "nombre_codigo"
+        '
+        'tipo
+        '
+        Me.tipo.DataPropertyName = "tipo"
+        Me.tipo.HeaderText = "Tipo"
+        Me.tipo.Name = "tipo"
+        '
+        'marca
+        '
+        Me.marca.DataPropertyName = "marca"
+        Me.marca.HeaderText = "Marca"
+        Me.marca.Name = "marca"
+        '
+        'modelo
+        '
+        Me.modelo.DataPropertyName = "modelo"
+        Me.modelo.HeaderText = "Modelo"
+        Me.modelo.Name = "modelo"
+        '
+        'area
+        '
+        Me.area.DataPropertyName = "area"
+        Me.area.HeaderText = "Área"
+        Me.area.Name = "area"
+        '
+        'estado
+        '
+        Me.estado.DataPropertyName = "estado"
+        Me.estado.HeaderText = "Estado"
+        Me.estado.Name = "estado"
+        '
+        'observaciones
+        '
+        Me.observaciones.DataPropertyName = "observaciones"
+        Me.observaciones.HeaderText = "Observaciones"
+        Me.observaciones.Name = "observaciones"
+        '
+        'fecha_registro
+        '
+        Me.fecha_registro.DataPropertyName = "fecha_registro"
+        Me.fecha_registro.DefaultCellStyle.Format = "dd/MM/yyyy"
+        Me.fecha_registro.HeaderText = "Fecha de registro"
+        Me.fecha_registro.Name = "fecha_registro"
+        CType(Me.dgvMaquinaria, System.ComponentModel.ISupportInitialize).EndInit()
         '
         'frmMaquinaria
         '
@@ -405,4 +543,13 @@ Partial Class frmMaquinaria
     Friend WithEvents cbxFiltroArea As ComboBox
     Friend WithEvents pnlFiltros As Panel
     Friend WithEvents dgvMaquinaria As DataGridView
+    Friend WithEvents id_maquinaria As DataGridViewTextBoxColumn
+    Friend WithEvents nombre_codigo As DataGridViewTextBoxColumn
+    Friend WithEvents tipo As DataGridViewTextBoxColumn
+    Friend WithEvents marca As DataGridViewTextBoxColumn
+    Friend WithEvents modelo As DataGridViewTextBoxColumn
+    Friend WithEvents area As DataGridViewTextBoxColumn
+    Friend WithEvents estado As DataGridViewTextBoxColumn
+    Friend WithEvents observaciones As DataGridViewTextBoxColumn
+    Friend WithEvents fecha_registro As DataGridViewTextBoxColumn
 End Class

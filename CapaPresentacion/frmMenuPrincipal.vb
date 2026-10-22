@@ -1,24 +1,12 @@
-﻿Imports System.Drawing.Drawing2D
-Imports System.Globalization
-Imports System.Reflection
+﻿Imports System.Globalization
 
 Public Class frmMenuPrincipal
     Private cerrandoSesion As Boolean
     Private opcionActiva As ToolStripMenuItem
     Private formularioAbierto As Form
-    Private imagenFondo As Image
-    Private acomodandoTextos As Boolean
 
     Private Sub frmMenuPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' DoubleBuffered está declarado en Control; en Panel no se encuentra con reflexión.
-        Dim dobleBuffer As PropertyInfo = GetType(Control).GetProperty("DoubleBuffered", BindingFlags.NonPublic Or BindingFlags.Instance)
-        dobleBuffer.SetValue(pnlContenido, True, Nothing)
-        dobleBuffer.SetValue(lblBienvenido, True, Nothing)
-        dobleBuffer.SetValue(lblFecha, True, Nothing)
-        dobleBuffer.SetValue(lblSistema, True, Nothing)
-
-        imagenFondo = pnlContenido.BackgroundImage
-        pnlContenido.BackgroundImage = Nothing
+        ' No se puede en el Diseñador: no existe una propiedad para un pintor propio del menú ni de los submenús.
         mnuPrincipal.Renderer = New clsRenderMenu()
         PrepararSubmenu(mnuSolicitudes)
         PrepararSubmenu(mnuUsuarioSesion)
@@ -27,9 +15,7 @@ Public Class frmMenuPrincipal
         lblBienvenido.Text = "Bienvenido, " & modSesion.UsuarioNombre
         lblFecha.Text = FechaHoy()
 
-        pnlContenido.Controls.SetChildIndex(pnlModulo, 0)
         AplicarPermisos()
-        AcomodarTextos()
         MostrarInicio()
     End Sub
 
@@ -63,6 +49,7 @@ Public Class frmMenuPrincipal
         Dim esSupervisor As Boolean = (rol = "Supervisor")
         Dim esOperario As Boolean = (rol = "Operario")
 
+        ' No se puede en el Diseñador: los menús se muestran u ocultan según el rol.
         mnuInicio.Visible = True
         mnuUsuarios.Visible = esAdmin
         mnuMaquinaria.Visible = esAdmin OrElse esSupervisor
@@ -77,10 +64,8 @@ Public Class frmMenuPrincipal
         CerrarFormularioAbierto()
         pnlModulo.Visible = False
         MarcarActivo(mnuInicio)
-        lblBienvenido.Visible = True
-        lblFecha.Visible = True
-        lblSistema.Visible = True
-        pnlContenido.Invalidate()
+        ' No se puede en el Diseñador: la bienvenida se muestra u oculta según si hay un módulo abierto.
+        pnlBienvenida.Visible = True
     End Sub
 
     Private Sub AbrirFormulario(frm As Form, opcion As ToolStripMenuItem)
@@ -89,9 +74,8 @@ Public Class frmMenuPrincipal
         frm.TopLevel = False
         frm.FormBorderStyle = FormBorderStyle.None
         frm.Dock = DockStyle.Fill
-        lblBienvenido.Visible = False
-        lblFecha.Visible = False
-        lblSistema.Visible = False
+        ' No se puede en el Diseñador: la bienvenida se muestra u oculta según si hay un módulo abierto.
+        pnlBienvenida.Visible = False
         pnlModulo.Visible = True
         pnlModulo.Controls.Add(frm)
         formularioAbierto = frm
@@ -132,6 +116,7 @@ Public Class frmMenuPrincipal
             marcar = mnuSolicitudes
         End If
 
+        ' No se puede en el Diseñador: el color y la fuente cambian según la opción activa.
         If opcionActiva IsNot Nothing AndAlso opcionActiva IsNot marcar Then
             opcionActiva.BackColor = Color.FromArgb(7, 47, 204)
             opcionActiva.Font = New Font("Segoe UI", 10.0!, FontStyle.Regular)
@@ -185,78 +170,9 @@ Public Class frmMenuPrincipal
         End If
     End Sub
 
-    Private Sub pnlContenido_Resize(sender As Object, e As EventArgs) Handles pnlContenido.Resize
-        AcomodarTextos()
-        pnlContenido.Invalidate()
-    End Sub
 
-    Private Sub AcomodarTextos()
-        If acomodandoTextos OrElse pnlContenido.ClientSize.Height < 1 Then
-            Return
-        End If
-        acomodandoTextos = True
-        Try
-            Dim margen As Integer = 48
-            Dim y As Integer = pnlContenido.ClientSize.Height - margen - lblSistema.Height
-            Colocar(lblSistema, margen, y)
-            y -= 6 + lblFecha.Height
-            Colocar(lblFecha, margen, y)
-            y -= 4 + lblBienvenido.Height
-            Colocar(lblBienvenido, margen, y)
-        Finally
-            acomodandoTextos = False
-        End Try
-    End Sub
 
-    Private Sub Colocar(lbl As Label, x As Integer, y As Integer)
-        If lbl.Left <> x OrElse lbl.Top <> y Then
-            lbl.Location = New Point(x, y)
-        End If
-    End Sub
 
-    Private Sub pnlContenido_Paint(sender As Object, e As PaintEventArgs) Handles pnlContenido.Paint
-        DibujarFondo(e.Graphics)
-    End Sub
 
-    Private Sub Etiqueta_Paint(sender As Object, e As PaintEventArgs) Handles lblBienvenido.Paint, lblFecha.Paint, lblSistema.Paint
-        Dim lbl As Label = DirectCast(sender, Label)
-        Dim estado As GraphicsState = e.Graphics.Save()
-        Try
-            e.Graphics.TranslateTransform(-lbl.Left, -lbl.Top)
-            e.Graphics.SetClip(New Rectangle(lbl.Left, lbl.Top, lbl.Width, lbl.Height))
-            DibujarFondo(e.Graphics)
-        Finally
-            e.Graphics.Restore(estado)
-        End Try
-        TextRenderer.DrawText(e.Graphics, lbl.Text, lbl.Font, lbl.ClientRectangle, lbl.ForeColor, TextFormatFlags.Left Or TextFormatFlags.VerticalCenter Or TextFormatFlags.NoPrefix)
-    End Sub
 
-    Private Sub DibujarFondo(g As Graphics)
-        If imagenFondo Is Nothing Then
-            Return
-        End If
-        Dim anchoPanel As Integer = pnlContenido.ClientSize.Width
-        Dim altoPanel As Integer = pnlContenido.ClientSize.Height
-        If anchoPanel < 1 OrElse altoPanel < 1 OrElse imagenFondo.Width < 1 OrElse imagenFondo.Height < 1 Then
-            Return
-        End If
-
-        Dim escala As Single = Math.Max(anchoPanel / CSng(imagenFondo.Width), altoPanel / CSng(imagenFondo.Height))
-        Dim anchoDibujo As Single = imagenFondo.Width * escala
-        Dim altoDibujo As Single = imagenFondo.Height * escala
-        Dim x As Single = (anchoPanel - anchoDibujo) / 2.0F
-        Dim y As Single = (altoPanel - altoDibujo) / 2.0F
-
-        g.InterpolationMode = InterpolationMode.HighQualityBicubic
-        g.PixelOffsetMode = PixelOffsetMode.HighQuality
-        g.DrawImage(imagenFondo, x, y, anchoDibujo, altoDibujo)
-
-        Dim altoBanda As Integer = CInt(altoPanel * 0.35F)
-        If altoBanda > 0 Then
-            Dim rect As New Rectangle(0, altoPanel - altoBanda, anchoPanel, altoBanda)
-            Using brocha As New LinearGradientBrush(rect, Color.FromArgb(0, 0, 0, 0), Color.FromArgb(170, 0, 0, 0), LinearGradientMode.Vertical)
-                g.FillRectangle(brocha, rect)
-            End Using
-        End If
-    End Sub
 End Class

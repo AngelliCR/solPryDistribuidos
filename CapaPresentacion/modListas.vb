@@ -1,12 +1,4 @@
-﻿Public Module modListas
-    Public Areas() As String = {"Campo", "Fábrica", "Logística", "Mantenimiento", "Administración", "Recursos humanos", "Sistemas"}
-    Public Roles() As String = {"Operario", "Supervisor", "Administrador"}
-    Public Prioridades() As String = {"Alta", "Media", "Baja"}
-    Public EstadosSolicitud() As String = {"Pendiente", "En revisión", "Aprobado", "Rechazado"}
-    Public EstadosMaquina() As String = {"Operativo", "En Mantenimiento", "Sin Tarea", "Dado de Baja"}
-    Public Zonas() As String = {"Anexo Pampagrande", "Anexo Saltur", "Sipán Lote 4"}
-    Public NivelesCombustible() As String = {"75%", "50%", "25%", "Reserva"}
-
+Public Module modListas
     Public Function CombustibleANumero(texto As String) As Decimal
         Select Case If(texto, "").Trim()
             Case "100%"

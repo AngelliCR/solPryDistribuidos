@@ -6,30 +6,22 @@ Public Class frmGestionSolicitudes
     Private listo As Boolean
 
     Private Sub frmGestionSolicitudes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        EstilizarBotonPrimario(btnGuardar)
-        EstilizarBotonSecundario(btnLimpiarFiltros)
-        EstilizarGrilla(dgvGestion)
-        LlenarFiltro(cbxFiltroEstado, modListas.EstadosSolicitud)
-        LlenarFiltro(cbxFiltroArea, modListas.Areas)
-        LlenarFiltro(cbxFiltroPrioridad, modListas.Prioridades)
-        cbxNuevoEstado.Items.AddRange(modListas.EstadosSolicitud)
+        ' No se puede en el Diseñador: AutoGenerateColumns está oculta en la ventana Propiedades.
+        dgvGestion.AutoGenerateColumns = False
+        cbxFiltroEstado.SelectedIndex = 0
+        cbxFiltroArea.SelectedIndex = 0
+        cbxFiltroPrioridad.SelectedIndex = 0
         LimpiarRevision()
         CargarGrilla()
         listo = True
     End Sub
 
-    Private Sub LlenarFiltro(cbx As ComboBox, valores() As String)
-        cbx.Items.Add("Todos")
-        cbx.Items.AddRange(valores)
-        cbx.SelectedIndex = 0
-    End Sub
 
     Private Sub CargarGrilla()
         cargando = True
         Try
             Dim obj As New clsSolicitud
             dgvGestion.DataSource = obj.listarSolicitudes(TextoCombo(cbxFiltroEstado), TextoCombo(cbxFiltroArea), TextoCombo(cbxFiltroPrioridad))
-            ConfigurarColumnas()
             dgvGestion.ClearSelection()
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -40,41 +32,14 @@ Public Class frmGestionSolicitudes
         btnGuardar.Enabled = False
     End Sub
 
-    Private Sub ConfigurarColumnas()
-        PonerEncabezado("fecha_registro", "Fecha")
-        PonerEncabezado("trabajador", "Trabajador")
-        PonerEncabezado("tipo_solicitud", "Tipo")
-        PonerEncabezado("maquina", "Máquina")
-        PonerEncabezado("descripcion", "Descripción")
-        PonerEncabezado("area", "Área")
-        PonerEncabezado("prioridad", "Prioridad")
-        PonerEncabezado("estado", "Estado")
-        PonerEncabezado("comentario", "Comentario")
-        If dgvGestion.Columns.Contains("fecha_registro") Then
-            dgvGestion.Columns("fecha_registro").DefaultCellStyle.Format = "dd/MM/yyyy HH:mm"
-        End If
-        Ocultar("id_solicitud")
-        Ocultar("id_personal")
-        Ocultar("id_maquinaria")
-        Ocultar("tipo_solicitud")
-    End Sub
 
-    Private Sub PonerEncabezado(columna As String, titulo As String)
-        If dgvGestion.Columns.Contains(columna) Then
-            dgvGestion.Columns(columna).HeaderText = titulo
-        End If
-    End Sub
 
-    Private Sub Ocultar(columna As String)
-        If dgvGestion.Columns.Contains(columna) Then
-            dgvGestion.Columns(columna).Visible = False
-        End If
-    End Sub
 
     Private Sub dgvGestion_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles dgvGestion.CellFormatting
         If e.RowIndex < 0 OrElse dgvGestion.Columns(e.ColumnIndex).Name <> "estado" Then
             Return
         End If
+        ' No se puede en el Diseñador: el color del estado depende del valor de la fila.
         Dim colorTexto As Color = ColorEstado(Convert.ToString(e.Value))
         e.CellStyle.ForeColor = colorTexto
         e.CellStyle.SelectionForeColor = colorTexto

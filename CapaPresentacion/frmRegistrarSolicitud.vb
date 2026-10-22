@@ -2,10 +2,6 @@
 
 Public Class frmRegistrarSolicitud
     Private Sub frmRegistrarSolicitud_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        EstilizarBotonPrimario(btnRegistrar)
-        EstilizarBotonSecundario(btnLimpiar)
-        cbxarea.Items.AddRange(modListas.Areas)
-        cbxprioridad.Items.AddRange(modListas.Prioridades)
         CargarMaquinas()
         Dim indiceArea As Integer = cbxarea.FindStringExact(If(modSesion.UsuarioArea, ""))
         If indiceArea >= 0 Then

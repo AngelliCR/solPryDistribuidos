@@ -22,6 +22,9 @@ Partial Class frmActividad
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.components = New System.ComponentModel.Container()
         Me.tmrTranscurrido = New System.Windows.Forms.Timer(Me.components)
         Me.lblTitulo = New System.Windows.Forms.Label()
@@ -52,18 +55,25 @@ Partial Class frmActividad
         Me.lblMotivo = New System.Windows.Forms.Label()
         Me.txtMotivo = New System.Windows.Forms.TextBox()
         Me.btnFinalizar = New System.Windows.Forms.Button()
+        Me.pnlBordeIncidente = New System.Windows.Forms.Panel()
         Me.pnlIncidente = New System.Windows.Forms.Panel()
         Me.lblIncidente = New System.Windows.Forms.Label()
         Me.lblFalla = New System.Windows.Forms.Label()
         Me.txtFalla = New System.Windows.Forms.TextBox()
         Me.btnAveria = New System.Windows.Forms.Button()
         Me.pnlResumen = New System.Windows.Forms.Panel()
+        Me.pnlBordeCardActivas = New System.Windows.Forms.Panel()
+        Me.pnlBarraActivas = New System.Windows.Forms.Panel()
         Me.pnlCardActivas = New System.Windows.Forms.Panel()
         Me.lblNumActivas = New System.Windows.Forms.Label()
         Me.lblTxtActivas = New System.Windows.Forms.Label()
+        Me.pnlBordeCardFinalizadas = New System.Windows.Forms.Panel()
+        Me.pnlBarraFinalizadas = New System.Windows.Forms.Panel()
         Me.pnlCardFinalizadas = New System.Windows.Forms.Panel()
         Me.lblNumFinalizadas = New System.Windows.Forms.Label()
         Me.lblTxtFinalizadas = New System.Windows.Forms.Label()
+        Me.pnlBordeCardAverias = New System.Windows.Forms.Panel()
+        Me.pnlBarraAverias = New System.Windows.Forms.Panel()
         Me.pnlCardAverias = New System.Windows.Forms.Panel()
         Me.lblNumAverias = New System.Windows.Forms.Label()
         Me.lblTxtAverias = New System.Windows.Forms.Label()
@@ -77,6 +87,22 @@ Partial Class frmActividad
         Me.btnActualizar = New System.Windows.Forms.Button()
         Me.lblGrilla = New System.Windows.Forms.Label()
         Me.dgvActividades = New System.Windows.Forms.DataGridView()
+        Me.operario = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fecha_inicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.maquina = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.zona = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.horas_estimadas = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.horas_reales = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.combustible_final = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fecha_fin = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id_actividad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id_maquinaria = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id_personal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.combustible_inicial = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.motivo_retraso = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.observacion_falla = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.observacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.lblSinDatos = New System.Windows.Forms.Label()
         Me.pnlDetalle = New System.Windows.Forms.Panel()
         Me.lblDetalle = New System.Windows.Forms.Label()
@@ -108,10 +134,14 @@ Partial Class frmActividad
         CType(Me.nudHorasReales, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlCheckin.SuspendLayout()
         Me.pnlFinalizar.SuspendLayout()
+        Me.pnlBordeIncidente.SuspendLayout()
         Me.pnlIncidente.SuspendLayout()
         Me.pnlControl.SuspendLayout()
+        Me.pnlBordeCardActivas.SuspendLayout()
         Me.pnlCardActivas.SuspendLayout()
+        Me.pnlBordeCardFinalizadas.SuspendLayout()
         Me.pnlCardFinalizadas.SuspendLayout()
+        Me.pnlBordeCardAverias.SuspendLayout()
         Me.pnlCardAverias.SuspendLayout()
         Me.pnlResumen.SuspendLayout()
         Me.pnlFiltros.SuspendLayout()
@@ -205,6 +235,7 @@ Partial Class frmActividad
         Me.cbxZona.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbxZona.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbxZona.FormattingEnabled = True
+        Me.cbxZona.Items.AddRange(New Object() {"Anexo Pampagrande", "Anexo Saltur", "Sipán Lote 4"})
         Me.cbxZona.Location = New System.Drawing.Point(16, 124)
         Me.cbxZona.Name = "cbxZona"
         Me.cbxZona.Size = New System.Drawing.Size(280, 28)
@@ -247,13 +278,24 @@ Partial Class frmActividad
         '
         'nudHorasEstimadas
         '
+        Me.nudHorasEstimadas.DecimalPlaces = 1
         Me.nudHorasEstimadas.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.nudHorasEstimadas.Increment = New Decimal(New Integer() {5, 0, 0, 65536})
         Me.nudHorasEstimadas.Location = New System.Drawing.Point(480, 186)
+        Me.nudHorasEstimadas.Maximum = New Decimal(New Integer() {24, 0, 0, 0})
         Me.nudHorasEstimadas.Name = "nudHorasEstimadas"
         Me.nudHorasEstimadas.Size = New System.Drawing.Size(100, 25)
+        Me.nudHorasEstimadas.Value = New Decimal(New Integer() {8, 0, 0, 0})
+        Me.nudHorasEstimadas.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'btnIniciar
         '
+        Me.btnIniciar.BackColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(177, Byte), Integer))
+        Me.btnIniciar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnIniciar.FlatAppearance.BorderSize = 0
+        Me.btnIniciar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(153, Byte), Integer))
+        Me.btnIniciar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(153, Byte), Integer))
+        Me.btnIniciar.ForeColor = System.Drawing.Color.White
         Me.btnIniciar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnIniciar.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnIniciar.Location = New System.Drawing.Point(16, 250)
@@ -275,7 +317,7 @@ Partial Class frmActividad
         'pnlControl
         '
         Me.pnlControl.BackColor = System.Drawing.Color.White
-        Me.pnlControl.Controls.Add(Me.pnlIncidente)
+        Me.pnlControl.Controls.Add(Me.pnlBordeIncidente)
         Me.pnlControl.Controls.Add(Me.pnlFinalizar)
         Me.pnlControl.Controls.Add(Me.lblDatosJornada)
         Me.pnlControl.Controls.Add(Me.lblMiJornadaControl)
@@ -341,6 +383,7 @@ Partial Class frmActividad
         Me.cbxCombustibleFinal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbxCombustibleFinal.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbxCombustibleFinal.FormattingEnabled = True
+        Me.cbxCombustibleFinal.Items.AddRange(New Object() {"75%", "50%", "25%", "Reserva"})
         Me.cbxCombustibleFinal.Location = New System.Drawing.Point(0, 48)
         Me.cbxCombustibleFinal.Name = "cbxCombustibleFinal"
         Me.cbxCombustibleFinal.Size = New System.Drawing.Size(200, 28)
@@ -366,10 +409,15 @@ Partial Class frmActividad
         '
         'nudHorasReales
         '
+        Me.nudHorasReales.DecimalPlaces = 1
         Me.nudHorasReales.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.nudHorasReales.Increment = New Decimal(New Integer() {5, 0, 0, 65536})
         Me.nudHorasReales.Location = New System.Drawing.Point(0, 128)
+        Me.nudHorasReales.Maximum = New Decimal(New Integer() {24, 0, 0, 0})
         Me.nudHorasReales.Name = "nudHorasReales"
         Me.nudHorasReales.Size = New System.Drawing.Size(100, 25)
+        Me.nudHorasReales.Value = New Decimal(New Integer() {5, 0, 0, 65536})
+        Me.nudHorasReales.Minimum = New Decimal(New Integer() {5, 0, 0, 65536})
         '
         'lblMotivo
         '
@@ -392,6 +440,12 @@ Partial Class frmActividad
         '
         'btnFinalizar
         '
+        Me.btnFinalizar.BackColor = System.Drawing.Color.FromArgb(CType(CType(39, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(96, Byte), Integer))
+        Me.btnFinalizar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnFinalizar.FlatAppearance.BorderSize = 0
+        Me.btnFinalizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(82, Byte), Integer))
+        Me.btnFinalizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(82, Byte), Integer))
+        Me.btnFinalizar.ForeColor = System.Drawing.Color.White
         Me.btnFinalizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnFinalizar.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnFinalizar.Location = New System.Drawing.Point(0, 196)
@@ -407,9 +461,21 @@ Partial Class frmActividad
         Me.pnlIncidente.Controls.Add(Me.txtFalla)
         Me.pnlIncidente.Controls.Add(Me.lblFalla)
         Me.pnlIncidente.Controls.Add(Me.lblIncidente)
-        Me.pnlIncidente.Location = New System.Drawing.Point(360, 84)
+        Me.pnlIncidente.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pnlIncidente.Location = New System.Drawing.Point(1, 1)
         Me.pnlIncidente.Name = "pnlIncidente"
-        Me.pnlIncidente.Size = New System.Drawing.Size(330, 230)
+        Me.pnlIncidente.Size = New System.Drawing.Size(328, 228)
+        Me.pnlIncidente.TabIndex = 0
+        '
+        'pnlBordeIncidente
+        '
+        Me.pnlBordeIncidente.BackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.pnlBordeIncidente.Controls.Add(Me.pnlIncidente)
+        Me.pnlBordeIncidente.Location = New System.Drawing.Point(360, 84)
+        Me.pnlBordeIncidente.Name = "pnlBordeIncidente"
+        Me.pnlBordeIncidente.Padding = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.pnlBordeIncidente.Size = New System.Drawing.Size(330, 230)
+        Me.pnlBordeIncidente.TabIndex = 1
         '
         'lblIncidente
         '
@@ -441,6 +507,12 @@ Partial Class frmActividad
         '
         'btnAveria
         '
+        Me.btnAveria.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(43, Byte), Integer))
+        Me.btnAveria.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnAveria.FlatAppearance.BorderSize = 0
+        Me.btnAveria.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(160, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.btnAveria.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(160, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.btnAveria.ForeColor = System.Drawing.Color.White
         Me.btnAveria.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAveria.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAveria.Location = New System.Drawing.Point(12, 164)
@@ -452,29 +524,51 @@ Partial Class frmActividad
         'pnlResumen
         '
         Me.pnlResumen.BackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(249, Byte), Integer))
-        Me.pnlResumen.Controls.Add(Me.pnlCardAverias)
-        Me.pnlResumen.Controls.Add(Me.pnlCardFinalizadas)
-        Me.pnlResumen.Controls.Add(Me.pnlCardActivas)
+        Me.pnlResumen.Controls.Add(Me.pnlBordeCardAverias)
+        Me.pnlResumen.Controls.Add(Me.pnlBordeCardFinalizadas)
+        Me.pnlResumen.Controls.Add(Me.pnlBordeCardActivas)
         Me.pnlResumen.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlResumen.Location = New System.Drawing.Point(0, 64)
         Me.pnlResumen.Name = "pnlResumen"
         Me.pnlResumen.Size = New System.Drawing.Size(980, 90)
         Me.pnlResumen.Visible = False
         '
+        'pnlBordeCardActivas
+        '
+        Me.pnlBordeCardActivas.BackColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(221, Byte), Integer), CType(CType(225, Byte), Integer))
+        Me.pnlBordeCardActivas.Controls.Add(Me.pnlBarraActivas)
+        Me.pnlBordeCardActivas.Controls.Add(Me.pnlCardActivas)
+        Me.pnlBordeCardActivas.Location = New System.Drawing.Point(0, 8)
+        Me.pnlBordeCardActivas.Name = "pnlBordeCardActivas"
+        Me.pnlBordeCardActivas.Padding = New System.Windows.Forms.Padding(1, 0, 1, 1)
+        Me.pnlBordeCardActivas.Size = New System.Drawing.Size(210, 74)
+        Me.pnlBordeCardActivas.TabIndex = 0
+        '
+        'pnlBarraActivas
+        '
+        Me.pnlBarraActivas.BackColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(177, Byte), Integer))
+        Me.pnlBarraActivas.Dock = System.Windows.Forms.DockStyle.Top
+        Me.pnlBarraActivas.Location = New System.Drawing.Point(1, 0)
+        Me.pnlBarraActivas.Name = "pnlBarraActivas"
+        Me.pnlBarraActivas.Size = New System.Drawing.Size(208, 4)
+        Me.pnlBarraActivas.TabIndex = 0
+        '
         'pnlCardActivas
         '
         Me.pnlCardActivas.BackColor = System.Drawing.Color.White
         Me.pnlCardActivas.Controls.Add(Me.lblTxtActivas)
         Me.pnlCardActivas.Controls.Add(Me.lblNumActivas)
-        Me.pnlCardActivas.Location = New System.Drawing.Point(0, 8)
+        Me.pnlCardActivas.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pnlCardActivas.Location = New System.Drawing.Point(1, 4)
         Me.pnlCardActivas.Name = "pnlCardActivas"
-        Me.pnlCardActivas.Size = New System.Drawing.Size(210, 74)
+        Me.pnlCardActivas.Size = New System.Drawing.Size(208, 69)
+        Me.pnlCardActivas.TabIndex = 1
         '
         'lblNumActivas
         '
         Me.lblNumActivas.Font = New System.Drawing.Font("Segoe UI Semibold", 22.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblNumActivas.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(177, Byte), Integer))
-        Me.lblNumActivas.Location = New System.Drawing.Point(16, 4)
+        Me.lblNumActivas.Location = New System.Drawing.Point(16, 0)
         Me.lblNumActivas.Name = "lblNumActivas"
         Me.lblNumActivas.Size = New System.Drawing.Size(178, 36)
         Me.lblNumActivas.Text = "0"
@@ -483,25 +577,47 @@ Partial Class frmActividad
         '
         Me.lblTxtActivas.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTxtActivas.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.lblTxtActivas.Location = New System.Drawing.Point(16, 42)
+        Me.lblTxtActivas.Location = New System.Drawing.Point(16, 38)
         Me.lblTxtActivas.Name = "lblTxtActivas"
         Me.lblTxtActivas.Size = New System.Drawing.Size(178, 24)
         Me.lblTxtActivas.Text = "Jornadas activas"
+        '
+        'pnlBordeCardFinalizadas
+        '
+        Me.pnlBordeCardFinalizadas.BackColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(221, Byte), Integer), CType(CType(225, Byte), Integer))
+        Me.pnlBordeCardFinalizadas.Controls.Add(Me.pnlBarraFinalizadas)
+        Me.pnlBordeCardFinalizadas.Controls.Add(Me.pnlCardFinalizadas)
+        Me.pnlBordeCardFinalizadas.Location = New System.Drawing.Point(226, 8)
+        Me.pnlBordeCardFinalizadas.Name = "pnlBordeCardFinalizadas"
+        Me.pnlBordeCardFinalizadas.Padding = New System.Windows.Forms.Padding(1, 0, 1, 1)
+        Me.pnlBordeCardFinalizadas.Size = New System.Drawing.Size(210, 74)
+        Me.pnlBordeCardFinalizadas.TabIndex = 0
+        '
+        'pnlBarraFinalizadas
+        '
+        Me.pnlBarraFinalizadas.BackColor = System.Drawing.Color.FromArgb(CType(CType(39, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(96, Byte), Integer))
+        Me.pnlBarraFinalizadas.Dock = System.Windows.Forms.DockStyle.Top
+        Me.pnlBarraFinalizadas.Location = New System.Drawing.Point(1, 0)
+        Me.pnlBarraFinalizadas.Name = "pnlBarraFinalizadas"
+        Me.pnlBarraFinalizadas.Size = New System.Drawing.Size(208, 4)
+        Me.pnlBarraFinalizadas.TabIndex = 0
         '
         'pnlCardFinalizadas
         '
         Me.pnlCardFinalizadas.BackColor = System.Drawing.Color.White
         Me.pnlCardFinalizadas.Controls.Add(Me.lblTxtFinalizadas)
         Me.pnlCardFinalizadas.Controls.Add(Me.lblNumFinalizadas)
-        Me.pnlCardFinalizadas.Location = New System.Drawing.Point(226, 8)
+        Me.pnlCardFinalizadas.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pnlCardFinalizadas.Location = New System.Drawing.Point(1, 4)
         Me.pnlCardFinalizadas.Name = "pnlCardFinalizadas"
-        Me.pnlCardFinalizadas.Size = New System.Drawing.Size(210, 74)
+        Me.pnlCardFinalizadas.Size = New System.Drawing.Size(208, 69)
+        Me.pnlCardFinalizadas.TabIndex = 1
         '
         'lblNumFinalizadas
         '
         Me.lblNumFinalizadas.Font = New System.Drawing.Font("Segoe UI Semibold", 22.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblNumFinalizadas.ForeColor = System.Drawing.Color.FromArgb(CType(CType(39, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(96, Byte), Integer))
-        Me.lblNumFinalizadas.Location = New System.Drawing.Point(16, 4)
+        Me.lblNumFinalizadas.Location = New System.Drawing.Point(16, 0)
         Me.lblNumFinalizadas.Name = "lblNumFinalizadas"
         Me.lblNumFinalizadas.Size = New System.Drawing.Size(178, 36)
         Me.lblNumFinalizadas.Text = "0"
@@ -510,25 +626,47 @@ Partial Class frmActividad
         '
         Me.lblTxtFinalizadas.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTxtFinalizadas.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.lblTxtFinalizadas.Location = New System.Drawing.Point(16, 42)
+        Me.lblTxtFinalizadas.Location = New System.Drawing.Point(16, 38)
         Me.lblTxtFinalizadas.Name = "lblTxtFinalizadas"
         Me.lblTxtFinalizadas.Size = New System.Drawing.Size(178, 24)
         Me.lblTxtFinalizadas.Text = "Finalizadas hoy"
+        '
+        'pnlBordeCardAverias
+        '
+        Me.pnlBordeCardAverias.BackColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(221, Byte), Integer), CType(CType(225, Byte), Integer))
+        Me.pnlBordeCardAverias.Controls.Add(Me.pnlBarraAverias)
+        Me.pnlBordeCardAverias.Controls.Add(Me.pnlCardAverias)
+        Me.pnlBordeCardAverias.Location = New System.Drawing.Point(452, 8)
+        Me.pnlBordeCardAverias.Name = "pnlBordeCardAverias"
+        Me.pnlBordeCardAverias.Padding = New System.Windows.Forms.Padding(1, 0, 1, 1)
+        Me.pnlBordeCardAverias.Size = New System.Drawing.Size(210, 74)
+        Me.pnlBordeCardAverias.TabIndex = 0
+        '
+        'pnlBarraAverias
+        '
+        Me.pnlBarraAverias.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(43, Byte), Integer))
+        Me.pnlBarraAverias.Dock = System.Windows.Forms.DockStyle.Top
+        Me.pnlBarraAverias.Location = New System.Drawing.Point(1, 0)
+        Me.pnlBarraAverias.Name = "pnlBarraAverias"
+        Me.pnlBarraAverias.Size = New System.Drawing.Size(208, 4)
+        Me.pnlBarraAverias.TabIndex = 0
         '
         'pnlCardAverias
         '
         Me.pnlCardAverias.BackColor = System.Drawing.Color.White
         Me.pnlCardAverias.Controls.Add(Me.lblTxtAverias)
         Me.pnlCardAverias.Controls.Add(Me.lblNumAverias)
-        Me.pnlCardAverias.Location = New System.Drawing.Point(452, 8)
+        Me.pnlCardAverias.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pnlCardAverias.Location = New System.Drawing.Point(1, 4)
         Me.pnlCardAverias.Name = "pnlCardAverias"
-        Me.pnlCardAverias.Size = New System.Drawing.Size(210, 74)
+        Me.pnlCardAverias.Size = New System.Drawing.Size(208, 69)
+        Me.pnlCardAverias.TabIndex = 1
         '
         'lblNumAverias
         '
         Me.lblNumAverias.Font = New System.Drawing.Font("Segoe UI Semibold", 22.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblNumAverias.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(43, Byte), Integer))
-        Me.lblNumAverias.Location = New System.Drawing.Point(16, 4)
+        Me.lblNumAverias.Location = New System.Drawing.Point(16, 0)
         Me.lblNumAverias.Name = "lblNumAverias"
         Me.lblNumAverias.Size = New System.Drawing.Size(178, 36)
         Me.lblNumAverias.Text = "0"
@@ -537,7 +675,7 @@ Partial Class frmActividad
         '
         Me.lblTxtAverias.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTxtAverias.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.lblTxtAverias.Location = New System.Drawing.Point(16, 42)
+        Me.lblTxtAverias.Location = New System.Drawing.Point(16, 38)
         Me.lblTxtAverias.Name = "lblTxtAverias"
         Me.lblTxtAverias.Size = New System.Drawing.Size(178, 24)
         Me.lblTxtAverias.Text = "Averías hoy"
@@ -572,6 +710,7 @@ Partial Class frmActividad
         Me.cbxFiltroEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbxFiltroEstado.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbxFiltroEstado.FormattingEnabled = True
+        Me.cbxFiltroEstado.Items.AddRange(New Object() {"Todos", "ACTIVO", "FINALIZADO", "AVERIADO"})
         Me.cbxFiltroEstado.Location = New System.Drawing.Point(54, 12)
         Me.cbxFiltroEstado.Name = "cbxFiltroEstado"
         Me.cbxFiltroEstado.Size = New System.Drawing.Size(140, 28)
@@ -612,6 +751,12 @@ Partial Class frmActividad
         '
         'btnActualizar
         '
+        Me.btnActualizar.BackColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(177, Byte), Integer))
+        Me.btnActualizar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnActualizar.FlatAppearance.BorderSize = 0
+        Me.btnActualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(153, Byte), Integer))
+        Me.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(153, Byte), Integer))
+        Me.btnActualizar.ForeColor = System.Drawing.Color.White
         Me.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnActualizar.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnActualizar.Location = New System.Drawing.Point(580, 8)
@@ -632,21 +777,164 @@ Partial Class frmActividad
         Me.lblGrilla.Size = New System.Drawing.Size(980, 32)
         Me.lblGrilla.Text = "Mis jornadas"
         '
+        CType(Me.dgvActividades, System.ComponentModel.ISupportInitialize).BeginInit()
+        '
         'dgvActividades
         '
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(177, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(177, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(251, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(249, Byte), Integer), CType(CType(251, Byte), Integer))
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(251, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
+        Me.dgvActividades.AllowUserToAddRows = False
+        Me.dgvActividades.AllowUserToDeleteRows = False
+        Me.dgvActividades.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
+        Me.dgvActividades.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvActividades.BackgroundColor = System.Drawing.Color.White
+        Me.dgvActividades.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.dgvActividades.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.dgvActividades.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgvActividades.ColumnHeadersHeight = 36
+        Me.dgvActividades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.dgvActividades.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.operario, Me.fecha_inicio, Me.maquina, Me.zona, Me.horas_estimadas, Me.horas_reales, Me.combustible_final, Me.estado, Me.fecha_fin, Me.id_actividad, Me.id_maquinaria, Me.id_personal, Me.combustible_inicial, Me.motivo_retraso, Me.observacion_falla, Me.observacion})
+        Me.dgvActividades.DefaultCellStyle = DataGridViewCellStyle2
         Me.dgvActividades.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgvActividades.EnableHeadersVisualStyles = False
+        Me.dgvActividades.GridColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(221, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.dgvActividades.Location = New System.Drawing.Point(0, 264)
+        Me.dgvActividades.MinimumSize = New System.Drawing.Size(0, 220)
+        Me.dgvActividades.MultiSelect = False
         Me.dgvActividades.Name = "dgvActividades"
+        Me.dgvActividades.ReadOnly = True
+        Me.dgvActividades.RowHeadersVisible = False
+        Me.dgvActividades.RowTemplate.Height = 30
+        Me.dgvActividades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvActividades.Size = New System.Drawing.Size(640, 376)
+        '
+        'operario
+        '
+        Me.operario.DataPropertyName = "operario"
+        Me.operario.HeaderText = "Operario"
+        Me.operario.Name = "operario"
+        '
+        'fecha_inicio
+        '
+        Me.fecha_inicio.DataPropertyName = "fecha_inicio"
+        Me.fecha_inicio.DefaultCellStyle.Format = "dd/MM/yyyy HH:mm"
+        Me.fecha_inicio.HeaderText = "Inicio"
+        Me.fecha_inicio.Name = "fecha_inicio"
+        '
+        'maquina
+        '
+        Me.maquina.DataPropertyName = "maquina"
+        Me.maquina.HeaderText = "Máquina"
+        Me.maquina.Name = "maquina"
+        '
+        'zona
+        '
+        Me.zona.DataPropertyName = "zona"
+        Me.zona.HeaderText = "Zona"
+        Me.zona.Name = "zona"
+        '
+        'horas_estimadas
+        '
+        Me.horas_estimadas.DataPropertyName = "horas_estimadas"
+        Me.horas_estimadas.DefaultCellStyle.Format = "0.0"
+        Me.horas_estimadas.HeaderText = "Horas estimadas"
+        Me.horas_estimadas.Name = "horas_estimadas"
+        '
+        'horas_reales
+        '
+        Me.horas_reales.DataPropertyName = "horas_reales"
+        Me.horas_reales.DefaultCellStyle.Format = "0.0"
+        Me.horas_reales.HeaderText = "Horas reales"
+        Me.horas_reales.Name = "horas_reales"
+        '
+        'combustible_final
+        '
+        Me.combustible_final.DataPropertyName = "combustible_final"
+        Me.combustible_final.HeaderText = "Combustible final"
+        Me.combustible_final.Name = "combustible_final"
+        '
+        'estado
+        '
+        Me.estado.DataPropertyName = "estado"
+        Me.estado.HeaderText = "Estado"
+        Me.estado.Name = "estado"
+        '
+        'fecha_fin
+        '
+        Me.fecha_fin.DataPropertyName = "fecha_fin"
+        Me.fecha_fin.DefaultCellStyle.Format = "dd/MM/yyyy HH:mm"
+        Me.fecha_fin.HeaderText = "Fin"
+        Me.fecha_fin.Name = "fecha_fin"
+        '
+        'id_actividad
+        '
+        Me.id_actividad.DataPropertyName = "id_actividad"
+        Me.id_actividad.HeaderText = "id_actividad"
+        Me.id_actividad.Name = "id_actividad"
+        Me.id_actividad.Visible = False
+        '
+        'id_maquinaria
+        '
+        Me.id_maquinaria.DataPropertyName = "id_maquinaria"
+        Me.id_maquinaria.HeaderText = "id_maquinaria"
+        Me.id_maquinaria.Name = "id_maquinaria"
+        Me.id_maquinaria.Visible = False
+        '
+        'id_personal
+        '
+        Me.id_personal.DataPropertyName = "id_personal"
+        Me.id_personal.HeaderText = "id_personal"
+        Me.id_personal.Name = "id_personal"
+        Me.id_personal.Visible = False
+        '
+        'combustible_inicial
+        '
+        Me.combustible_inicial.DataPropertyName = "combustible_inicial"
+        Me.combustible_inicial.HeaderText = "combustible_inicial"
+        Me.combustible_inicial.Name = "combustible_inicial"
+        Me.combustible_inicial.Visible = False
+        '
+        'motivo_retraso
+        '
+        Me.motivo_retraso.DataPropertyName = "motivo_retraso"
+        Me.motivo_retraso.HeaderText = "motivo_retraso"
+        Me.motivo_retraso.Name = "motivo_retraso"
+        Me.motivo_retraso.Visible = False
+        '
+        'observacion_falla
+        '
+        Me.observacion_falla.DataPropertyName = "observacion_falla"
+        Me.observacion_falla.HeaderText = "observacion_falla"
+        Me.observacion_falla.Name = "observacion_falla"
+        Me.observacion_falla.Visible = False
+        '
+        'observacion
+        '
+        Me.observacion.DataPropertyName = "observacion"
+        Me.observacion.HeaderText = "Observación"
+        Me.observacion.Name = "observacion"
+        CType(Me.dgvActividades, System.ComponentModel.ISupportInitialize).EndInit()
         '
         'lblSinDatos
         '
+        Me.lblSinDatos.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) Or System.Windows.Forms.AnchorStyles.Left) Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblSinDatos.BackColor = System.Drawing.Color.White
         Me.lblSinDatos.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblSinDatos.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.lblSinDatos.Location = New System.Drawing.Point(80, 400)
+        Me.lblSinDatos.Location = New System.Drawing.Point(0, 264)
         Me.lblSinDatos.Name = "lblSinDatos"
-        Me.lblSinDatos.Size = New System.Drawing.Size(480, 40)
+        Me.lblSinDatos.Size = New System.Drawing.Size(640, 376)
         Me.lblSinDatos.Text = "No hay jornadas registradas en el rango seleccionado."
         Me.lblSinDatos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.lblSinDatos.Visible = False
@@ -973,10 +1261,14 @@ Partial Class frmActividad
         Me.pnlFinalizar.PerformLayout()
         Me.pnlIncidente.ResumeLayout(False)
         Me.pnlIncidente.PerformLayout()
+        Me.pnlBordeIncidente.ResumeLayout(False)
         Me.pnlControl.ResumeLayout(False)
         Me.pnlCardActivas.ResumeLayout(False)
+        Me.pnlBordeCardActivas.ResumeLayout(False)
         Me.pnlCardFinalizadas.ResumeLayout(False)
+        Me.pnlBordeCardFinalizadas.ResumeLayout(False)
         Me.pnlCardAverias.ResumeLayout(False)
+        Me.pnlBordeCardAverias.ResumeLayout(False)
         Me.pnlResumen.ResumeLayout(False)
         Me.pnlFiltros.ResumeLayout(False)
         Me.pnlDetalle.ResumeLayout(False)
@@ -1014,18 +1306,25 @@ Partial Class frmActividad
     Friend WithEvents lblMotivo As Label
     Friend WithEvents txtMotivo As TextBox
     Friend WithEvents btnFinalizar As Button
+    Friend WithEvents pnlBordeIncidente As Panel
     Friend WithEvents pnlIncidente As Panel
     Friend WithEvents lblIncidente As Label
     Friend WithEvents lblFalla As Label
     Friend WithEvents txtFalla As TextBox
     Friend WithEvents btnAveria As Button
     Friend WithEvents pnlResumen As Panel
+    Friend WithEvents pnlBordeCardActivas As Panel
+    Friend WithEvents pnlBarraActivas As Panel
     Friend WithEvents pnlCardActivas As Panel
     Friend WithEvents lblNumActivas As Label
     Friend WithEvents lblTxtActivas As Label
+    Friend WithEvents pnlBordeCardFinalizadas As Panel
+    Friend WithEvents pnlBarraFinalizadas As Panel
     Friend WithEvents pnlCardFinalizadas As Panel
     Friend WithEvents lblNumFinalizadas As Label
     Friend WithEvents lblTxtFinalizadas As Label
+    Friend WithEvents pnlBordeCardAverias As Panel
+    Friend WithEvents pnlBarraAverias As Panel
     Friend WithEvents pnlCardAverias As Panel
     Friend WithEvents lblNumAverias As Label
     Friend WithEvents lblTxtAverias As Label
@@ -1066,4 +1365,20 @@ Partial Class frmActividad
     Friend WithEvents txtDetMotivo As TextBox
     Friend WithEvents lblCapFalla As Label
     Friend WithEvents txtDetFalla As TextBox
+    Friend WithEvents operario As DataGridViewTextBoxColumn
+    Friend WithEvents fecha_inicio As DataGridViewTextBoxColumn
+    Friend WithEvents maquina As DataGridViewTextBoxColumn
+    Friend WithEvents zona As DataGridViewTextBoxColumn
+    Friend WithEvents horas_estimadas As DataGridViewTextBoxColumn
+    Friend WithEvents horas_reales As DataGridViewTextBoxColumn
+    Friend WithEvents combustible_final As DataGridViewTextBoxColumn
+    Friend WithEvents estado As DataGridViewTextBoxColumn
+    Friend WithEvents fecha_fin As DataGridViewTextBoxColumn
+    Friend WithEvents id_actividad As DataGridViewTextBoxColumn
+    Friend WithEvents id_maquinaria As DataGridViewTextBoxColumn
+    Friend WithEvents id_personal As DataGridViewTextBoxColumn
+    Friend WithEvents combustible_inicial As DataGridViewTextBoxColumn
+    Friend WithEvents motivo_retraso As DataGridViewTextBoxColumn
+    Friend WithEvents observacion_falla As DataGridViewTextBoxColumn
+    Friend WithEvents observacion As DataGridViewTextBoxColumn
 End Class

@@ -6,20 +6,8 @@ Public Class frmPersonal
     Private listo As Boolean
 
     Private Sub frmPersonal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        EstilizarBotonPrimario(btnRegistrar)
-        EstilizarBotonPrimario(btnActualizar)
-        EstilizarBotonPeligro(btnBaja)
-        EstilizarBotonPeligro(btnEliminar)
-        EstilizarBotonSecundario(btnLimpiar)
-        EstilizarGrilla(dgvPersonal)
-
-        cbxtipo.Items.AddRange(modListas.Roles)
-        cbxarea.Items.AddRange(modListas.Areas)
-        cbxFiltroRol.Items.Add("Todos")
-        cbxFiltroRol.Items.AddRange(modListas.Roles)
-        cbxFiltroEstado.Items.Add("Todos")
-        cbxFiltroEstado.Items.Add("Activo")
-        cbxFiltroEstado.Items.Add("Inactivo")
+        ' No se puede en el Diseñador: AutoGenerateColumns está oculta en la ventana Propiedades.
+        dgvPersonal.AutoGenerateColumns = False
         cbxFiltroRol.SelectedIndex = 0
         cbxFiltroEstado.SelectedIndex = 0
 
@@ -33,7 +21,6 @@ Public Class frmPersonal
         Try
             Dim obj As New clsPersonal
             dgvPersonal.DataSource = obj.listarPersonalFiltrado(txtbuscar.Text, TextoCombo(cbxFiltroRol), TextoCombo(cbxFiltroEstado))
-            ConfigurarColumnas()
             dgvPersonal.ClearSelection()
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -46,29 +33,7 @@ Public Class frmPersonal
         btnBaja.Enabled = False
     End Sub
 
-    Private Sub ConfigurarColumnas()
-        PonerEncabezado("dni", "DNI")
-        PonerEncabezado("nombres", "Nombres")
-        PonerEncabezado("apellidos", "Apellidos")
-        PonerEncabezado("telefono", "Teléfono")
-        PonerEncabezado("correo", "Correo")
-        PonerEncabezado("tipo_usuario", "Tipo")
-        PonerEncabezado("area", "Área")
-        PonerEncabezado("fecha_ingreso", "Fecha de ingreso")
-        PonerEncabezado("estado", "Estado")
-        If dgvPersonal.Columns.Contains("fecha_ingreso") Then
-            dgvPersonal.Columns("fecha_ingreso").DefaultCellStyle.Format = "dd/MM/yyyy"
-        End If
-        If dgvPersonal.Columns.Contains("id_personal") Then
-            dgvPersonal.Columns("id_personal").Visible = False
-        End If
-    End Sub
 
-    Private Sub PonerEncabezado(columna As String, titulo As String)
-        If dgvPersonal.Columns.Contains(columna) Then
-            dgvPersonal.Columns(columna).HeaderText = titulo
-        End If
-    End Sub
 
     Private Sub dgvPersonal_SelectionChanged(sender As Object, e As EventArgs) Handles dgvPersonal.SelectionChanged
         If cargando OrElse dgvPersonal.CurrentRow Is Nothing Then
@@ -271,16 +236,25 @@ Public Class frmPersonal
         btnEliminar.Enabled = False
         btnBaja.Enabled = False
         btnBaja.Text = "Dar de baja"
-        EstilizarBotonPeligro(btnBaja)
+        ' No se puede en el Diseñador: el color cambia según el estado del usuario.
+        btnBaja.BackColor = Color.FromArgb(192, 57, 43)
+        btnBaja.FlatAppearance.MouseOverBackColor = Color.FromArgb(160, 45, 35)
+        btnBaja.FlatAppearance.MouseDownBackColor = Color.FromArgb(160, 45, 35)
     End Sub
 
     Private Sub ActualizarBotonBaja()
         If lblEstado.Text = "Inactivo" Then
             btnBaja.Text = "Reactivar"
-            EstilizarBotonExito(btnBaja)
+            ' No se puede en el Diseñador: el color cambia según el estado del usuario.
+            btnBaja.BackColor = Color.FromArgb(39, 174, 96)
+            btnBaja.FlatAppearance.MouseOverBackColor = Color.FromArgb(33, 148, 82)
+            btnBaja.FlatAppearance.MouseDownBackColor = Color.FromArgb(33, 148, 82)
         Else
             btnBaja.Text = "Dar de baja"
-            EstilizarBotonPeligro(btnBaja)
+            ' No se puede en el Diseñador: el color cambia según el estado del usuario.
+            btnBaja.BackColor = Color.FromArgb(192, 57, 43)
+            btnBaja.FlatAppearance.MouseOverBackColor = Color.FromArgb(160, 45, 35)
+            btnBaja.FlatAppearance.MouseDownBackColor = Color.FromArgb(160, 45, 35)
         End If
     End Sub
 

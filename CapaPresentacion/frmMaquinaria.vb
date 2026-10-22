@@ -6,19 +6,8 @@ Public Class frmMaquinaria
     Private listo As Boolean
 
     Private Sub frmMaquinaria_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        EstilizarBotonPrimario(btnRegistrar)
-        EstilizarBotonPrimario(btnActualizar)
-        EstilizarBotonPeligro(btnBaja)
-        EstilizarBotonPeligro(btnEliminar)
-        EstilizarBotonSecundario(btnLimpiar)
-        EstilizarGrilla(dgvMaquinaria)
-
-        cbxarea.Items.AddRange(modListas.Areas)
-        cbxestado.Items.AddRange(modListas.EstadosMaquina)
-        cbxFiltroEstado.Items.Add("Todos")
-        cbxFiltroEstado.Items.AddRange(modListas.EstadosMaquina)
-        cbxFiltroArea.Items.Add("Todos")
-        cbxFiltroArea.Items.AddRange(modListas.Areas)
+        ' No se puede en el Diseñador: AutoGenerateColumns está oculta en la ventana Propiedades.
+        dgvMaquinaria.AutoGenerateColumns = False
         cbxFiltroEstado.SelectedIndex = 0
         cbxFiltroArea.SelectedIndex = 0
 
@@ -32,7 +21,6 @@ Public Class frmMaquinaria
         Try
             Dim obj As New clsMaquinaria
             dgvMaquinaria.DataSource = obj.listarMaquinaria(txtbuscar.Text, TextoCombo(cbxFiltroEstado), TextoCombo(cbxFiltroArea))
-            ConfigurarColumnas()
             dgvMaquinaria.ClearSelection()
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -45,33 +33,13 @@ Public Class frmMaquinaria
         btnBaja.Enabled = False
     End Sub
 
-    Private Sub ConfigurarColumnas()
-        PonerEncabezado("nombre_codigo", "Código")
-        PonerEncabezado("tipo", "Tipo")
-        PonerEncabezado("marca", "Marca")
-        PonerEncabezado("modelo", "Modelo")
-        PonerEncabezado("area", "Área")
-        PonerEncabezado("estado", "Estado")
-        PonerEncabezado("observaciones", "Observaciones")
-        PonerEncabezado("fecha_registro", "Fecha de registro")
-        If dgvMaquinaria.Columns.Contains("fecha_registro") Then
-            dgvMaquinaria.Columns("fecha_registro").DefaultCellStyle.Format = "dd/MM/yyyy"
-        End If
-        If dgvMaquinaria.Columns.Contains("id_maquinaria") Then
-            dgvMaquinaria.Columns("id_maquinaria").Visible = False
-        End If
-    End Sub
 
-    Private Sub PonerEncabezado(columna As String, titulo As String)
-        If dgvMaquinaria.Columns.Contains(columna) Then
-            dgvMaquinaria.Columns(columna).HeaderText = titulo
-        End If
-    End Sub
 
     Private Sub dgvMaquinaria_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles dgvMaquinaria.CellFormatting
         If e.RowIndex < 0 OrElse dgvMaquinaria.Columns(e.ColumnIndex).Name <> "estado" Then
             Return
         End If
+        ' No se puede en el Diseñador: el color del estado depende del valor de la fila.
         Dim colorTexto As Color = ColorEstado(Convert.ToString(e.Value))
         e.CellStyle.ForeColor = colorTexto
         e.CellStyle.SelectionForeColor = colorTexto

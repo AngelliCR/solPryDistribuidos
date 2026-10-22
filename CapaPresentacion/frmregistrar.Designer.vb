@@ -28,6 +28,7 @@ Partial Class frmregistrar
         Me.lblSistema = New System.Windows.Forms.Label()
         Me.picLogo = New System.Windows.Forms.PictureBox()
         Me.pnlTarjeta = New System.Windows.Forms.Panel()
+        Me.pnlBordeTarjeta = New System.Windows.Forms.Panel()
         Me.flpIniciarSesion = New System.Windows.Forms.FlowLayoutPanel()
         Me.lblYaTiene = New System.Windows.Forms.Label()
         Me.lnkIniciarSesion = New System.Windows.Forms.LinkLabel()
@@ -61,6 +62,7 @@ Partial Class frmregistrar
         Me.lblTitulo = New System.Windows.Forms.Label()
         Me.pnlMarca.SuspendLayout()
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlBordeTarjeta.SuspendLayout()
         Me.pnlTarjeta.SuspendLayout()
         Me.flpIniciarSesion.SuspendLayout()
         Me.SuspendLayout()
@@ -144,10 +146,21 @@ Partial Class frmregistrar
         Me.pnlTarjeta.Controls.Add(Me.lblSecPersonales)
         Me.pnlTarjeta.Controls.Add(Me.lblSubtitulo)
         Me.pnlTarjeta.Controls.Add(Me.lblTitulo)
-        Me.pnlTarjeta.Location = New System.Drawing.Point(380, 40)
+        Me.pnlTarjeta.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pnlTarjeta.Location = New System.Drawing.Point(1, 1)
         Me.pnlTarjeta.Name = "pnlTarjeta"
-        Me.pnlTarjeta.Size = New System.Drawing.Size(580, 560)
-        Me.pnlTarjeta.TabIndex = 1
+        Me.pnlTarjeta.Size = New System.Drawing.Size(578, 558)
+        Me.pnlTarjeta.TabIndex = 0
+        '
+        'pnlBordeTarjeta
+        '
+        Me.pnlBordeTarjeta.BackColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(221, Byte), Integer), CType(CType(225, Byte), Integer))
+        Me.pnlBordeTarjeta.Controls.Add(Me.pnlTarjeta)
+        Me.pnlBordeTarjeta.Location = New System.Drawing.Point(380, 40)
+        Me.pnlBordeTarjeta.Name = "pnlBordeTarjeta"
+        Me.pnlBordeTarjeta.Padding = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.pnlBordeTarjeta.Size = New System.Drawing.Size(580, 560)
+        Me.pnlBordeTarjeta.TabIndex = 1
         '
         'flpIniciarSesion
         '
@@ -156,7 +169,7 @@ Partial Class frmregistrar
         Me.flpIniciarSesion.BackColor = System.Drawing.Color.White
         Me.flpIniciarSesion.Controls.Add(Me.lblYaTiene)
         Me.flpIniciarSesion.Controls.Add(Me.lnkIniciarSesion)
-        Me.flpIniciarSesion.Location = New System.Drawing.Point(166, 517)
+        Me.flpIniciarSesion.Location = New System.Drawing.Point(161, 517)
         Me.flpIniciarSesion.Name = "flpIniciarSesion"
         Me.flpIniciarSesion.Size = New System.Drawing.Size(256, 23)
         Me.flpIniciarSesion.TabIndex = 11
@@ -222,11 +235,11 @@ Partial Class frmregistrar
         'txtconfirmar
         '
         Me.txtconfirmar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtconfirmar.Font = New System.Drawing.Font("Segoe UI", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtconfirmar.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtconfirmar.Location = New System.Drawing.Point(300, 404)
         Me.txtconfirmar.MinimumSize = New System.Drawing.Size(250, 30)
         Me.txtconfirmar.Name = "txtconfirmar"
-        Me.txtconfirmar.Size = New System.Drawing.Size(250, 31)
+        Me.txtconfirmar.Size = New System.Drawing.Size(250, 30)
         Me.txtconfirmar.TabIndex = 8
         Me.txtconfirmar.UseSystemPasswordChar = True
         '
@@ -244,11 +257,11 @@ Partial Class frmregistrar
         'txtcontrasena
         '
         Me.txtcontrasena.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtcontrasena.Font = New System.Drawing.Font("Segoe UI", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtcontrasena.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtcontrasena.Location = New System.Drawing.Point(30, 404)
         Me.txtcontrasena.MinimumSize = New System.Drawing.Size(250, 30)
         Me.txtcontrasena.Name = "txtcontrasena"
-        Me.txtcontrasena.Size = New System.Drawing.Size(250, 31)
+        Me.txtcontrasena.Size = New System.Drawing.Size(250, 30)
         Me.txtcontrasena.TabIndex = 7
         Me.txtcontrasena.UseSystemPasswordChar = True
         '
@@ -348,11 +361,11 @@ Partial Class frmregistrar
         'txtcorreo
         '
         Me.txtcorreo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtcorreo.Font = New System.Drawing.Font("Segoe UI", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtcorreo.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtcorreo.Location = New System.Drawing.Point(30, 234)
         Me.txtcorreo.MinimumSize = New System.Drawing.Size(520, 30)
         Me.txtcorreo.Name = "txtcorreo"
-        Me.txtcorreo.Size = New System.Drawing.Size(520, 31)
+        Me.txtcorreo.Size = New System.Drawing.Size(520, 30)
         Me.txtcorreo.TabIndex = 4
         '
         'lblCorreo
@@ -369,21 +382,21 @@ Partial Class frmregistrar
         'txtapellido
         '
         Me.txtapellido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtapellido.Font = New System.Drawing.Font("Segoe UI", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtapellido.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtapellido.Location = New System.Drawing.Point(300, 179)
         Me.txtapellido.MinimumSize = New System.Drawing.Size(250, 30)
         Me.txtapellido.Name = "txtapellido"
-        Me.txtapellido.Size = New System.Drawing.Size(250, 31)
+        Me.txtapellido.Size = New System.Drawing.Size(250, 30)
         Me.txtapellido.TabIndex = 3
         '
         'txtnombre
         '
         Me.txtnombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtnombre.Font = New System.Drawing.Font("Segoe UI", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtnombre.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtnombre.Location = New System.Drawing.Point(30, 179)
         Me.txtnombre.MinimumSize = New System.Drawing.Size(250, 30)
         Me.txtnombre.Name = "txtnombre"
-        Me.txtnombre.Size = New System.Drawing.Size(250, 31)
+        Me.txtnombre.Size = New System.Drawing.Size(250, 30)
         Me.txtnombre.TabIndex = 2
         '
         'lblApellidos
@@ -411,23 +424,23 @@ Partial Class frmregistrar
         'txttelefono
         '
         Me.txttelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txttelefono.Font = New System.Drawing.Font("Segoe UI", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txttelefono.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txttelefono.Location = New System.Drawing.Point(300, 124)
         Me.txttelefono.MaxLength = 9
         Me.txttelefono.MinimumSize = New System.Drawing.Size(250, 30)
         Me.txttelefono.Name = "txttelefono"
-        Me.txttelefono.Size = New System.Drawing.Size(250, 31)
+        Me.txttelefono.Size = New System.Drawing.Size(250, 30)
         Me.txttelefono.TabIndex = 1
         '
         'txtnumdni
         '
         Me.txtnumdni.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtnumdni.Font = New System.Drawing.Font("Segoe UI", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtnumdni.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtnumdni.Location = New System.Drawing.Point(30, 124)
         Me.txtnumdni.MaxLength = 8
         Me.txtnumdni.MinimumSize = New System.Drawing.Size(250, 30)
         Me.txtnumdni.Name = "txtnumdni"
-        Me.txtnumdni.Size = New System.Drawing.Size(250, 31)
+        Me.txtnumdni.Size = New System.Drawing.Size(250, 30)
         Me.txtnumdni.TabIndex = 0
         '
         'lblTelefono
@@ -495,12 +508,13 @@ Partial Class frmregistrar
         '
         'frmregistrar
         '
+        Me.AcceptButton = Me.btnregistrar
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(249, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1000, 640)
         Me.Controls.Add(Me.pnlMarca)
-        Me.Controls.Add(Me.pnlTarjeta)
+        Me.Controls.Add(Me.pnlBordeTarjeta)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
@@ -511,6 +525,7 @@ Partial Class frmregistrar
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlTarjeta.ResumeLayout(False)
         Me.pnlTarjeta.PerformLayout()
+        Me.pnlBordeTarjeta.ResumeLayout(False)
         Me.flpIniciarSesion.ResumeLayout(False)
         Me.flpIniciarSesion.PerformLayout()
         Me.ResumeLayout(False)
@@ -521,6 +536,7 @@ Partial Class frmregistrar
     Friend WithEvents picLogo As PictureBox
     Friend WithEvents lblSistema As Label
     Friend WithEvents lblCopyright As Label
+    Friend WithEvents pnlBordeTarjeta As Panel
     Friend WithEvents pnlTarjeta As Panel
     Friend WithEvents lblTitulo As Label
     Friend WithEvents lblSubtitulo As Label

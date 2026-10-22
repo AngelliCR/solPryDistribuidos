@@ -28,6 +28,7 @@ Partial Class frmLogin
         Me.lblSistema = New System.Windows.Forms.Label()
         Me.picLogo = New System.Windows.Forms.PictureBox()
         Me.pnlTarjeta = New System.Windows.Forms.Panel()
+        Me.pnlBordeTarjeta = New System.Windows.Forms.Panel()
         Me.flpRegistro = New System.Windows.Forms.FlowLayoutPanel()
         Me.lblNuevo = New System.Windows.Forms.Label()
         Me.lnkRegistro = New System.Windows.Forms.LinkLabel()
@@ -41,6 +42,7 @@ Partial Class frmLogin
         Me.lblTitulo = New System.Windows.Forms.Label()
         Me.pnlMarca.SuspendLayout()
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlBordeTarjeta.SuspendLayout()
         Me.pnlTarjeta.SuspendLayout()
         Me.flpRegistro.SuspendLayout()
         Me.SuspendLayout()
@@ -74,7 +76,7 @@ Partial Class frmLogin
         '
         Me.lblSistema.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblSistema.ForeColor = System.Drawing.Color.White
-        Me.lblSistema.Location = New System.Drawing.Point(40, 400)
+        Me.lblSistema.Location = New System.Drawing.Point(40, 376)
         Me.lblSistema.Name = "lblSistema"
         Me.lblSistema.Size = New System.Drawing.Size(300, 56)
         Me.lblSistema.TabIndex = 1
@@ -85,12 +87,22 @@ Partial Class frmLogin
         '
         Me.picLogo.BackColor = System.Drawing.Color.Transparent
         Me.picLogo.Image = CType(resources.GetObject("picLogo.Image"), System.Drawing.Image)
-        Me.picLogo.Location = New System.Drawing.Point(40, 80)
+        Me.picLogo.Location = New System.Drawing.Point(40, 72)
         Me.picLogo.Name = "picLogo"
         Me.picLogo.Size = New System.Drawing.Size(300, 296)
         Me.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.picLogo.TabIndex = 3
         Me.picLogo.TabStop = False
+        '
+        'pnlBordeTarjeta
+        '
+        Me.pnlBordeTarjeta.BackColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(221, Byte), Integer), CType(CType(225, Byte), Integer))
+        Me.pnlBordeTarjeta.Controls.Add(Me.pnlTarjeta)
+        Me.pnlBordeTarjeta.Location = New System.Drawing.Point(450, 70)
+        Me.pnlBordeTarjeta.Name = "pnlBordeTarjeta"
+        Me.pnlBordeTarjeta.Padding = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.pnlBordeTarjeta.Size = New System.Drawing.Size(380, 420)
+        Me.pnlBordeTarjeta.TabIndex = 1
         '
         'pnlTarjeta
         '
@@ -104,10 +116,11 @@ Partial Class frmLogin
         Me.pnlTarjeta.Controls.Add(Me.lblDni)
         Me.pnlTarjeta.Controls.Add(Me.lblSubtitulo)
         Me.pnlTarjeta.Controls.Add(Me.lblTitulo)
-        Me.pnlTarjeta.Location = New System.Drawing.Point(450, 70)
+        Me.pnlTarjeta.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pnlTarjeta.Location = New System.Drawing.Point(1, 1)
         Me.pnlTarjeta.Name = "pnlTarjeta"
-        Me.pnlTarjeta.Size = New System.Drawing.Size(380, 420)
-        Me.pnlTarjeta.TabIndex = 1
+        Me.pnlTarjeta.Size = New System.Drawing.Size(378, 418)
+        Me.pnlTarjeta.TabIndex = 0
         '
         'flpRegistro
         '
@@ -182,11 +195,11 @@ Partial Class frmLogin
         'txtcontrasena
         '
         Me.txtcontrasena.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtcontrasena.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtcontrasena.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtcontrasena.Location = New System.Drawing.Point(32, 206)
         Me.txtcontrasena.MinimumSize = New System.Drawing.Size(316, 30)
         Me.txtcontrasena.Name = "txtcontrasena"
-        Me.txtcontrasena.Size = New System.Drawing.Size(316, 32)
+        Me.txtcontrasena.Size = New System.Drawing.Size(316, 30)
         Me.txtcontrasena.TabIndex = 1
         Me.txtcontrasena.UseSystemPasswordChar = True
         '
@@ -204,12 +217,12 @@ Partial Class frmLogin
         'txtdni
         '
         Me.txtdni.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtdni.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtdni.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtdni.Location = New System.Drawing.Point(32, 140)
         Me.txtdni.MaxLength = 8
         Me.txtdni.MinimumSize = New System.Drawing.Size(316, 30)
         Me.txtdni.Name = "txtdni"
-        Me.txtdni.Size = New System.Drawing.Size(316, 32)
+        Me.txtdni.Size = New System.Drawing.Size(316, 30)
         Me.txtdni.TabIndex = 0
         '
         'lblDni
@@ -253,7 +266,7 @@ Partial Class frmLogin
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(249, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(900, 560)
         Me.Controls.Add(Me.pnlMarca)
-        Me.Controls.Add(Me.pnlTarjeta)
+        Me.Controls.Add(Me.pnlBordeTarjeta)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
@@ -264,6 +277,7 @@ Partial Class frmLogin
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlTarjeta.ResumeLayout(False)
         Me.pnlTarjeta.PerformLayout()
+        Me.pnlBordeTarjeta.ResumeLayout(False)
         Me.flpRegistro.ResumeLayout(False)
         Me.flpRegistro.PerformLayout()
         Me.ResumeLayout(False)
@@ -274,6 +288,7 @@ Partial Class frmLogin
     Friend WithEvents picLogo As PictureBox
     Friend WithEvents lblSistema As Label
     Friend WithEvents lblCopyright As Label
+    Friend WithEvents pnlBordeTarjeta As Panel
     Friend WithEvents pnlTarjeta As Panel
     Friend WithEvents lblTitulo As Label
     Friend WithEvents lblSubtitulo As Label

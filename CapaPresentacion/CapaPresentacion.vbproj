@@ -137,7 +137,6 @@
     </Compile>
     <Compile Include="clsColoresMenu.vb" />
     <Compile Include="modSesion.vb" />
-    <Compile Include="modEstilos.vb" />
     <Compile Include="modListas.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">

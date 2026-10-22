@@ -2,54 +2,11 @@
 
 Public Class frmregistrar
     Private Sub frmregistrar_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        txtnumdni.AutoSize = False
-        txttelefono.AutoSize = False
-        txtnombre.AutoSize = False
-        txtapellido.AutoSize = False
-        txtcorreo.AutoSize = False
-        txtcontrasena.AutoSize = False
-        txtconfirmar.AutoSize = False
-        txtnumdni.Height = 30
-        txttelefono.Height = 30
-        txtnombre.Height = 30
-        txtapellido.Height = 30
-        txtcorreo.Height = 30
-        txtcontrasena.Height = 30
-        txtconfirmar.Height = 30
-        flpIniciarSesion.Controls.SetChildIndex(lblYaTiene, 0)
-        flpIniciarSesion.Controls.SetChildIndex(lnkIniciarSesion, 1)
-        CentrarTarjeta()
-        CentrarMarca()
-        flpIniciarSesion.Left = (pnlTarjeta.ClientSize.Width - flpIniciarSesion.Width) \ 2
         txtnumdni.Focus()
-        Me.AcceptButton = btnregistrar
     End Sub
 
-    Private Sub CentrarTarjeta()
-        Dim x As Integer = pnlMarca.Width + (Me.ClientSize.Width - pnlMarca.Width - pnlTarjeta.Width) \ 2
-        Dim y As Integer = (Me.ClientSize.Height - pnlTarjeta.Height) \ 2
-        pnlTarjeta.Location = New Point(x, y)
-    End Sub
 
-    ' Logo y texto centrados en el panel azul (el texto queda debajo del logo).
-    Private Sub CentrarMarca()
-        Dim ancho As Integer = pnlMarca.ClientSize.Width
-        Dim altoDisponible As Integer = pnlMarca.ClientSize.Height - lblCopyright.Height
-        Dim altoBloque As Integer = picLogo.Height + 8 + lblSistema.Height
-        Dim y As Integer = (altoDisponible - altoBloque) \ 2
-        If y < 16 Then
-            y = 16
-        End If
-        picLogo.Location = New Point((ancho - picLogo.Width) \ 2, y)
-        lblSistema.Location = New Point((ancho - lblSistema.Width) \ 2, y + picLogo.Height + 8)
-    End Sub
 
-    Private Sub pnlTarjeta_Paint(sender As Object, e As PaintEventArgs) Handles pnlTarjeta.Paint
-        Dim rect As New Rectangle(0, 0, pnlTarjeta.Width - 1, pnlTarjeta.Height - 1)
-        Using lapiz As New Pen(Color.FromArgb(220, 221, 225))
-            e.Graphics.DrawRectangle(lapiz, rect)
-        End Using
-    End Sub
 
     Private Sub SoloDigitos_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtnumdni.KeyPress, txttelefono.KeyPress
         If Not Char.IsDigit(e.KeyChar) AndAlso e.KeyChar <> ControlChars.Back Then

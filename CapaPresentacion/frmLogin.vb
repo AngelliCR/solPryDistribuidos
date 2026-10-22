@@ -2,42 +2,11 @@
 
 Public Class frmLogin
     Private Sub frmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        txtdni.AutoSize = False
-        txtcontrasena.AutoSize = False
-        txtdni.Height = 32
-        txtcontrasena.Height = 32
-        flpRegistro.Controls.SetChildIndex(lblNuevo, 0)
-        flpRegistro.Controls.SetChildIndex(lnkRegistro, 1)
-        CentrarTarjeta()
-        CentrarMarca()
         txtdni.Focus()
     End Sub
 
-    Private Sub CentrarTarjeta()
-        Dim x As Integer = pnlMarca.Width + (Me.ClientSize.Width - pnlMarca.Width - pnlTarjeta.Width) \ 2
-        Dim y As Integer = (Me.ClientSize.Height - pnlTarjeta.Height) \ 2
-        pnlTarjeta.Location = New Point(x, y)
-    End Sub
 
-    ' Logo y texto centrados en el panel azul (el texto queda debajo del logo).
-    Private Sub CentrarMarca()
-        Dim ancho As Integer = pnlMarca.ClientSize.Width
-        Dim altoDisponible As Integer = pnlMarca.ClientSize.Height - lblCopyright.Height
-        Dim altoBloque As Integer = picLogo.Height + 8 + lblSistema.Height
-        Dim y As Integer = (altoDisponible - altoBloque) \ 2
-        If y < 16 Then
-            y = 16
-        End If
-        picLogo.Location = New Point((ancho - picLogo.Width) \ 2, y)
-        lblSistema.Location = New Point((ancho - lblSistema.Width) \ 2, y + picLogo.Height + 8)
-    End Sub
 
-    Private Sub pnlTarjeta_Paint(sender As Object, e As PaintEventArgs) Handles pnlTarjeta.Paint
-        Dim rect As New Rectangle(0, 0, pnlTarjeta.Width - 1, pnlTarjeta.Height - 1)
-        Using lapiz As New Pen(Color.FromArgb(220, 221, 225))
-            e.Graphics.DrawRectangle(lapiz, rect)
-        End Using
-    End Sub
 
     Private Sub txtdni_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtdni.KeyPress
         If Not Char.IsDigit(e.KeyChar) AndAlso e.KeyChar <> ControlChars.Back Then
@@ -55,6 +24,7 @@ Public Class frmLogin
             Return
         End If
 
+        ' No se puede en el Diseñador: el cursor de espera depende del intento de inicio de sesión.
         Me.Cursor = Cursors.WaitCursor
         Me.UseWaitCursor = True
         btninicio.Enabled = False
